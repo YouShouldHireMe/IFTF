@@ -1,0 +1,81 @@
+/*Main.css consists of very general css rules that are used across the site
+It consists of:
+General tag rules
+General class rules
+Color scheme class rules
+*/
+
+/*Define general tag rules*/
+a{
+    text-decoration:none;
+    color:#444;
+}
+
+body{
+    color:#444;
+    background-color:#f0f0f0;
+    font-family: 'Helvetica Neue', helvetica, arial, san-serif;
+}
+
+/*Define general class rules*/
+
+.button{
+    display:inline-block;
+    border:1px solid black;
+    border-radius:3px;
+    padding:5px;
+    cursor:pointer;
+}
+
+.button.inactive{
+    color:gray;
+    border-color:gray;
+    cursor:default;
+}
+
+.bordered-block{
+    border:2px solid black;
+    border-radius:3px;
+}
+
+.styleless_list{
+    list-style:none;
+    margin:0;
+    padding: 0;
+}
+
+.horizontal_list{
+    list-style:none;
+    display:inline-block;
+    margin:0;
+    vertical-align:middle;
+    padding:0;
+}
+
+.horizontal_list li{
+    float:left;
+    display:block;
+    margin:0px 5px;
+}
+
+.styled_list{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.styled_list li{
+    padding:10px;
+}
+.styled_list li:nth-child(odd) {background: #f3f3f3;}
+.styled_list li:nth-child(even) {background:#fff;}
+
+/*Define color scheme class rules */
+.orange_white{
+    color:white;
+    background-color:#eb9f4d;
+    border-color:white;
+}
+.orange_white a{
+    color:white;
+}

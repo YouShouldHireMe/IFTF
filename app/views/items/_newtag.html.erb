@@ -1,0 +1,13 @@
+Add popular tags:
+<% @tags.each do |tag| %>
+    <span class="button">
+        <%= link_to "+" + tag.name, addtag_path(@item, tagname: tag.name), method: "post" %>
+    </span>
+<% end %>
+
+Add a different tag:
+<%= form_tag(addtag_path(@item), method: "post") do %>
+    <%= label_tag(:tagname, "Tag Name:") %>
+    <%= text_field_tag(:tagname) %>
+    <%= submit_tag("Add") %>
+<% end %>

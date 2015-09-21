@@ -1,0 +1,18 @@
+<!--item preview-->
+<div class="item_title"> <%= @item.title %></div>
+<% if @item.image.presence %>
+    <div class="item_image"><img src="<%= @item.image %>" /></div>
+<% end %>
+<div class="item_description"><%= @item.description %></div>
+<% if @item.url.presence %>
+    <div class="item_url"><%= link_to 'More...', @item.url %></div>
+<% end %>
+<div class="item_tags">
+    Tags: 
+    <% @item.tags.each do |tag| %>
+        <span class="button">
+            <%= tag.name %>
+        </span>
+    <% end %>
+</div> 
+<%= link_to 'Add a new tag', edittags_path(@item), :remote => true %>

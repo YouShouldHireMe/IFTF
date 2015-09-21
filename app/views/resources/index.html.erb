@@ -1,0 +1,135 @@
+<h1 style="text-align:center">The Interface for the Future</h1>
+<div id="resource_center">
+    <div id="resource_header">
+        <div>
+            <span class="button orange_white">
+                <%= link_to 'Add Item', new_item_path, :remote=>true %>
+                <%= form_tag(new_item_path, method: "get") do %>
+                    <%= label_tag(:quick_url, "URL: ") %>
+                    <%= text_field_tag(:quick_url) %>
+                    <%= submit_tag("Addd") %>
+                <% end %>
+            </span>
+            
+        </div>
+        <div id="top_signals">
+            <span style="width:45px;">View:</span> 
+            <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
+            <span id="view_select_options">
+            <ul class="styleless_list">
+                <li class="selected"><%= link_to 'All Items', root_path %></li>
+                <li><%= link_to 'Signals', root_path(type: "Signal") %></li>
+                <li><%= link_to 'Projects', root_path(type: "Project") %></li>
+                <li><%= link_to 'Artifacts', root_path(type: "Artifact") %></li>
+                <li><%= link_to 'Forecasts', root_path(type: "Forecast") %></li>
+            </ul>
+            </span>
+            Filter By Tag:
+            <ul class="horizontal_list">
+                <% @sigs.each do |sig| %>
+                    <li class="button"><%= sig.title %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div id="resource_list" class="bordered-block">
+            <div id="navigator">
+                <ul class="horizontal_list">
+                    <li id = 'navigator_home' class="button" onclick="navigate_home()">Home</li>
+                    <li id = 'navigator_back' class="button inactive" onclick="navigate_back()">Back</li>
+                    <li id = 'navigator_forward' class="button inactive" onclick="navigate_forward()">Forward</li>
+                </ul>
+            </div>
+            <div id="slider">
+                <div id="resource_page_0" class="homepage">
+                <div class="page_title">
+                    <%= @filter %>
+                </div>
+                <ul class="styled_list">
+                    <% @items.each do |item| %>
+                    <li>
+                        <%= link_to item.title, item_path(item), :remote=>true %>
+                    </li>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div id="resource_preview" class="bordered-block">
+        </div>
+        <!--item edit bar-->
+        <div id="item_edit_bar">
+        </div>
+    </div>
+</div>
+
+<div id="popup"></div>
+<div id="grayout"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+    var pageWidth = 455;
+    $('#slider').data('current_page', 0);
+    $('#view_select_options').hide();
+    adjust_on_window_change();
+    
+    function adjust_on_window_change(){
+        $('#item_edit_bar').css('left', $('#resource_preview').offset().left + 2.5);
+        $('#item_edit_bar').css('top', $('#resource_preview').offset().top + 2.125);
+        $('#item_edit_bar').css('width', $('#resource_preview').width()); 
+        $('#view_select_options').css('left', $('#view_select').offset().left);
+    }
+    
+    function view_select_dropdown(){
+        $('#view_select_options').toggle();
+        $('#view_select_options').css({'left':$('#view_select').offset().left});
+    }
+
+    function navigate_back(){
+        var c_page = $('#slider').data('current_page');
+        if (c_page > 0){
+            $('#slider').animate({
+                left:('+='+pageWidth)
+            }, 250);
+            $('#slider').data('current_page', c_page - 1);
+            update_navigator();
+        }
+    }
+
+    function navigate_forward(){
+        var c_page = $('#slider').data('current_page');
+        var next_page = '#resource_page_' + (c_page + 1);
+        if ($('#slider').find(next_page).length > 0) {
+            $('#slider').animate({
+                left: ('-=' + pageWidth)
+            }, 250);
+            $('#slider').data('current_page', c_page + 1);
+            update_navigator();
+        }
+    }
+    
+    function navigate_home(){
+        var c_page = $('#slider').data('current_page');
+        if ($('#resource_page_' + c_page).hasClass('homepage')) return;
+        var next_page = 'resource_page_' + (c_page + 1);
+        var path_length = $('#slider').children().length;
+        for (var i = c_page + 1; i < path_length; i++) {
+            $('#resource_page_' + i).remove();
+        }
+        $('#slider').width((c_page + 2) * pageWidth);
+        $new_page = $('#resource_page_0').clone().attr('id', next_page);
+        $('#slider').append($new_page);
+        $('#slider').animate({
+            left: ('-=' + pageWidth)
+        }, 250);
+        $('#slider').data('current_page', c_page + 1);
+        update_navigator();
+    }
+
+    function update_navigator(){
+        var c_page = $('#slider').data('current_page');
+        var next_page = '#resource_page_' + (c_page + 1);
+        $('#navigator_back').toggleClass('inactive', c_page == 0);
+        $('#navigator_forward').toggleClass('inactive', $('#slider').find(next_page).length == 0);
+    }
+</script>
