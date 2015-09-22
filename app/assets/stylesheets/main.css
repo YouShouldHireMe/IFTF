@@ -79,3 +79,7 @@ body{
 .orange_white a{
     color:white;
 }
+
+.lighter_border{
+    border-color:#bbb;
+}

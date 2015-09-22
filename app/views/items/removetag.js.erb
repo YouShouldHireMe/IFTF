@@ -1,0 +1,7 @@
+$('[id="tag_<%= @tag.name %>"]').remove();
+var last_tag;
+$('#tag_lists>span.lighter_border').each(function(){
+    last_tag = $(this).attr('id');
+});
+adjustNewTagWidth(last_tag);
+

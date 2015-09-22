@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/linkeditems/:id' => 'items#showlinks', as: :linkeditems
     post '/item/:id/addtag' => 'items#addtag', as: :addtag
     get '/item/:id/addtag' => 'items#edittags', as: :edittags
+    post '/item/:id/removetag' => 'items#removetag', as: :removetag
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

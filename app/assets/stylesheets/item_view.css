@@ -1,0 +1,24 @@
+/*Tags */
+.item_tags {
+    margin:10px 0px;
+}
+#tag_lists { 
+    font-size:0px;
+    border:1px solid #bbb;
+    border-radius:2px;
+    padding:8px;
+}
+
+#tag_lists span{
+    font-size:16px;
+    margin:2px;
+}
+#new_tag {
+    font-size:16px;
+    color:#444;
+    height:25px;
+    border:none;
+}
+#new_tag:focus{
+    outline:none;
+}

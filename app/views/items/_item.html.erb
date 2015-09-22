@@ -8,11 +8,59 @@
     <div class="item_url"><%= link_to 'More...', @item.url %></div>
 <% end %>
 <div class="item_tags">
-    Tags: 
+    <span>Tags:</span>
+    <div id="tag_lists"> 
     <% @item.tags.each do |tag| %>
-        <span class="button">
+        <span id="tag_<%=tag.name %>" class="button lighter_border">
             <%= tag.name %>
+            <span class="remove_tag"><%= link_to 'x', removetag_path(@item, tagname: tag.name), :remote=> true, method: :post %></span>
         </span>
     <% end %>
+    <input id="new_tag"></input>
+    </div>
+    <%= csrf_meta_tag %>
+    <div id="tag_suggestions">
+        <span>Add popular tags:</span>
+        <% @top_tags.each do |tag| %>
+            <span class="button lighter_border" onclick="addTag('<%= tag.name %>'); $(this).remove();"> 
+                <%= tag.name %>
+            </span>
+        <% end %>
+    </div>
 </div> 
-<%= link_to 'Add a new tag', edittags_path(@item), :remote => true %>
+<script type="text/javascript">
+    var existing_tags = [],
+        last_tag = '';
+    $('#tag_lists>span.lighter_border').each(function(){
+        existing_tags.push($(this).attr('id').substr(4));
+        last_tag = $(this).attr('id');
+    });
+    adjustNewTagWidth(last_tag);
+
+    $('#new_tag').on('focusout', function(){
+        var name = $(this).val();
+        addTag(name);
+    });
+
+    function addTag(name){
+        if (name && existing_tags.indexOf(name) == -1){ 
+        var url = '/item/' + '<%= @item.id %>' + '/addtag';
+        $.ajax({
+            type: 'POST',
+            url: url, 
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            data: 'tagname=' + name,
+            success: function(data, textStatus) {
+                $('#new_tag').before($('<span id="tag_' + name + '" class="lighter_border button">' + name + '<span class="remove_tag"><a data-remote="true" rel="nofollow" data-method="post" href="/item/<%= @item.id %>/removetag?tagname=' + name + '">x</a></span></span>'));
+                $('#new_tag').val('');
+                existing_tags.push(name);
+                adjustNewTagWidth('tag_' + name);
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log(textStatus);
+            }
+        });
+        }
+    }
+     
+</script>

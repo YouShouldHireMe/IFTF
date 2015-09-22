@@ -48,6 +48,9 @@ class ItemsController < ApplicationController
     def show
         @item = Item.find(params[:id])
         
+        query = Tag.all(:tags).items.query_as(:tagitems)
+        @top_tags = query.with(:tags, 'count(tagitems) AS count').where('NOT tags.name IN ?', @item.tags.map { |t| t.name }).order('count DESC').limit(5).pluck(:tags)
+ 
         respond_to do |format|
             format.html {}
             format.js {}
@@ -94,7 +97,23 @@ class ItemsController < ApplicationController
             @item.tags << @tag
             @tag.items << @item
         end
+        
+        respond_to do |format|
+            format.json {}
+            format.html {}
+        end
+        render json: @tag
+    end
 
-        redirect_to root_path
+    def removetag
+        @tag = Tag.find_by name: params[:tagname]
+        @item = Item.find(params[:id])
+        @item.tags.delete(@tag)
+        @tag.items.delete(@item)
+        
+        respond_to do |format|
+            format.html {}
+            format.js {}
+        end 
     end
 end

@@ -1,13 +1,15 @@
-Add popular tags:
+<div class="margin_btm">
+<div class="section_label">Add popular tags:</div>
 <% @tags.each do |tag| %>
     <span class="button">
         <%= link_to "+" + tag.name, addtag_path(@item, tagname: tag.name), method: "post" %>
     </span>
 <% end %>
-
-Add a different tag:
+</div>
+<div>
+<div class="section_label">Add a different tag:</div>
 <%= form_tag(addtag_path(@item), method: "post") do %>
-    <%= label_tag(:tagname, "Tag Name:") %>
     <%= text_field_tag(:tagname) %>
     <%= submit_tag("Add") %>
 <% end %>
+</div>
