@@ -10,3 +10,8 @@ function adjustNewTagWidth(tagid){
             $newtag.width(newWidth);
         }
     }
+
+function popupHide(){
+    $('#popup').hide();
+    $('#grayout').hide();
+}

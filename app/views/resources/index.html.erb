@@ -63,16 +63,18 @@
 </div>
 
 <div id="popup"></div>
-<div id="grayout"></div>
+<div id="grayout" onclick="popupHide();"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">
     var pageWidth = 455;
     $('#slider').data('current_page', 0);
     $('#view_select_options').hide();
     adjust_on_window_change();
+    $(window).resize(adjust_on_window_change);
+    $(window).scroll(adjust_on_window_change);
     
     function adjust_on_window_change(){
+        $('#grayout').height(window.screen.height);
         $('#item_edit_bar').css('left', $('#resource_preview').offset().left + 2.5);
         $('#item_edit_bar').css('top', $('#resource_preview').offset().top + 2.125);
         $('#item_edit_bar').css('width', $('#resource_preview').width()); 

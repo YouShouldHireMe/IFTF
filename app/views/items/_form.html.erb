@@ -31,13 +31,15 @@
     </p>
     <p>
         <%= f.label 'linked items' %>
-    <%= f.select :items, options_for_select(Item.all.collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+        <%= if @item.id.present? 
+            f.select :items, options_for_select(Item.all.where('n.uuid <> {id}').params(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true}
+         else
+            f.select :items, options_for_select(Item.all.collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true}
+         end %>
     </p>
     <p>
         <%= f.submit %>
     </p>
  <% end %>
 
-<%= link_to 'Cancel', root_path %>
-
-
+<a style="cursor:pointer;" onclick="popupHide()">Cancel</a>

@@ -34926,3 +34926,2184 @@ Processing by ResourcesController#index as HTML
  [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
   Rendered resources/index.html.erb within layouts/application (160.0ms)
 Completed 200 OK in 1553ms (Views: 407.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 12:17:55 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1082ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m17ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 1653ms (Views: 530.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 12:18:37 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1039ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m31ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (222.9ms)
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (83.3ms)
+  Rendered items/show.js.erb (341.4ms)
+Completed 200 OK in 1461ms (Views: 357.0ms)
+
+
+Started GET "/linkeditems/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 12:35:58 -0700
+Processing by ItemsController#showlinks as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1216ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#items[0m [33m47ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+  Rendered items/_itemlinks.html.erb (187.5ms)
+  Rendered items/showlinks.js.erb (203.2ms)
+Completed 200 OK in 1490ms (Views: 242.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:36:04 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (203.2ms)
+  Rendered items/edit.js.erb (207.3ms)
+Completed 200 OK in 243ms (Views: 223.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 12:46:32 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1070ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m0ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (111.8ms)
+Completed 200 OK in 1395ms (Views: 290.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 12:56:26 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1086ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (117.7ms)
+Completed 200 OK in 1603ms (Views: 485.3ms)
+
+
+Started GET "/assets/main.self-a25e584b916948568dd9f412744ce73365bc3af340e3e46ce8fbbe16fdd8d2f1.js?body=1" for ::1 at 2015-09-23 12:56:27 -0700
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 12:56:30 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m23ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m17ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m17ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m0ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (129.1ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (62.5ms)
+  Rendered items/show.js.erb (192.6ms)
+Completed 200 OK in 261ms (Views: 196.6ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:56:31 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m21ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (50.8ms)
+  Rendered items/edit.js.erb (52.8ms)
+Completed 500 Internal Server Error in 79ms
+
+ActionView::Template::Error (undefined method `not' for <QueryProxy [36m[0m CYPHER: [33m"MATCH (n:`Item`)"[0m>:Neo4j::ActiveNode::Query::QueryProxy):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where.not(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_84189288'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_84189288'
+  app/views/items/edit.js.erb:1:in `_app_views_items_edit_js_erb___571619448_84207276'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (50.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (93.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:56:36 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m22ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (62.5ms)
+  Rendered items/edit.js.erb (62.5ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (undefined method `not' for <QueryProxy [36m[0m CYPHER: [33m"MATCH (n:`Item`)"[0m>:Neo4j::ActiveNode::Query::QueryProxy):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where.not(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_84189288'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_84189288'
+  app/views/items/edit.js.erb:1:in `_app_views_items_edit_js_erb___571619448_84207276'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.text.erb (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (71.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:56:43 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2036ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (59.1ms)
+  Rendered items/edit.html.erb within layouts/application (62.1ms)
+Completed 500 Internal Server Error in 2107ms
+
+ActionView::Template::Error (undefined method `not' for <QueryProxy [36m[0m CYPHER: [33m"MATCH (n:`Item`)"[0m>:Neo4j::ActiveNode::Query::QueryProxy):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where.not(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_78461580'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_78461580'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (29.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (63.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:58:37 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1039ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m81ms[0m MATCH (i:`Item`) WHERE (i.id !=f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i 
+  Rendered items/_form.html.erb (141.1ms)
+  Rendered items/edit.html.erb within layouts/application (143.1ms)
+Completed 500 Internal Server Error in 1195ms
+
+ActionView::Template::Error (Unknown operation '!=' (you probably meant to use '<>', which is the operator for inequality testing) (line 1, column 30 (offset: 29))
+"MATCH (i:`Item`) WHERE (i.id !=f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i"
+                              ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all(:i).where('i.id !=' + @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_77917332'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_77917332'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (69.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:58:56 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2045ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m69ms[0m MATCH (i:`Item`) WHERE (i.id <>f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i 
+  Rendered items/_form.html.erb (132.6ms)
+  Rendered items/edit.html.erb within layouts/application (135.6ms)
+Completed 500 Internal Server Error in 2209ms
+
+ActionView::Template::Error (f8b0416d not defined (line 1, column 32 (offset: 31))
+"MATCH (i:`Item`) WHERE (i.id <>f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i"
+                                ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all(:i).where('i.id <>' + @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_81494376'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_81494376'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (29.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (63.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:59:39 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1031ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m68ms[0m MATCH (i:`Item`) WHERE (i.id <> @item.id) RETURN i 
+  Rendered items/_form.html.erb (126.0ms)
+  Rendered items/edit.html.erb within layouts/application (127.0ms)
+Completed 500 Internal Server Error in 1167ms
+
+ActionView::Template::Error (Invalid input '@': expected whitespace, comment or an expression (line 1, column 33 (offset: 32))
+"MATCH (i:`Item`) WHERE (i.id <> @item.id) RETURN i"
+                                 ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all(:i).where('i.id <> @item.id').collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_78357852'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_78357852'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (29.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (64.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 12:59:58 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2035ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m55ms[0m MATCH (i:`Item`) WHERE (i.id <> f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i 
+  Rendered items/_form.html.erb (111.9ms)
+  Rendered items/edit.html.erb within layouts/application (113.9ms)
+Completed 500 Internal Server Error in 2163ms
+
+ActionView::Template::Error (f8b0416d not defined (line 1, column 33 (offset: 32))
+"MATCH (i:`Item`) WHERE (i.id <> f8b0416d-94e0-4b06-a659-84b16fd92d63) RETURN i"
+                                 ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all(:i).where('i.id <> ' +  @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_73733964'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_73733964'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.4ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (63.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:00:24 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2034ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m34ms[0m MATCH (i:`Item`) WHERE (i.id <> 5) RETURN i 
+ [36mItem#items[0m [33m12ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (122.4ms)
+  Rendered items/edit.html.erb within layouts/application (125.4ms)
+Completed 200 OK in 2292ms (Views: 254.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:02:09 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1031ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) WHERE (i.id <> {id}) RETURN i | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+  Rendered items/_form.html.erb (68.9ms)
+  Rendered items/edit.html.erb within layouts/application (71.9ms)
+Completed 500 Internal Server Error in 1115ms
+
+ActionView::Template::Error (i not defined (line 1, column 25 (offset: 24))
+"MATCH (n:`Item`) WHERE (i.id <> {id}) RETURN i"
+                         ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where('i.id <> {id}').params(id: @item.id).pluck(:i).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_84147036'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_84147036'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (29.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (64.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:02:33 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2036ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m35ms[0m MATCH (n:`Item`) WHERE (n.id <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (124.3ms)
+  Rendered items/edit.html.erb within layouts/application (126.6ms)
+Completed 200 OK in 2294ms (Views: 255.7ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:03:49 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1033ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m23ms[0m MATCH (n:`Item`) WHERE (NOT n.id <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (106.9ms)
+  Rendered items/edit.html.erb within layouts/application (109.9ms)
+Completed 200 OK in 1292ms (Views: 253.2ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:04:16 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2037ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m25ms[0m MATCH (n:`Item`) WHERE (NOT n.id == {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+  Rendered items/_form.html.erb (85.1ms)
+  Rendered items/edit.html.erb within layouts/application (89.6ms)
+Completed 500 Internal Server Error in 2142ms
+
+ActionView::Template::Error (Invalid input '=': expected '~' (line 1, column 35 (offset: 34))
+"MATCH (n:`Item`) WHERE (NOT n.id == {id}) RETURN n"
+                                   ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where('NOT n.id == {id}').params(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_71056380'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_71056380'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (70.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:04:51 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1030ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (55.6ms)
+  Rendered items/edit.html.erb within layouts/application (57.1ms)
+Completed 500 Internal Server Error in 1095ms
+
+ActionView::Template::Error (undefined method `where_not' for <QueryProxy [36m[0m CYPHER: [33m"MATCH (n:`Item`)"[0m>:Neo4j::ActiveNode::Query::QueryProxy):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where_not('n.id = {id}').params(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_73370448'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_73370448'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (66.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:08:03 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1089ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m5ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m44ms[0m MATCH (i:`Item`) WHERE (i.id = {id}) RETURN i | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (122.8ms)
+  Rendered items/edit.html.erb within layouts/application (125.8ms)
+Completed 200 OK in 1396ms (Views: 285.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:08:36 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1017ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m25ms[0m MATCH (i:`Item`) RETURN i | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+  Rendered items/_form.html.erb (101.1ms)
+  Rendered items/edit.html.erb within layouts/application (103.1ms)
+Completed 500 Internal Server Error in 1127ms
+
+ActionView::Template::Error (undefined method `title' for #<#<Class:0x6bdc9c0>:0x6bd6798>):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.query_as(:i).where().params(id: @item.id).return(:i).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block (2 levels) in _app_views_items__form_html_erb___673656862_70407828'
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_70407828'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_70407828'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (64.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:08:57 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2021ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH (i:`Item`) RETURN i | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+  Rendered items/_form.html.erb (63.9ms)
+  Rendered items/edit.html.erb within layouts/application (65.4ms)
+Completed 500 Internal Server Error in 2094ms
+
+ActionView::Template::Error (undefined method `title' for #<#<Class:0x9447d68>:0x94478b8>):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.query_as(:i).params(id: @item.id).return(:i).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block (2 levels) in _app_views_items__form_html_erb___673656862_79249476'
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_79249476'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_79249476'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.9ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:09:18 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2035ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH (i:`Item`) RETURN i 
+  Rendered items/_form.html.erb (79.5ms)
+  Rendered items/edit.html.erb within layouts/application (82.2ms)
+Completed 500 Internal Server Error in 2133ms
+
+ActionView::Template::Error (undefined method `title' for #<#<Class:0xa08f5d0>:0xa08f180>):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.query_as(:i).return(:i).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `block (2 levels) in _app_views_items__form_html_erb___673656862_71201064'
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_71201064'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_71201064'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (65.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:10:12 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1030ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m23ms[0m MATCH (result_item:`Item`) WHERE (result_item.id = {result_item_id}) RETURN result_item | {:result_item_id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (101.8ms)
+  Rendered items/edit.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 1260ms (Views: 226.9ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:10:27 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2037ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) WHERE (n.id = {n_id}) RETURN n | {:n_id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (108.3ms)
+  Rendered items/edit.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 2292ms (Views: 249.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:10:42 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2023ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n 
+ [36mItem#items[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (110.0ms)
+  Rendered items/edit.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 2288ms (Views: 260.6ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:11:20 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1032ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m23ms[0m MATCH (n:`Item`) WHERE (n.uuid = {n_uuid}) RETURN n | {:n_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (107.8ms)
+  Rendered items/edit.html.erb within layouts/application (110.9ms)
+Completed 200 OK in 1295ms (Views: 258.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:12:25 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1031ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) WHERE (uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+  Rendered items/_form.html.erb (67.4ms)
+  Rendered items/edit.html.erb within layouts/application (69.9ms)
+Completed 500 Internal Server Error in 1111ms
+
+ActionView::Template::Error (uuid not defined (line 1, column 25 (offset: 24))
+"MATCH (n:`Item`) WHERE (uuid <> {id}) RETURN n"
+                         ^):
+    31:     </p>
+    32:     <p>
+    33:         <%= f.label 'linked items' %>
+    34:     <%= f.select :items, options_for_select(Item.all.where('uuid <> {id}').params(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true} %>
+    35:     </p>
+    36:     <p>
+    37:         <%= f.submit %>
+  app/views/items/_form.html.erb:34:in `collect'
+  app/views/items/_form.html.erb:34:in `block in _app_views_items__form_html_erb___673656862_77197068'
+  app/views/items/_form.html.erb:1:in `_app_views_items__form_html_erb___673656862_77197068'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.9ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.1ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (66.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:12:37 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2034ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m35ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (124.3ms)
+  Rendered items/edit.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 2309ms (Views: 269.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:15:19 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1091ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 1331ms (Views: 222.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:15:20 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1048ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 1392ms (Views: 312.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:15:24 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m17ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (140.6ms)
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (46.9ms)
+  Rendered items/show.js.erb (203.1ms)
+Completed 200 OK in 253ms (Views: 203.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:15:26 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (156.3ms)
+  Rendered items/edit.js.erb (156.3ms)
+Completed 200 OK in 173ms (Views: 156.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:16:12 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1040ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (131.5ms)
+Completed 200 OK in 1380ms (Views: 317.6ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:16:17 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>nil}
+  Rendered items/_form.html.erb (28.0ms)
+  Rendered items/new.js.erb (29.0ms)
+Completed 200 OK in 37ms (Views: 36.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:18:29 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1082ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 1335ms (Views: 232.2ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:18:32 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m21ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (118.8ms)
+ [36mCYPHER[0m [33m23ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (55.2ms)
+  Rendered items/show.js.erb (176.0ms)
+Completed 200 OK in 229ms (Views: 176.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:18:33 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+  Rendered items/_form.html.erb (1.6ms)
+  Rendered items/edit.js.erb (3.6ms)
+Completed 500 Internal Server Error in 23ms
+
+SyntaxError (C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if @item.id.present? );@output_buffer.safe_append='
+...                               ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:36: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                      ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;  end 
+              ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:50: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/items/_form.html.erb:36: syntax error, unexpected keyword_else, expecting ')'
+  app/views/items/_form.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/items/_form.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/edit.js.erb:1:in `_app_views_items_edit_js_erb___571619448_84207276'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (15.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (62.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:18:37 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+  Rendered items/_form.html.erb (2.0ms)
+  Rendered items/edit.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 23ms
+
+SyntaxError (C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if @item.id.present? );@output_buffer.safe_append='
+...                               ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:36: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                      ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;  end 
+              ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:50: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/items/_form.html.erb:36: syntax error, unexpected keyword_else, expecting ')'
+  app/views/items/_form.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:48: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/items/_form.html.erb:50: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (31.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (70.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:19:25 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1031ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+  Rendered items/_form.html.erb (4.0ms)
+  Rendered items/edit.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 1054ms
+
+SyntaxError (C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if @item.id.present? );@output_buffer.safe_append='
+...                               ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:36: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;  end 
+              ^
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:46: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Huapeng/IFTF/app/views/items/_form.html.erb:48: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/items/_form.html.erb:34: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/items/_form.html.erb:36: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:41: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/_form.html.erb:46: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/items/_form.html.erb:48: syntax error, unexpected keyword_end, expecting ')'
+  app/views/items/edit.html.erb:3:in `_app_views_items_edit_html_erb___1027907695_78477792'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (12.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (75.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:20:49 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1031ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (108.7ms)
+  Rendered items/edit.html.erb within layouts/application (112.7ms)
+Completed 200 OK in 1269ms (Views: 234.9ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:21:17 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2042ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (99.1ms)
+  Rendered items/edit.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 2272ms (Views: 227.2ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:22:17 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1019ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (95.5ms)
+  Rendered items/edit.html.erb within layouts/application (96.5ms)
+Completed 200 OK in 1261ms (Views: 239.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:22:24 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2044ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m18ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 2343ms (Views: 269.7ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:22:29 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (31.7ms)
+  Rendered items/new.js.erb (33.7ms)
+Completed 200 OK in 37ms (Views: 36.7ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:22:33 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m17ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (19.7ms)
+  Rendered items/new.js.erb (20.7ms)
+Completed 200 OK in 24ms (Views: 23.7ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:22:38 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m12ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m19ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (135.5ms)
+ [36mCYPHER[0m [33m32ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (94.3ms)
+  Rendered items/show.js.erb (237.1ms)
+Completed 200 OK in 286ms (Views: 241.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:22:40 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (125.3ms)
+  Rendered items/edit.js.erb (126.3ms)
+Completed 200 OK in 146ms (Views: 130.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:22:44 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (141.4ms)
+  Rendered items/edit.js.erb (142.4ms)
+Completed 200 OK in 162ms (Views: 146.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:22:48 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m22ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (187.5ms)
+  Rendered items/edit.js.erb (187.5ms)
+Completed 200 OK in 211ms (Views: 187.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:22:55 -0700
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2035ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (105.9ms)
+  Rendered items/edit.html.erb within layouts/application (107.9ms)
+Completed 200 OK in 2276ms (Views: 235.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:23:01 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (106.5ms)
+Completed 200 OK in 281ms (Views: 246.6ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:23:03 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m17ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m19ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (112.3ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (62.5ms)
+  Rendered items/show.js.erb (176.9ms)
+Completed 200 OK in 230ms (Views: 180.9ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:23:04 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m26ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m33ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (156.4ms)
+  Rendered items/edit.js.erb (158.4ms)
+Completed 200 OK in 178ms (Views: 163.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:23:15 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2088ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (187.5ms)
+  Rendered items/edit.js.erb (187.5ms)
+Completed 200 OK in 2276ms (Views: 187.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:26:12 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1050ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m17ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (99.7ms)
+Completed 200 OK in 1420ms (Views: 334.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:26:15 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m0ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (107.4ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (93.8ms)
+  Rendered items/show.js.erb (203.2ms)
+Completed 200 OK in 255ms (Views: 207.2ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:26:16 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (99.2ms)
+  Rendered items/edit.js.erb (102.7ms)
+Completed 200 OK in 124ms (Views: 106.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:28:29 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1036ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 1316ms (Views: 260.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:28:35 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m19ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (119.0ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (78.1ms)
+  Rendered items/show.js.erb (198.1ms)
+Completed 200 OK in 253ms (Views: 202.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:28:38 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (143.0ms)
+  Rendered items/edit.js.erb (144.0ms)
+Completed 200 OK in 164ms (Views: 148.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:36:36 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1064ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m5ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 1487ms (Views: 390.0ms)
+
+
+Started GET "/assets/resource_listing.self-13a998d2dcea87f3f356a54163b5859843c973632d2eb60325e1c807b0d28390.css?body=1" for ::1 at 2015-09-23 13:36:38 -0700
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:36:42 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (111.2ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m0ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (78.1ms)
+  Rendered items/show.js.erb (189.3ms)
+Completed 200 OK in 255ms (Views: 192.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:36:44 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (108.7ms)
+  Rendered items/edit.js.erb (109.7ms)
+Completed 200 OK in 131ms (Views: 113.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:36:53 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2081ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 2407ms (Views: 293.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:37:46 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1046ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 1376ms (Views: 296.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:37:47 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m14ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (101.5ms)
+Completed 200 OK in 245ms (Views: 214.1ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:38:14 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m2074ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (2075.7ms)
+  Rendered items/new.js.erb (2076.7ms)
+Completed 200 OK in 2081ms (Views: 2080.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:39:07 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1028ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (112.2ms)
+Completed 200 OK in 1302ms (Views: 254.3ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:39:10 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (18.0ms)
+  Rendered items/new.js.erb (19.0ms)
+Completed 200 OK in 23ms (Views: 23.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:43:23 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1040ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (128.5ms)
+Completed 200 OK in 1352ms (Views: 289.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:43:38 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2031ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m43ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (143.1ms)
+Completed 200 OK in 2323ms (Views: 273.7ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:43:45 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (188.4ms)
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (61.1ms)
+  Rendered items/show.js.erb (258.0ms)
+Completed 200 OK in 309ms (Views: 263.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:44:01 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2064ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m18ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m22ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (127.9ms)
+  Rendered items/edit.js.erb (128.9ms)
+Completed 200 OK in 2194ms (Views: 128.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:44:20 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2073ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m33ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m30ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (190.5ms)
+Completed 200 OK in 2454ms (Views: 348.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:45:41 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1016ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (100.4ms)
+Completed 200 OK in 1269ms (Views: 237.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:45:46 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m25ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (115.0ms)
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (46.8ms)
+  Rendered items/show.js.erb (163.8ms)
+Completed 200 OK in 213ms (Views: 166.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:45:47 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (103.5ms)
+  Rendered items/edit.js.erb (104.5ms)
+Completed 200 OK in 124ms (Views: 108.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:45:49 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m18ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (171.9ms)
+Completed 200 OK in 347ms (Views: 312.5ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:45:53 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m13ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (112.5ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (62.5ms)
+  Rendered items/show.js.erb (177.0ms)
+Completed 200 OK in 226ms (Views: 180.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:45:54 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (96.9ms)
+  Rendered items/edit.js.erb (99.2ms)
+Completed 200 OK in 118ms (Views: 102.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:46:14 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2039ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (123.9ms)
+Completed 200 OK in 2345ms (Views: 284.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:46:27 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2066ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m34ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (106.8ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (62.5ms)
+  Rendered items/show.js.erb (172.3ms)
+Completed 200 OK in 2303ms (Views: 179.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:46:30 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m27ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (194.3ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (93.7ms)
+  Rendered items/show.js.erb (288.1ms)
+Completed 200 OK in 347ms (Views: 288.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:46:31 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (93.3ms)
+  Rendered items/edit.js.erb (95.1ms)
+Completed 200 OK in 115ms (Views: 99.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:47:50 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1028ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 1314ms (Views: 265.6ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:47:53 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m17ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (128.2ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (93.8ms)
+  Rendered items/show.js.erb (224.0ms)
+Completed 200 OK in 280ms (Views: 227.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:47:55 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (94.4ms)
+  Rendered items/edit.js.erb (95.4ms)
+Completed 200 OK in 116ms (Views: 100.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:47:59 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (95.3ms)
+  Rendered items/edit.js.erb (96.9ms)
+Completed 200 OK in 117ms (Views: 100.9ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:48:03 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m18ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m19ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m23ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (151.6ms)
+  Rendered items/edit.js.erb (151.6ms)
+Completed 200 OK in 172ms (Views: 151.6ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:48:07 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m21ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (106.4ms)
+  Rendered items/edit.js.erb (108.5ms)
+Completed 200 OK in 129ms (Views: 113.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:50:34 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1042ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (126.9ms)
+Completed 200 OK in 1464ms (Views: 403.5ms)
+
+
+Started GET "/assets/main.self-a4839ea7893eb1c717dd76683fa6adc6cc9e8b76346863d5430253cffc9b951e.js?body=1" for ::1 at 2015-09-23 13:50:36 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:50:38 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (18.6ms)
+  Rendered items/new.js.erb (19.6ms)
+Completed 200 OK in 24ms (Views: 22.6ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:50:39 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (23.5ms)
+  Rendered items/new.js.erb (26.0ms)
+Completed 200 OK in 33ms (Views: 32.5ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-23 13:50:42 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (20.3ms)
+  Rendered items/new.js.erb (21.3ms)
+Completed 200 OK in 26ms (Views: 25.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:50:50 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2067ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m31ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m26ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (120.7ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (62.5ms)
+  Rendered items/show.js.erb (198.8ms)
+Completed 200 OK in 2330ms (Views: 198.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:50:54 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m15ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (102.6ms)
+  Rendered items/edit.js.erb (103.6ms)
+Completed 200 OK in 125ms (Views: 108.7ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:50:57 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m14ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (97.1ms)
+  Rendered items/edit.js.erb (99.1ms)
+Completed 200 OK in 121ms (Views: 104.1ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=test3" for ::1 at 2015-09-23 13:51:09 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"test3", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2068ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"test3", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m30ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>25}
+ [36mTag#items[0m [33m23ms[0m MATCH tag25 WHERE (ID(tag25) = {ID_tag25}) MATCH tag25<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag25=>25, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 2164ms (Views: 7.2ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=test5" for ::1 at 2015-09-23 13:51:14 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"test5", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m21ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"test5", :limit_1=>1}
+ [36mCYPHER[0m [33m47ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>27}
+ [36mTag#items[0m [33m16ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag27=>27, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 99ms (Views: 0.0ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=popular" for ::1 at 2015-09-23 13:51:18 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"popular", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m26ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"popular", :limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>33}
+ [36mTag#items[0m [33m47ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag33=>33, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 121ms (Views: 0.0ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=test1" for ::1 at 2015-09-23 13:51:19 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"test1", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"test1", :limit_1=>1}
+ [36mCYPHER[0m [33m34ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m12ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>34}
+ [36mTag#items[0m [33m49ms[0m MATCH tag34 WHERE (ID(tag34) = {ID_tag34}) MATCH tag34<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag34=>34, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 121ms (Views: 4.0ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=test2" for ::1 at 2015-09-23 13:51:20 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"test2", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"test2", :limit_1=>1}
+ [36mCYPHER[0m [33m18ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>19}
+ [36mTag#items[0m [33m31ms[0m MATCH tag19 WHERE (ID(tag19) = {ID_tag19}) MATCH tag19<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag19=>19, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 96ms (Views: 0.0ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=test4" for ::1 at 2015-09-23 13:51:21 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"test4", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"test4", :limit_1=>1}
+ [36mCYPHER[0m [33m35ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>26}
+ [36mTag#items[0m [33m16ms[0m MATCH tag26 WHERE (ID(tag26) = {ID_tag26}) MATCH tag26<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag26=>26, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 89ms (Views: 6.7ms)
+
+
+Started POST "/item/f8b0416d-94e0-4b06-a659-84b16fd92d63/removetag?tagname=longgggg" for ::1 at 2015-09-23 13:51:21 -0700
+Processing by ItemsController#removetag as JS
+  Parameters: {"tagname"=>"longgggg", "id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m25ms[0m MATCH (n:`Tag`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1} | {:n_name=>"longgggg", :limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) WHERE (ID(result_tags) = {ID_result_tags}) DELETE rel1 | {:ID_item7=>7, :ID_result_tags=>35}
+ [36mTag#items[0m [33m31ms[0m MATCH tag35 WHERE (ID(tag35) = {ID_tag35}) MATCH tag35<-[rel1:`tagged`]-(result_items:`Item`) WHERE (ID(result_items) = {ID_result_items}) DELETE rel1 | {:ID_tag35=>35, :ID_result_items=>7}
+  Rendered items/removetag.js.erb (0.0ms)
+Completed 200 OK in 87ms (Views: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:51:25 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m34ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m23ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (103.9ms)
+Completed 200 OK in 310ms (Views: 247.8ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:51:27 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m33ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m23ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m54ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>[], :limit_5=>5}
+  Rendered items/_item.html.erb (1.0ms)
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (56.7ms)
+  Rendered items/show.js.erb (60.7ms)
+Completed 200 OK in 182ms (Views: 64.7ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:51:55 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m2066ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m31ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m31ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>[], :limit_5=>5}
+  Rendered items/_item.html.erb (0.0ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (93.8ms)
+  Rendered items/show.js.erb (109.4ms)
+Completed 200 OK in 2239ms (Views: 109.4ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:51:57 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m1016ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m23ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m13ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (105.7ms)
+  Rendered items/edit.js.erb (107.7ms)
+Completed 200 OK in 1134ms (Views: 112.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-23 13:53:34 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1032ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (106.7ms)
+Completed 200 OK in 1336ms (Views: 284.3ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-23 13:53:39 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m12ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m23ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>[], :limit_5=>5}
+  Rendered items/_item.html.erb (0.0ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (78.1ms)
+  Rendered items/show.js.erb (78.1ms)
+Completed 200 OK in 145ms (Views: 78.1ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63/edit" for ::1 at 2015-09-23 13:53:40 -0700
+Processing by ItemsController#edit as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) WHERE (n.uuid <> {id}) RETURN n | {:id=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mItem#items[0m [33m16ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`related`]-(result_items:`Item`) RETURN result_items | {:ID_item7=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_form.html.erb (98.4ms)
+  Rendered items/edit.js.erb (99.4ms)
+Completed 200 OK in 119ms (Views: 103.4ms)
