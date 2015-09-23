@@ -32697,3 +32697,2232 @@ Processing by ResourcesController#index as HTML
  [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
   Rendered resources/index.html.erb within layouts/application (145.0ms)
 Completed 200 OK in 2359ms (Views: 317.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:44:38 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1054ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m10ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (160.2ms)
+Completed 200 OK in 1528ms (Views: 462.3ms)
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 17:44:40 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Addd" for ::1 at 2015-09-22 17:47:30 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m1028ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (1106.0ms)
+  Rendered items/new.html.erb within layouts/application (1110.0ms)
+Completed 200 OK in 1285ms (Views: 1284.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:48:50 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m19ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m23ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (146.8ms)
+Completed 200 OK in 1424ms (Views: 341.2ms)
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 17:48:52 -0700
+
+
+Started GET "/items/new" for ::1 at 2015-09-22 17:48:53 -0700
+Processing by ItemsController#new as JS
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name=' for #<Item:0x984baa8>):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (64.6ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (131.7ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Addd" for ::1 at 2015-09-22 17:48:55 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `name=' for #<Item:0x845fad8>):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (76.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:49:45 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 1386ms (Views: 313.6ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 17:49:47 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Addd" for ::1 at 2015-09-22 17:49:49 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m1036ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (1040.4ms)
+  Rendered items/new.html.erb within layouts/application (1044.4ms)
+Completed 200 OK in 1208ms (Views: 1203.3ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=red&commit=Addd" for ::1 at 2015-09-22 17:50:23 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"red", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `title=' for nil:NilClass):
+  app/controllers/items_controller.rb:4:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (75.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=red&commit=Addd" for ::1 at 2015-09-22 17:50:32 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"red", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `title=' for nil:NilClass):
+  app/controllers/items_controller.rb:4:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.8ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (81.8ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=red&commit=Addd" for ::1 at 2015-09-22 17:50:57 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"red", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (19.0ms)
+  Rendered items/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 1244ms (Views: 193.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:59:24 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m14ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m19ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (146.0ms)
+Completed 200 OK in 1385ms (Views: 311.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:59:27 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (232.0ms)
+Completed 200 OK in 419ms (Views: 398.7ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=hh&commit=Addd" for ::1 at 2015-09-22 17:59:32 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"hh", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 277ms
+
+RuntimeError (redirection forbidden: http://www.reddit.com/ -> https://www.reddit.com/):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (112.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 17:59:57 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (204.1ms)
+Completed 200 OK in 2484ms (Views: 372.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=hkjh&commit=Addd" for ::1 at 2015-09-22 18:00:03 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"hkjh", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 53ms
+
+OpenSSL::SSL::SSLError (SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (34.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:03:09 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (164.1ms)
+Completed 200 OK in 1415ms (Views: 328.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=ghj&commit=Addd" for ::1 at 2015-09-22 18:03:14 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"ghj", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (28.0ms)
+  Rendered items/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 578ms (Views: 216.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:04:13 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (180.0ms)
+Completed 200 OK in 1449ms (Views: 360.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D0&commit=Addd" for ::1 at 2015-09-22 18:04:18 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=0", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 1387ms
+
+RuntimeError (redirection forbidden: http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=5 -> https://myaccount.nytimes.com/auth/login?URI=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D5&REFUSE_COOKIE_ERROR=SHOW_ERROR):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (80.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:09:35 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m36ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (212.0ms)
+Completed 200 OK in 1474ms (Views: 400.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D0&commit=Addd" for ::1 at 2015-09-22 18:09:40 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=0", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 8ms
+
+LoadError (cannot load such file -- open_uri_redirections):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (84.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:10:42 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1033ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 1409ms (Views: 368.0ms)
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 18:10:43 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D0&commit=Addd" for ::1 at 2015-09-22 18:10:46 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=0", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 9ms
+
+LoadError (cannot load such file -- open_uri_redirections):
+  app/controllers/items_controller.rb:7:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (94.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:12:23 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (184.1ms)
+Completed 200 OK in 2054ms (Views: 928.1ms)
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:12:26 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:12:31 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 1360ms
+
+RuntimeError (redirection forbidden: http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=5 -> https://myaccount.nytimes.com/auth/login?URI=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D5&REFUSE_COOKIE_ERROR=SHOW_ERROR):
+  app/controllers/items_controller.rb:8:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.2ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.7ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (82.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:12:58 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m52ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (196.0ms)
+Completed 200 OK in 1448ms (Views: 360.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:13:03 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 1477ms
+
+RuntimeError (redirection forbidden: http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news&_r=5 -> https://myaccount.nytimes.com/auth/login?URI=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news%26_r%3D5&REFUSE_COOKIE_ERROR=SHOW_ERROR):
+  app/controllers/items_controller.rb:8:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:17:32 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (148.0ms)
+  Rendered items/new.html.erb within layouts/application (152.0ms)
+Completed 200 OK in 1648ms (Views: 304.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:17:47 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m13ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (143.9ms)
+Completed 200 OK in 2359ms (Views: 288.4ms)
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 18:17:49 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:17:53 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (36.0ms)
+  Rendered items/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 320ms (Views: 208.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:20:11 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m13ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (148.1ms)
+Completed 200 OK in 1370ms (Views: 292.0ms)
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 18:20:12 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:20:15 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (38.0ms)
+  Rendered items/new.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 305ms (Views: 217.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:23:17 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 1430ms (Views: 336.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F23%2Fus%2Flos-angeles-plans-100-million-effort-to-end-homelessness.html%3Fhp%26action%3Dclick%26pgtype%3DHomepage%26module%3Dphoto-spot-region%26region%3Dtop-news%26WT.nav%3Dtop-news&commit=Addd" for ::1 at 2015-09-22 18:23:29 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.nytimes.com/2015/09/23/us/los-angeles-plans-100-million-effort-to-end-homelessness.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m2048ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (2064.1ms)
+  Rendered items/new.html.erb within layouts/application (2068.1ms)
+Completed 200 OK in 2324ms (Views: 2220.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:31:46 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (160.0ms)
+Completed 200 OK in 1434ms (Views: 348.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.rubyinside.com%2Fnethttp-cheat-sheet-2940.html&commit=Addd" for ::1 at 2015-09-22 18:31:56 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.rubyinside.com/nethttp-cheat-sheet-2940.html", "commit"=>"Addd"}
+Completed 500 Internal Server Error in 2330ms
+
+NoMethodError (undefined method `title' for #<Hash:0x950f490>):
+  app/controllers/items_controller.rb:11:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (76.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fwww.rubyinside.com%2Fnethttp-cheat-sheet-2940.html&commit=Addd" for ::1 at 2015-09-22 18:35:07 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://www.rubyinside.com/nethttp-cheat-sheet-2940.html", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (32.0ms)
+  Rendered items/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 1576ms (Views: 180.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 18:36:04 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m26ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m15ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m13ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (149.6ms)
+Completed 200 OK in 1424ms (Views: 342.2ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F596314%2Fjquery-ids-with-spaces&commit=Addd" for ::1 at 2015-09-22 18:36:13 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://stackoverflow.com/questions/596314/jquery-ids-with-spaces", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m2037ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (2045.2ms)
+  Rendered items/new.html.erb within layouts/application (2053.2ms)
+Completed 200 OK in 3613ms (Views: 2225.2ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F596314%2Fjquery-ids-with-spaces&commit=Addd" for ::1 at 2015-09-22 18:36:31 -0700
+Processing by ItemsController#new as HTML
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://stackoverflow.com/questions/596314/jquery-ids-with-spaces", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (24.0ms)
+  Rendered items/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 2622ms (Views: 188.0ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 19:12:47 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mCYPHER[0m [33m63ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m17ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m28ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m25ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (112.8ms)
+Completed 200 OK in 1763ms (Views: 607.0ms)
+
+
+Started GET "/?type=Project" for ::1 at 2015-09-22 19:12:51 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Project"}
+ [36mCYPHER[0m [33m12ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Project"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 243ms (Views: 226.8ms)
+
+
+Started GET "/?type=Artifact" for ::1 at 2015-09-22 19:12:53 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Artifact"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Artifact"}
+  Rendered resources/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 196ms (Views: 180.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:12:54 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m18ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m32ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (207.1ms)
+Completed 200 OK in 399ms (Views: 383.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:15:27 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1036ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m14ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (178.3ms)
+Completed 200 OK in 1642ms (Views: 602.3ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Addd" for ::1 at 2015-09-22 19:15:30 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (31.3ms)
+  Rendered items/new.js.erb (31.3ms)
+Completed 200 OK in 47ms (Views: 46.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:15:32 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (163.3ms)
+Completed 200 OK in 383ms (Views: 366.8ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F25970335%2Frails-form-tag-remote-example&commit=Addd" for ::1 at 2015-09-22 19:15:38 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://stackoverflow.com/questions/25970335/rails-form-tag-remote-example", "commit"=>"Addd"}
+ [36mCYPHER[0m [33m2059ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (2074.8ms)
+  Rendered items/new.js.erb (2074.8ms)
+Completed 200 OK in 2955ms (Views: 2090.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:15:56 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m2044ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m32ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (205.5ms)
+Completed 200 OK in 2439ms (Views: 395.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:15:58 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1063ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (215.9ms)
+Completed 200 OK in 1462ms (Views: 383.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:00 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1042ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m4ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (159.0ms)
+Completed 200 OK in 1433ms (Views: 386.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:01 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1035ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m21ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m25ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (180.3ms)
+Completed 200 OK in 1440ms (Views: 400.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:03 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1041ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m0ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (222.9ms)
+Completed 200 OK in 1464ms (Views: 422.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:04 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1063ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (202.0ms)
+Completed 200 OK in 1421ms (Views: 358.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:06 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1034ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (234.4ms)
+Completed 200 OK in 1460ms (Views: 421.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:07 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1048ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (223.6ms)
+Completed 200 OK in 1444ms (Views: 395.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:09 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1058ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (255.8ms)
+Completed 200 OK in 1548ms (Views: 490.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:10 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1061ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (250.0ms)
+Completed 200 OK in 1542ms (Views: 481.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:16:12 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1059ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (250.0ms)
+Completed 200 OK in 1449ms (Views: 390.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:17:54 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1035ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (172.1ms)
+Completed 200 OK in 1543ms (Views: 504.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:18:36 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1034ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (176.0ms)
+Completed 200 OK in 1430ms (Views: 392.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:18:58 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m2038ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (188.0ms)
+Completed 200 OK in 2622ms (Views: 580.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:35:13 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1098ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m12ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (220.0ms)
+Completed 200 OK in 1718ms (Views: 600.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:36:23 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (160.1ms)
+Completed 200 OK in 1568ms (Views: 436.0ms)
+
+
+Started GET "/assets/linkeditems.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/item_view.self-1f0a85d2e46d450ee39714f2afa3da6f8fd03b73ce1ff74dc9be9adc4de4680f.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/main.self-2e72691f9a31a59760a7d88dbc985c675aacd70015f4cea1316852a20c5f3f69.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/resource_listing.self-bd12f5081211a59996c6966d5962ab30a7462ff164b17ddaafab95c9881112ab.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/sigs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/linkeditems.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/main.self-847c9db8a13b50d99df13b5a29f1b5fde189d131e084ccf883680ed96c6ac1cd.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/sigs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-09-22 19:36:25 -0700
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=stackoverflow&commit=Add" for ::1 at 2015-09-22 19:36:31 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"stackoverflow", "commit"=>"Add"}
+Completed 500 Internal Server Error in 292ms
+
+OpenURI::HTTPError (400 Bad Request):
+  app/controllers/items_controller.rb:10:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (148.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (92.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (225.3ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F14824551%2Frendering-json-in-controller&commit=Add" for ::1 at 2015-09-22 19:36:42 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"http://stackoverflow.com/questions/14824551/rendering-json-in-controller", "commit"=>"Add"}
+ [36mCYPHER[0m [33m1048ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (1063.5ms)
+  Rendered items/new.js.erb (1063.5ms)
+Completed 200 OK in 3392ms (Views: 1079.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:36:57 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m2057ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (144.1ms)
+Completed 200 OK in 2338ms (Views: 276.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:36:59 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m1041ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m29ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (237.5ms)
+Completed 200 OK in 1596ms (Views: 555.0ms)
+
+
+Started GET "/items/new?utf8=%E2%9C%93&quick_url=&commit=Add" for ::1 at 2015-09-22 19:37:34 -0700
+Processing by ItemsController#new as JS
+  Parameters: {"utf8"=>"✓", "quick_url"=>"", "commit"=>"Add"}
+ [36mCYPHER[0m [33m1034ms[0m MATCH (n:`Item`) RETURN n 
+  Rendered items/_form.html.erb (1036.6ms)
+  Rendered items/new.js.erb (1038.1ms)
+Completed 200 OK in 1042ms (Views: 1041.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:37:38 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m14ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (149.2ms)
+Completed 200 OK in 477ms (Views: 459.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:48:56 -0700
+
+SyntaxError (C:/Users/Huapeng/IFTF/app/controllers/resources_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting keyword_end):
+  app/controllers/resources_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (68.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:49:22 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m50ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m94ms[0m MATCH (n:`Tag`) RETURN n 
+  Rendered resources/index.html.erb within layouts/application (114.1ms)
+Completed 500 Internal Server Error in 1279ms
+
+ActionView::Template::Error (undefined method `title' for #<Tag uuid: "685dd206-b8cd-4f38-b9c2-1bffecf04281", name: "test">):
+    26:             Filter By Tag:
+    27:             <ul class="horizontal_list">
+    28:                 <% @tags.each do |tag| %>
+    29:                     <li class="button"><%= link_to tag.title, root_path(tag: tag.id) %></li>
+    30:                 <% end %>
+    31:             </ul>
+    32:         </div>
+  app/views/resources/index.html.erb:29:in `block in _app_views_resources_index_html_erb___947417168_76755840'
+  app/views/resources/index.html.erb:28:in `_app_views_resources_index_html_erb___947417168_76755840'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (28.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (64.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:49:53 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m2034ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m36ms[0m MATCH (n:`Tag`) RETURN n 
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (228.0ms)
+Completed 200 OK in 2534ms (Views: 496.1ms)
+
+
+Started GET "/?tag=b5b8beba-ac3b-441c-befb-9cda7edb0bd5" for ::1 at 2015-09-22 19:50:04 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"b5b8beba-ac3b-441c-befb-9cda7edb0bd5"}
+ [36mCYPHER[0m [33m2063ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m125ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"b5b8beba-ac3b-441c-befb-9cda7edb0bd5", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag21 WHERE (ID(tag21) = {ID_tag21}) MATCH tag21<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag21=>21}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Tag`) RETURN n 
+ [36mCYPHER[0m [33m31ms[0m MATCH (items:`Item`) WHERE (items.id IN {question_mark_param1}) RETURN items | {:question_mark_param1=>"25d9a298-1a01-4754-a294-859a245f493a"}
+  Rendered resources/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 2379ms (Views: 156.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:50:17 -0700
+Processing by ResourcesController#index as HTML
+ [36mCYPHER[0m [33m2096ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m32ms[0m MATCH (n:`Tag`) RETURN n 
+ [36mCYPHER[0m [33m44ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (224.0ms)
+Completed 200 OK in 2568ms (Views: 468.0ms)
+
+
+Started GET "/items/f8b0416d-94e0-4b06-a659-84b16fd92d63" for ::1 at 2015-09-22 19:50:22 -0700
+Processing by ItemsController#show as JS
+  Parameters: {"id"=>"f8b0416d-94e0-4b06-a659-84b16fd92d63"}
+ [36mCYPHER[0m [33m36ms[0m MATCH (result_item:`Item`) WHERE (result_item.uuid = {result_item_uuid}) RETURN result_item ORDER BY result_item.uuid LIMIT {limit_1} | {:result_item_uuid=>"f8b0416d-94e0-4b06-a659-84b16fd92d63", :limit_1=>1}
+ [36mItem#tags[0m [33m24ms[0m MATCH item7 WHERE (ID(item7) = {ID_item7}) MATCH item7-[rel1:`tags`]->(result_tags:`Tag`) RETURN result_tags | {:ID_item7=>7}
+ [36mTag#items[0m [33m29ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} WHERE (NOT tags.name IN {question_mark_param1}) RETURN tags | {:question_mark_param1=>["longgggg", "test4", "test2", "test1", "popular", "test5", "test3"], :limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_item.html.erb (164.1ms)
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m34ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered items/_itemBar.html.erb (85.2ms)
+  Rendered items/show.js.erb (280.8ms)
+Completed 200 OK in 393ms (Views: 300.7ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 19:50:29 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mCYPHER[0m [33m2047ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m84ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m26ms[0m MATCH (n:`Tag`) RETURN n 
+ [36mCYPHER[0m [33m36ms[0m MATCH (items:`Item`) WHERE (items.id IN {question_mark_param1}) RETURN items | {:question_mark_param1=>"25d9a298-1a01-4754-a294-859a245f493a"}
+  Rendered resources/index.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 2353ms (Views: 194.6ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 19:52:03 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m104ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m20ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH (items:`Item`) WHERE (items.id IN {question_mark_param1}) RETURN items | {:question_mark_param1=>"25d9a298-1a01-4754-a294-859a245f493a"}
+  Rendered resources/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 1457ms (Views: 204.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:54:50 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m32ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 1691ms (Views: 556.1ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 19:54:56 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m22ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 341ms (Views: 289.4ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af" for ::1 at 2015-09-22 19:54:58 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m68ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (165.5ms)
+Completed 200 OK in 429ms (Views: 376.6ms)
+
+
+Started GET "/?tag=6572ecfe-e10f-4fb9-b19d-f03dba7927c3" for ::1 at 2015-09-22 19:55:00 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"6572ecfe-e10f-4fb9-b19d-f03dba7927c3"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"6572ecfe-e10f-4fb9-b19d-f03dba7927c3", :limit_1=>1}
+ [36mTag#items[0m [33m28ms[0m MATCH tag23 WHERE (ID(tag23) = {ID_tag23}) MATCH tag23<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag23=>23}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 338ms (Views: 289.2ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 19:55:03 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m24ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (71.1ms)
+Completed 200 OK in 372ms (Views: 340.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:55:09 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2055ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m32ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m33ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (190.4ms)
+Completed 200 OK in 2464ms (Views: 377.9ms)
+
+
+Started GET "/?type=Project" for ::1 at 2015-09-22 19:55:15 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Project"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Project"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (94.1ms)
+Completed 200 OK in 380ms (Views: 347.9ms)
+
+
+Started GET "/?type=Artifact" for ::1 at 2015-09-22 19:55:17 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Artifact"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m18ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Artifact"}
+  Rendered resources/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 164ms (Views: 129.8ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 19:55:19 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 196ms (Views: 164.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:55:21 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (169.6ms)
+Completed 200 OK in 365ms (Views: 333.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:59:11 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1037ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 1537ms (Views: 472.0ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 19:59:17 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m27ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 292ms (Views: 256.3ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Signal" for ::1 at 2015-09-22 19:59:19 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m17ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 397ms (Views: 348.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:59:24 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m2042ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m18ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (168.7ms)
+Completed 200 OK in 2543ms (Views: 477.5ms)
+
+
+Started GET "/?type=Project" for ::1 at 2015-09-22 19:59:30 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Project"}
+ [36mTag#items[0m [33m28ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Project"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 396ms (Views: 352.2ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Project" for ::1 at 2015-09-22 19:59:32 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Project"}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 315ms (Views: 262.6ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:59:35 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m18ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (119.3ms)
+Completed 200 OK in 389ms (Views: 355.3ms)
+
+
+Started GET "/?type=Project" for ::1 at 2015-09-22 19:59:37 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Project"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Project"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 394ms (Views: 361.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 19:59:40 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (116.1ms)
+Completed 200 OK in 521ms (Views: 488.5ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 20:01:36 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1038ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (176.0ms)
+Completed 200 OK in 1526ms (Views: 460.0ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 20:01:41 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 247ms (Views: 214.6ms)
+
+
+Started GET "/?type=Project" for ::1 at 2015-09-22 20:01:43 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Project"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Project"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 460ms (Views: 427.7ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Project" for ::1 at 2015-09-22 20:01:45 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Project"}
+ [36mTag#items[0m [33m24ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m22ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m28ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (116.4ms)
+Completed 200 OK in 453ms (Views: 394.3ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Signal" for ::1 at 2015-09-22 20:01:48 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 424ms (Views: 364.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 20:01:50 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m17ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m18ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m8ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m21ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (142.9ms)
+Completed 200 OK in 367ms (Views: 334.8ms)
+
+
+Started GET "/?type=Signal" for ::1 at 2015-09-22 20:01:54 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_item:`Item`) WHERE (result_item.type = {result_item_type}) RETURN result_item | {:result_item_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 381ms (Views: 340.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 20:01:55 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 258ms (Views: 225.7ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 20:02:00 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m24ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (93.8ms)
+Completed 200 OK in 400ms (Views: 341.2ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 20:07:36 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m32ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m24ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 1574ms (Views: 409.0ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 20:09:12 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m64ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m16ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 1512ms (Views: 308.0ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 20:09:17 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m19ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m16ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 459ms (Views: 404.0ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a" for ::1 at 2015-09-22 20:09:40 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a"}
+ [36mTag#items[0m [33m32ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m20ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag33=>33}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 2560ms (Views: 388.0ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Signal" for ::1 at 2015-09-22 20:09:46 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m52ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag33=>33, :result_items_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (88.1ms)
+Completed 200 OK in 264ms (Views: 216.0ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Project" for ::1 at 2015-09-22 20:09:49 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Project"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m20ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag33=>33, :result_items_type=>"Project"}
+  Rendered resources/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 299ms (Views: 238.2ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Artifact" for ::1 at 2015-09-22 20:09:51 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Artifact"}
+ [36mTag#items[0m [33m28ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag33=>33, :result_items_type=>"Artifact"}
+  Rendered resources/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 276ms (Views: 216.7ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Forecast" for ::1 at 2015-09-22 20:09:53 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Forecast"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m24ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m16ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag33=>33, :result_items_type=>"Forecast"}
+  Rendered resources/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 307ms (Views: 251.3ms)
+
+
+Started GET "/?tag=46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a&type=Item" for ::1 at 2015-09-22 20:09:54 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", "type"=>"Item"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"46e731a0-f0e2-47d5-8d9e-8ec1b6e0961a", :limit_1=>1}
+ [36mTag#items[0m [33m16ms[0m MATCH tag33 WHERE (ID(tag33) = {ID_tag33}) MATCH tag33<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag33=>33, :result_items_type=>"Item"}
+  Rendered resources/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 186ms (Views: 138.2ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Item" for ::1 at 2015-09-22 20:09:56 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Item"}
+ [36mTag#items[0m [33m18ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m64ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag27=>27, :result_items_type=>"Item"}
+  Rendered resources/index.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 230ms (Views: 180.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 20:10:36 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m1036ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (156.1ms)
+Completed 200 OK in 1536ms (Views: 472.0ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af" for ::1 at 2015-09-22 20:10:43 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af"}
+ [36mTag#items[0m [33m2064ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m31ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 2458ms (Views: 328.1ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af" for ::1 at 2015-09-22 20:12:51 -0700
+
+SyntaxError (C:/Users/Huapeng/IFTF/app/controllers/resources_controller.rb:10: syntax error, unexpected keyword_if, expecting ':'
+        if params[:tag].present?
+          ^
+C:/Users/Huapeng/IFTF/app/controllers/resources_controller.rb:28: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/resources_controller.rb:10: syntax error, unexpected keyword_if, expecting ':'
+  app/controllers/resources_controller.rb:28: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (64.0ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af" for ::1 at 2015-09-22 20:13:15 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m20ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m20ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (88.1ms)
+Completed 200 OK in 1556ms (Views: 360.0ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Item" for ::1 at 2015-09-22 20:13:21 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Item"}
+ [36mTag#items[0m [33m12ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m28ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m32ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (125.6ms)
+Completed 200 OK in 621ms (Views: 561.6ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Signal" for ::1 at 2015-09-22 20:13:25 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Signal"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m24ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m31ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m31ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) WHERE (result_items.type = {result_items_type}) RETURN result_items | {:ID_tag27=>27, :result_items_type=>"Signal"}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m31ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+  Rendered resources/index.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 388ms (Views: 312.4ms)
+
+
+Started GET "/?tag=7f1afb27-176f-4e2f-9fa0-2c6d477560af&type=Item" for ::1 at 2015-09-22 20:13:26 -0700
+Processing by ResourcesController#index as HTML
+  Parameters: {"tag"=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", "type"=>"Item"}
+ [36mTag#items[0m [33m16ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m12ms[0m MATCH (result_tag:`Tag`) WHERE (result_tag.uuid = {result_tag_uuid}) RETURN result_tag ORDER BY result_tag.uuid LIMIT {limit_1} | {:result_tag_uuid=>"7f1afb27-176f-4e2f-9fa0-2c6d477560af", :limit_1=>1}
+ [36mTag#items[0m [33m12ms[0m MATCH tag27 WHERE (ID(tag27) = {ID_tag27}) MATCH tag27<-[rel1:`tagged`]-(result_items:`Item`) RETURN result_items | {:ID_tag27=>27}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+  Rendered resources/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 359ms (Views: 311.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-22 20:14:36 -0700
+Processing by ResourcesController#index as HTML
+ [36mTag#items[0m [33m32ms[0m MATCH (tags:`Tag`) MATCH tags<-[rel1:`tagged`]-(tagitems:`Item`) WITH tags, count(tagitems) AS count ORDER BY count DESC LIMIT {limit_5} RETURN tags | {:limit_5=>5}
+ [36mCYPHER[0m [33m20ms[0m MATCH (n:`Item`) RETURN n ORDER BY n.uuid LIMIT {limit_1} | {:limit_1=>1}
+ [36mCYPHER[0m [33m16ms[0m MATCH (n:`Item`) RETURN n 
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>7}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>9}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>10}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>11}
+ [36mCYPHER[0m [33m20ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>12}
+ [36mCYPHER[0m [33m16ms[0m MATCH n WHERE (ID(n) = {ID_n}) WITH n RETURN ID(n) | {:ID_n=>17}
+  Rendered resources/index.html.erb within layouts/application (160.0ms)
+Completed 200 OK in 1553ms (Views: 407.2ms)

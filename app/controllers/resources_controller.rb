@@ -1,14 +1,28 @@
 class ResourcesController < ApplicationController
   def index
     @sigs = Item.where(type: 'Signal')
-    @tags = Tag.all
+    query = Tag.all(:tags).items.query_as(:tagitems)
+    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(5).pluck(:tags)
     @item = Item.first
-    if params[:type].present?
+    @taggings = ''
+    if params[:type].present? && params[:type] != "Item"
         @filter = params[:type] + 's'
-        @items = Item.where(type: params[:type])
+        if params[:tag].present?
+            @tag = Tag.find(params[:tag])
+            @items = @tag.items.where(type: params[:type])
+            @taggings = 'tagged with "' + @tag.name + '"'
+        else
+            @items = Item.where(type: params[:type])
+        end
     else
         @filter = 'All Items'
-        @items = Item.all
+        if params[:tag].present?
+            @tag = Tag.find(params[:tag])
+            @items = @tag.items
+            @taggings = 'tagged with "' + @tag.name + '"'
+        else
+            @items = Item.all
+        end
     end
   end
 end

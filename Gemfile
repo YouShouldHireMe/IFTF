@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # neo4j
 gem 'neo4j', '~>5.0.0'
 
+gem 'open_uri_redirections'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use SCSS for stylesheets

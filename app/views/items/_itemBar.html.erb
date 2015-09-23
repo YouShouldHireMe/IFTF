@@ -2,5 +2,4 @@
     <li class="button orange_white"><%= link_to 'Edit', edit_item_path(@item), :remote=>true %></li>
     <li class="button orange_white"><%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: @item.title + ' will be deleted.' } %></li>
     <li class="button orange_white"><%= link_to 'View Linked Items', linkeditems_path(@item), :remote=>true %></li>
-    <li class="button orange_white"><%= link_to 'Add tag', addtag_path(@item, tagname: "test") %></li>
 </ul>

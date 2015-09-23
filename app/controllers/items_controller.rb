@@ -1,10 +1,18 @@
 class ItemsController < ApplicationController
     def new
-        if params[:quick_url].present?
-            
-        end
         @item = Item.new
         
+        if params[:quick_url].present?
+            require 'open-uri'
+            require 'json'
+            key = '7ae8a289ea5342feb466983a44a8ad26'
+            url = 'http://api.embed.ly/1/extract?key=' + key + '&url=' + params[:quick_url]
+            result = JSON.parse(open(url).read);
+            @item.title = result['title']
+            @item.description = result['description']
+            @item.url = params[:quick_url]
+            @item.image = result['images'][0]['url']    
+        end
         respond_to do |format|
             format.html {}
             format.js {}

@@ -2,32 +2,31 @@
 <div id="resource_center">
     <div id="resource_header">
         <div>
-            <span class="button orange_white">
-                <%= link_to 'Add Item', new_item_path, :remote=>true %>
-                <%= form_tag(new_item_path, method: "get") do %>
-                    <%= label_tag(:quick_url, "URL: ") %>
+                Add new item: 
+            <span style="display:inline-block">
+                <%= form_tag(new_item_path, method: "get", remote: true) do %>
+                    <%= label_tag(:quick_url, "URL ") %>
                     <%= text_field_tag(:quick_url) %>
-                    <%= submit_tag("Addd") %>
+                    <%= submit_tag("Add", :class => "button orange_white") %>
                 <% end %>
             </span>
-            
         </div>
         <div id="top_signals">
             <span style="width:45px;">View:</span> 
             <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
             <span id="view_select_options">
             <ul class="styleless_list">
-                <li class="selected"><%= link_to 'All Items', root_path %></li>
-                <li><%= link_to 'Signals', root_path(type: "Signal") %></li>
-                <li><%= link_to 'Projects', root_path(type: "Project") %></li>
-                <li><%= link_to 'Artifacts', root_path(type: "Artifact") %></li>
-                <li><%= link_to 'Forecasts', root_path(type: "Forecast") %></li>
+                <li class="selected"><%= link_to 'All Items', params.merge(:type => "Item") %></li>
+                <li><%= link_to 'Signals', params.merge(:type => "Signal") %></li>
+                <li><%= link_to 'Projects', params.merge(:type => "Project") %></li>
+                <li><%= link_to 'Artifacts', params.merge(:type => "Artifact") %></li>
+                <li><%= link_to 'Forecasts', params.merge(:type => "Forecast") %></li>
             </ul>
             </span>
             Filter By Tag:
             <ul class="horizontal_list">
-                <% @sigs.each do |sig| %>
-                    <li class="button"><%= sig.title %></li>
+                <% @tags.each do |tag| %>
+                    <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
                 <% end %>
             </ul>
         </div>
@@ -44,7 +43,7 @@
             <div id="slider">
                 <div id="resource_page_0" class="homepage">
                 <div class="page_title">
-                    <%= @filter %>
+                    <%= @filter + ' ' + @taggings %>
                 </div>
                 <ul class="styled_list">
                     <% @items.each do |item| %>
