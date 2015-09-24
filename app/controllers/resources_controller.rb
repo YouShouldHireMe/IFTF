@@ -21,7 +21,7 @@ class ResourcesController < ApplicationController
             @items = @tag.items
             @taggings = 'tagged with "' + @tag.name + '"'
         else
-            @items = Item.all
+            @items = Item.page(params[:page]).per(5)
         end
     end
   end

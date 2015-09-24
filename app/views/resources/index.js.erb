@@ -1,0 +1,3 @@
+$('#list_items').html('<%= j render partial: "listitem", collection: @items, as: :item %>');
+$('#pagination').html('<%= j (paginate(@items, :remote => true).to_s) %>');
+

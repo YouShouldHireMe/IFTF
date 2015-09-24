@@ -45,12 +45,12 @@
                 <div class="page_title">
                     <%= @filter + ' ' + @taggings %>
                 </div>
-                <ul class="styled_list">
-                    <% @items.each do |item| %>
-                    <li>
-                        <%= link_to item.title, item_path(item), :remote=>true %>
-                    </li>
-                    <% end %>
+                <ul id="list_items" class="styled_list">
+                    <%= render partial: "listitem", collection: @items, as: :item %>
+                </ul>
+                <div id="pagination">
+                    <%= paginate @items, :remote => true %>
+                </div>
                 </div>
             </div>
         </div>

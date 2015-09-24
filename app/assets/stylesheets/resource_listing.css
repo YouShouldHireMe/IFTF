@@ -51,6 +51,24 @@
     padding:5px 0px;
 }
 
+/* Resource Listing*/
+#pagination{
+    display:inline-block;
+    padding:10px 0;
+    width:455px;
+}
+.pagination{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+}
+.pagination .page{
+}
+.pagination .page.current{
+    font-weight:bold;
+    color:#eb9f4d;
+}
+
 /* Resrouce Preview*/
 #item_edit_bar{
     position:absolute;
@@ -92,6 +110,7 @@
     display:inline-block;
 }
 #slider .page_title{
+    width:455px;
     padding:5px;
     margin-bottom:15px;
     color:#eb9f4d;
