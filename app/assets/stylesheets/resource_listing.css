@@ -50,6 +50,9 @@
 #view_select_options li{
     padding:5px 0px;
 }
+#tagFilters_ {
+    width:300px;
+}
 
 /* Resource Listing*/
 #pagination{

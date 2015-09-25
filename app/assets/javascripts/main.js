@@ -1,3 +1,4 @@
+
 function adjustNewTagWidth(tagid){
         var $taglist = $('#tag_lists'),
             $newtag = $('#new_tag');

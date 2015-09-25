@@ -27,6 +27,9 @@ module IFTF
     config.neo4j.session_path = 'http://localhost:7474'
     config.neo4j.session_option = {basic_auth: { username: 'neo4j', password:'cynebr9zqleby0'}}
 
+    config.to_prepare do
+        DeviseController.respond_to :html, :js, :json
+    end
     # Configure where the embedded neo4j database should exist
     # Notice embedded db is only available for JRuby
     # config.neo4j.session_type = :embedded_db  # default #server_db

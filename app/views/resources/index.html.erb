@@ -24,6 +24,7 @@
             </ul>
             </span>
             Filter By Tag:
+            <%= select_tag 'tagFilters[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple =>true} %>
             <ul class="horizontal_list">
                 <% @tags.each do |tag| %>
                     <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
@@ -72,6 +73,7 @@
     adjust_on_window_change();
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
+    $('#tagFilters_').select2();
     
     function adjust_on_window_change(){
         $('#grayout').height(window.screen.height);

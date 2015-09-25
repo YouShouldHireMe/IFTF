@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+    before_action :authenticate_user!
+    skip_before_action :authenticate_user!, only: [:show, :showlinks]
     def new
         @item = Item.new
         
