@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
         
         query = Tag.all(:tags).items.query_as(:tagitems)
-        @top_tags = query.with(:tags, 'count(tagitems) AS count').where('NOT tags.name IN ?', @item.tags.map { |t| t.name }).order('count DESC').limit(5).pluck(:tags)
+        @top_tags = query.with(:tags, 'count(tagitems) AS count').where('NOT tags.name IN ?', @item.tags.map { |t| t.name }).order('count DESC').limit(4).pluck(:tags)
  
         respond_to do |format|
             format.html {}

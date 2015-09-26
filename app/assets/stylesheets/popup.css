@@ -1,0 +1,76 @@
+/* pop up*/
+#popup {
+    display:none;
+    position:absolute;
+    top:100px;
+    left:25%;
+    background-color:white;
+    border:2px solid #444;
+    border-radius:5px;
+    padding:5px 25px;
+    width:50%;
+    z-index:91;
+}
+#grayout{
+    z-index:90;
+    display:none;
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.2);
+}
+#popup label{
+    width: 100px;
+    display: inline-block;
+}
+#popup * {
+    vertical-align: text-top;
+}
+#popup textarea {
+    width: 70%;
+    height:150px;
+}
+#popup input[type="text"] {
+    width:70%;
+    height:25px;
+}
+#popup input#item_type{
+    width:200px;
+}
+#popup input[type="submit"]{
+    width:200px;
+}
+#popup #item_items{
+    width:70%;
+}
+
+/*popup signin*/
+#popup.popup_signin {
+    padding:5px 25px 25px 25px;
+}
+.popup_signin h2{
+    text-align:center;
+}
+.popup_signin #new_user{
+    width:400px;
+    margin:auto;
+    display:block;
+}
+.popup_signin .field{
+    margin: 10px 0px;
+}
+.popup_signin .field input:last-child{
+    width: 280px;
+}
+#popup.popup_signin .field:nth-child(5) label{
+    width: 200px;
+}
+.popup_signin .field:nth-child(5) input[type="checkbox"]{
+    margin-left:100px;
+}
+#popup.popup_signin input[type="submit"]{
+    margin:auto;
+    display:block;
+}

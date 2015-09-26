@@ -11,25 +11,45 @@
                 <% end %>
             </span>
         </div>
-        <div id="top_signals">
-            <span style="width:45px;">View:</span> 
-            <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
-            <span id="view_select_options">
-            <ul class="styleless_list">
-                <li class="selected"><%= link_to 'All Items', params.merge(:type => "Item") %></li>
-                <li><%= link_to 'Signals', params.merge(:type => "Signal") %></li>
-                <li><%= link_to 'Projects', params.merge(:type => "Project") %></li>
-                <li><%= link_to 'Artifacts', params.merge(:type => "Artifact") %></li>
-                <li><%= link_to 'Forecasts', params.merge(:type => "Forecast") %></li>
-            </ul>
+        <div id="filters">
+            Filter
+            <span class="filter_category">
+                <span style="width:45px;">Type:</span> 
+                <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
+                <span id="view_select_options">
+                    <ul class="styleless_list">
+                        <li class="selected"><%= link_to 'All Items', params.merge(:type => "Item") %></li>
+                        <li><%= link_to 'Signals', params.merge(:type => "Signal") %></li>
+                        <li><%= link_to 'Projects', params.merge(:type => "Project") %></li>
+                        <li><%= link_to 'Artifacts', params.merge(:type => "Artifact") %></li>
+                        <li><%= link_to 'Forecasts', params.merge(:type => "Forecast") %></li>
+                    </ul>
+                </span>
             </span>
-            Filter By Tag:
-            <%= select_tag 'tagFilters[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple =>true} %>
-            <ul class="horizontal_list">
-                <% @tags.each do |tag| %>
-                    <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
-                <% end %>
-            </ul>
+            <span class="filter_category">
+                Tag:
+                <ul class="horizontal_list">
+                    <% @tags.each do |tag| 
+                        if @tag && tag.name == @tag.name %>
+                            <li class="button gray_black"><%= link_to tag.name, url_for(params.except(:tag)) %></li>
+                        <% else %>
+                            <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
+                    <% end 
+                    end %>
+                </ul>
+                <span style="text-decoration:underline;"> More </span>
+            </span>
+            <span class="filter_category">
+                Project:
+                <%= select_tag 'projectFilter', options_for_select(@projects.collect {|project| [project.title, project.id]}), {:include_blank => true} %>
+            </span>
+        </div>
+        <div id="filters_advanced" style="display:none;">
+             <%= select_tag 'tagFilters[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple =>true} %>
+        </div>
+        <div id="search">
+            <input></input>
+            <span class="button">Search</span>
         </div>
     </div>
     <div>
@@ -44,7 +64,9 @@
             <div id="slider">
                 <div id="resource_page_0" class="homepage">
                 <div class="page_title">
-                    <%= @filter + ' ' + @taggings %>
+                    <%= @filter +  @taggings + @related_project %>
+                    <br>
+                    <%= @search %>
                 </div>
                 <ul id="list_items" class="styled_list">
                     <%= render partial: "listitem", collection: @items, as: :item %>
@@ -70,16 +92,27 @@
     var pageWidth = 455;
     $('#slider').data('current_page', 0);
     $('#view_select_options').hide();
+    $('#tagFilters_').select2();
+    $('#projectFilter').select2({placeholder: "Select a project", allowClear: true});
+
     adjust_on_window_change();
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
-    $('#tagFilters_').select2();
-    
+     
+    $('#projectFilter').on('change', function(){
+        window.location = updateCurrentParams('project=' + $(this).val());
+    });
+
+    $('#search span').on('click', function(){
+        var q = $('#search input').val();
+        window.location = updateCurrentParams('search=' + q);
+    });
+ 
     function adjust_on_window_change(){
         $('#grayout').height(window.screen.height);
         $('#item_edit_bar').css('left', $('#resource_preview').offset().left + 2.5);
         $('#item_edit_bar').css('top', $('#resource_preview').offset().top + 2.125);
-        $('#item_edit_bar').css('width', $('#resource_preview').width()); 
+        $('#item_edit_bar').css('width', $('#resource_preview').width() + 4); 
         $('#view_select_options').css('left', $('#view_select').offset().left);
     }
     

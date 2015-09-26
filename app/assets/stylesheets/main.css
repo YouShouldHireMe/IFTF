@@ -79,7 +79,11 @@ body{
 .orange_white a{
     color:white;
 }
-
+.gray_black{
+    color:#444;
+    background-color:#ddd;
+    border-color:#444;
+}
 .lighter_border{
     border-color:#bbb;
 }
