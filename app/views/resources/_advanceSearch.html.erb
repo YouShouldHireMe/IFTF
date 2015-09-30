@@ -1,0 +1,33 @@
+<div id="search_advance">
+<h4 class="token1">Advanced Search</h4> 
+<span id="ss" class="link"> (Back to simple filter/search) </span>
+<%= form_tag(search_path, method: "get", remote:true) do %>
+    <ul id="advance_options" class="styleless_list">
+        <li><%= label_tag(:keyword, "Search") %>
+            <%= text_field_tag(:keyword) %>
+        </li>
+        <li><%= label_tag(:type, "Item Type") %>
+            <%= select_tag 'itemType', options_for_select(['','Artifact', 'Forecast', 'Project', 'Signal']), {:inclue_blank => true} %>
+        </li>
+        <li>
+            <%= label_tag(:tags, "Tags") %>
+            <%= select_tag 'filter_tags[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple => true} %>
+        </li>
+        <li>
+            <%= label_tag(:related_items, "Related Items") %>
+            <%= select_tag 'filter_items[]', options_for_select(Item.all.collect {|item| [item.title, item.id]}), {:multiple => true} %>
+        </li>
+    </ul>
+    <%= submit_tag("Search", :class => "button orange_white") %> 
+<% end %>
+</div>
+<script type="text/javascript">
+    $('#filter_tags_').select2();
+    $('#filter_items_').select2();
+    $('#itemType').select2({placeholder: "All items", allowClear: true});
+    $('#ss').on('click', function(){
+        $('#search_simple').show();
+        $('#search_advance').hide();
+        adjust_on_window_change();
+    });
+</script>

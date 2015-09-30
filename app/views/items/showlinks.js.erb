@@ -1,3 +1,4 @@
+console.log('showlinks');
 var pageWidth = 455;
 var c_page = $('#slider').data('current_page');
 
@@ -21,4 +22,8 @@ $('#slider').animate({
 
 $new_page.data('item_id', '<%= @item.id %>');
 update_navigator();
+} else {
+    var $page = $('#resource_page_' + c_page);
+    $page.html("<%= j (render 'itemlinks') %>");
+    $page.find('.mypagination').html('<%= j (paginate(@items, :remote => true).to_s) %>');
 }

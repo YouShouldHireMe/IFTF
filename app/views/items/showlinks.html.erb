@@ -1,0 +1,6 @@
+<div class="page_title">
+    All items linked to <%= @item.title %>
+</div>
+<ul class="styled_list">
+    <%= render partial: "listitem", collection: @items, as: :item %>
+</ul>

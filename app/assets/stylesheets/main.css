@@ -69,6 +69,7 @@ body{
 }
 .styled_list li:nth-child(odd) {background: #f3f3f3;}
 .styled_list li:nth-child(even) {background:#fff;}
+.link {text-decoration:underline; cursor:pointer;}
 
 /*Define color scheme class rules */
 .orange_white{

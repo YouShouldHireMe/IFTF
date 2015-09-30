@@ -18,7 +18,7 @@ class ResourcesController < ApplicationController
     # Filters
     if params[:project].present?
         @project = Item.find(params[:project])
-        @items = @items.where(type: 'Signal')
+        @items = @items.where('n.uuid IN {items}', items: @project.items.map { |i| i.id })
         @related_project = ' related to "' + @project.title + '"'
     end
             
@@ -34,12 +34,42 @@ class ResourcesController < ApplicationController
     end
     
     if params[:search].present?
-         @items = @items.where(title: /.*#{Regexp.escape(params[:search])}.*/)
+         @items = @items.where(title: /.*#{Regexp.escape(params[:search])}.*/i)
          @search = 'Search Result for "' + params[:search] + '"'
     end
 
     # Pagination
     @items = @items.page(params[:page]).per(5)
+
+    respond_to do |format|
+        format.html {}
+        format.js {}
+        format.json {}
+    end
+  end
+  def search
+    @items = Item.all
+    if params['itemTyle'].present?
+        @items = @items.where(type:params[:type])
+    end
+    if params['keyword'].present?
+        @items = @items.where(title: /.*#{Regexp.escape(params[:keyword])}.*/i)
+    end
+    if params['filter_tags'].present?
+        params['filter_tags'].each do |tag| 
+            @tag = Tag.find(tag)
+            @items = @items.where('n.uuid IN {items}', items: @tag.items.map {|i| i.id })
+        end
+    end
+    if params['filter_items']
+        params['filter_items'].each do |item| 
+            @project = Item.find(item)
+            @items = @items.where('n.uuid IN {items}', items: @project.items.map {|i| i.id})
+        end
+    end
+     
+    @items = @items.page(params[:page]).per(5)
+
 
     respond_to do |format|
         format.html {}

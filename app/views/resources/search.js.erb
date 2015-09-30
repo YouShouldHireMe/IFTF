@@ -1,0 +1,19 @@
+var pageWidth = 455;
+var c_page = $('#slider').data('current_page');
+//remove forward paths
+var path_length = $('#slider').children().length;
+for (var i = c_page + 1; i < path_length; i++) {
+    $('#resource_page_' + i).remove();
+}
+
+$('#slider').css('width', ((c_page + 2) * pageWidth) + 'px');
+var $new_page = $('<div id="resource_page_' + (c_page + 1) + '" style="position:relative"></div>');
+$('#slider').data('current_page', c_page + 1);
+$('#slider').append($new_page);
+$new_page.html("<%= j render :partial => 'items/itemlinks' %>");
+$('#slider').css('position', 'relative');
+$('#slider').animate({
+        left:('-='+pageWidth)
+    }, 250);
+
+update_navigator();

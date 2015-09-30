@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
 
     def showlinks
         @item = Item.find(params[:id])
-        @items = @item.items
+        @items = @item.items.page(params[:page]).per(15)
         
         respond_to do |format|
             format.html {}

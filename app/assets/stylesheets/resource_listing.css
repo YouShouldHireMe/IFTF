@@ -37,6 +37,9 @@
 }
 
 /* Filter bar */
+#search_advance{
+    display:none;
+}
 #view_select{
     width:100px;
 }
@@ -62,6 +65,22 @@
 #tagFilters_ {
     width:300px;
 }
+#advance_search{
+    text-decoration:underline;
+    margin-left:20px;
+    cursor:pointer;
+}
+#advance_options>li{
+    padding:5px 0px;
+}
+#advance_options>li>label{
+    width:100px;
+    display:inline-block;
+}
+#advance_options>li>input, #advance_options>li>select{
+    width:600px;
+    display:inline-block;
+}    
 
 /* Resource Listing*/
 #pagination{

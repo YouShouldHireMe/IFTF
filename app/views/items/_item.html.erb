@@ -22,7 +22,7 @@
     <div id="tag_suggestions">
         <span>Add popular tags:</span>
         <% @top_tags.each do |tag| %>
-            <span class="button lighter_border" onclick="addTag('<%= tag.name %>'); $(this).remove();"> 
+            <span class="button lighter_border" onclick="if(addTag('<%= tag.name %>')){ $(this).remove(); }"> 
                 <%= tag.name %>
             </span>
         <% end %>
@@ -41,6 +41,12 @@
         var name = $(this).val();
         addTag(name);
     });
+    $('#new_tag').on('keypress', function(e){
+        if (e.which == 13) {
+            var name = $(this).val();
+            addTag(name);
+        }
+    });
 
     function addTag(name){
         if (name && existing_tags.indexOf(name) == -1){ 
@@ -51,13 +57,18 @@
             beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             data: 'tagname=' + name,
             success: function(data, textStatus) {
+                if (jQuery.type(data) != 'string' || data.indexOf('Please Login first before continue') == -1){    
                 $('#new_tag').before($('<span id="tag_' + name + '" class="lighter_border button">' + name + '<span class="remove_tag"><a data-remote="true" rel="nofollow" data-method="post" href="/item/<%= @item.id %>/removetag?tagname=' + name + '">x</a></span></span>'));
                 $('#new_tag').val('');
                 existing_tags.push(name);
                 adjustNewTagWidth('tag_' + name);
+                return true;
+                }
+                return false;
             },
             error: function(xhr, textStatus, errorThrown) {
                 console.log(textStatus);
+                return false;
             }
         });
         }

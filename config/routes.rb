@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     post '/item/:id/addtag' => 'items#addtag', as: :addtag
     get '/item/:id/addtag' => 'items#edittags', as: :edittags
     post '/item/:id/removetag' => 'items#removetag', as: :removetag
+    get '/search' => 'resources#search', as: :search
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

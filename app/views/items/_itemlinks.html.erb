@@ -1,10 +1,11 @@
+<% if defined?(@item) %>
 <div class="page_title">
     All items linked to <%= @item.title %>
 </div>
+<% end %>
 <ul class="styled_list">
-    <% @items.each do |item| %>
-        <li>
-            <%= link_to item.title, item_path(item), :remote=>true %>
-        </li>
-    <% end %>
+    <%= render partial: "resources/listitem", collection: @items, as: :item %>
 </ul>
+<div class="mypagination">
+    <%= paginate @items, :remote => true %>
+</div>

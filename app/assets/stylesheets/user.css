@@ -1,0 +1,39 @@
+#signin_wrapper, #signup_wrapper {
+    margin:auto;
+    width:600px;
+    background-color:white;
+    padding:5px 25px 25px 25px;
+}
+#signin_wrapper h2, #signup_wrapper h2{
+    text-align:center;
+}
+#signin_wrapper #new_user, #signup_wrapper #new_user{
+    width:400px;
+    margin:auto;
+    display:block;
+}
+#signin_wrapper .field, #signup_wrapper .field{
+    margin:10px 0px;
+}
+#signin_wrapper label, #signup_wrapper label{
+    width:100px;
+    display:inline-block;
+}
+#signin_wrapper input[type="text"], #signup_wrapper input[type="text"] {
+    width:70%;
+    height:25px;
+}
+#signin_wrapper .field input:last-child, #signup_wrapper .field input:last-child{
+    width:280px;
+}
+#signin_wrapper .field:nth-child(5) input[type="checkbox"]{
+    margin-left:100px;
+}
+#signin_wrapper .field:nth-child(5) label{
+    width:200px;
+}
+#signin_wrapper input[type="submit"], #signup_wrapper input[type="submit"]{
+    margin-auto;
+    display:block;
+    width:200px;
+}
