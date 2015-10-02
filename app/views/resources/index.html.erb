@@ -1,13 +1,13 @@
-<h1 style="text-align:center">The Interface for the Future</h1>
+<h1 style="text-align:center">
+    <%= link_to 'The Interface for the Future', root_path %>
+</h1>
 <div id="resource_center">
     <div id="resource_header">
         <div>
-                Add new item: 
             <span style="display:inline-block">
                 <%= form_tag(new_item_path, method: "get", remote: true) do %>
-                    <%= label_tag(:quick_url, "URL ") %>
-                    <%= text_field_tag(:quick_url) %>
-                    <%= submit_tag("Add", :class => "button orange_white") %>
+                    <%= submit_tag("Add New", :class => "button orange_white") %>
+                    <%= text_field_tag 'quick_url', nil, placeholder: 'Enter URL', class: "url_input" %>
                 <% end %>
             </span>
         </div>
@@ -58,11 +58,15 @@
     $('#view_select_options').hide();
     $('#tagFilters_').select2();
     $('#projectFilter').select2({placeholder: "Select a project", allowClear: true});
+    $('#typeFilter').select2({placeholder: "All Items", allowClear: true});
 
     adjust_on_window_change();
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
      
+    $('#typeFilter').on('change', function(){
+        window.location = updateCurrentParams('type=' + $(this).val());
+    });
     $('#projectFilter').on('change', function(){
         window.location = updateCurrentParams('project=' + $(this).val());
     });

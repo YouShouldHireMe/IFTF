@@ -1,8 +1,8 @@
 <div id="search_simple">
 <div id="filters">
-            Filter
             <span class="filter_category">
-                <span style="width:45px;">Type:</span> 
+                <span style="width:45px;">Item Type:</span> 
+                <!--
                 <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
                 <span id="view_select_options">
                     <ul class="styleless_list">
@@ -12,10 +12,16 @@
                         <li><%= link_to 'Artifacts', params.merge(:type => "Artifact") %></li>
                         <li><%= link_to 'Forecasts', params.merge(:type => "Forecast") %></li>
                     </ul>
-                </span>
+                </span>-->
+                <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal']), {:include_blank => true} %>
             </span>
+            <input></input>
+            <span id="simple_search" class="button">Search</span>
+            <span id="advance_search">Advanced</span>
+        </div>
+        <div id="search">
             <span class="filter_category">
-                Tag:
+                Filter By Tag:
                 <ul class="horizontal_list">
                     <% @tags.each do |tag| 
                         if @tag && tag.name == @tag.name %>
@@ -26,17 +32,6 @@
                     end %>
                 </ul>
             </span>
-            <span class="filter_category">
-                Project:
-                <%= select_tag 'projectFilter', options_for_select(@projects.collect {|project| [project.title, project.id]}), {:include_blank => true} %>
-            </span>
-        </div>
-        <div id="filters_advanced" style="display:none;">
-             <%= select_tag 'tagFilters[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple =>true} %>
-        </div>
-        <div id="search">
-            <input></input>
-            <span id="simple_search" class="button">Search</span>
-            <span id="advance_search">Advanced Search/Filter</span>
+                <!--<%= select_tag 'projectFilter', options_for_select(@projects.collect {|project| [project.title, project.id]}), {:include_blank => true} %>-->
         </div>
 </div>

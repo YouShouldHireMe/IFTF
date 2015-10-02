@@ -11,7 +11,7 @@
     <% end %>
     <p>
         <%= f.label :type %>
-        <%= f.text_field :type %>
+        <%= f.select :type, options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], @item.type||'Signal') %> 
     </p>
     <p>
         <%= f.label :title %>
@@ -36,6 +36,10 @@
          else
             f.select :items, options_for_select(Item.all.collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true}
          end %>
+    </p>
+    <p>
+        <%= f.label 'tags' %>
+        <%= f.select :tags, options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}, @item.tags.collect {|tag| tag.id}), {}, {:multiple => true} %>
     </p>
     <p>
         <%= f.submit %>

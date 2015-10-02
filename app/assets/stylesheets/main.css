@@ -64,12 +64,16 @@ body{
     padding:0;
 }
 
-.styled_list li{
+.styled_list li>a{
     padding:10px;
+    display:block;
 }
 .styled_list li:nth-child(odd) {background: #f3f3f3;}
 .styled_list li:nth-child(even) {background:#fff;}
 .link {text-decoration:underline; cursor:pointer;}
+.url_input{
+    height:18px;
+}
 
 /*Define color scheme class rules */
 .orange_white{

@@ -37,6 +37,9 @@
 }
 
 /* Filter bar */
+#search_filter{
+    margin-bottom:10px;
+}
 #search_advance{
     display:none;
 }
@@ -57,10 +60,10 @@
     padding:5px 0px;
 }
 .filter_category {
-    margin-left:20px;
+    margin-right:20px;
 }
-#projectFilter {
-    width:250px;
+#typeFilter {
+    width:200px;
 }
 #tagFilters_ {
     width:300px;
@@ -129,6 +132,7 @@
 }
 #navigator{
     margin-bottom:10px;
+    display:none;
 }
 #slider{
     width:910px;

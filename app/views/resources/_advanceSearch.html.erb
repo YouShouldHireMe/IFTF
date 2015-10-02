@@ -25,6 +25,9 @@
     $('#filter_tags_').select2();
     $('#filter_items_').select2();
     $('#itemType').select2({placeholder: "All items", allowClear: true});
+    $('#search_advance input[type="submit"]').on('click', function(){
+        $('#navigator').hide();
+    });
     $('#ss').on('click', function(){
         $('#search_simple').show();
         $('#search_advance').hide();
