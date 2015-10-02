@@ -1,3 +1,8 @@
-$('#list_items').html('<%= j render partial: "listitem", collection: @items, as: :item %>');
-$('#pagination').html('<%= j (paginate(@items, :remote => true).to_s) %>');
+$('#list_items').append('<%= j render partial: "listitem", collection: @items, as: :item %>');
+<% if @items.last_page? %>
+    $('#resource_list').off('scroll');
+    $('#pagination').hide();
+<% else %>
+    $('#pagination').html('<%= j (paginate(@items, :remote => true).to_s) %>');
+<% end %>
 

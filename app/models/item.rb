@@ -5,6 +5,7 @@ class Item
   property :description, type: String
   property :url, type: String
   property :image, type: String
+  property :creation_date, type: Date
 
   validates :type, :presence => true
   validates :title, :presence => true

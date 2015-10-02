@@ -3,13 +3,16 @@
 </h1>
 <div id="resource_center">
     <div id="resource_header">
-        <div>
+        <div id="add_item">
             <span style="display:inline-block">
                 <%= form_tag(new_item_path, method: "get", remote: true) do %>
                     <%= submit_tag("Add New", :class => "button orange_white") %>
                     <%= text_field_tag 'quick_url', nil, placeholder: 'Enter URL', class: "url_input" %>
                 <% end %>
             </span>
+        </div>
+        <div id="ss">
+            <a>(Back to Simple Search)</a>
         </div>
         <div id="search_filter">
             <%= render 'simpleSearch' %>
@@ -26,7 +29,7 @@
                 </ul>
             </div>
             <div id="slider">
-                <div id="resource_page_0" class="homepage">
+                <div id="resource_page_0" class="homepage currentpage">
                 <div class="page_title">
                     <%= @filter +  @taggings + @related_project %>
                     <br>
@@ -59,7 +62,7 @@
     $('#tagFilters_').select2();
     $('#projectFilter').select2({placeholder: "Select a project", allowClear: true});
     $('#typeFilter').select2({placeholder: "All Items", allowClear: true});
-
+    infiniteScroll();
     adjust_on_window_change();
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
@@ -79,9 +82,19 @@
     $('#advance_search').on('click', function(){
         $('#search_simple').hide();
         $('#search_advance').show();
+        $('#ss').show();
+        $('#add_item').hide();
         adjust_on_window_change();
     }); 
     
+    $('#ss').on('click', function(){
+        $('#search_simple').show();
+        $('#search_advance').hide();
+        $('#ss').hide();
+        $('#add_item').show();
+        adjust_on_window_change();
+    });
+
     function view_select_dropdown(){
         $('#view_select_options').toggle();
         $('#view_select_options').css({'left':$('#view_select').offset().left});

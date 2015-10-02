@@ -39,7 +39,7 @@ class ResourcesController < ApplicationController
     end
 
     # Pagination
-    @items = @items.page(params[:page]).per(5)
+    @items = @items.page(params[:page]).per(25)
 
     respond_to do |format|
         format.html {}
@@ -68,7 +68,7 @@ class ResourcesController < ApplicationController
         end
     end
      
-    @items = @items.page(params[:page]).per(5)
+    @items = @items.page(params[:page]).per(25)
 
 
     respond_to do |format|

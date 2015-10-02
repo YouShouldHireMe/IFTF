@@ -30,6 +30,10 @@
         <%= f.text_field :image %>
     </p>
     <p>
+        <%= f.label :creation_date %>
+        <%= f.date_field :creation_date, :value => @item.creation_date || Time.now.strftime('%Y-%m-%d') %>
+    </p>
+    <p>
         <%= f.label 'linked items' %>
         <%= if @item.id.present? 
             f.select :items, options_for_select(Item.all.where('n.uuid <> {id}').params(id: @item.id).collect {|item| [item.title, item.id]}, @item.items.collect {|item| item.id}), {}, {:multiple =>true}

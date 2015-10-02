@@ -43,6 +43,13 @@
 #search_advance{
     display:none;
 }
+#ss{
+    display:none;
+}
+#ss a{
+    text-decoration:underline;
+    cursor:pointer;
+}
 #view_select{
     width:100px;
 }

@@ -13,7 +13,7 @@
                         <li><%= link_to 'Forecasts', params.merge(:type => "Forecast") %></li>
                     </ul>
                 </span>-->
-                <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal']), {:include_blank => true} %>
+                <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], params[:type]), {:include_blank => true} %>
             </span>
             <input></input>
             <span id="simple_search" class="button">Search</span>
