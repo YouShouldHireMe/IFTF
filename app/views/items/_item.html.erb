@@ -28,6 +28,18 @@
         <% end %>
     </div>
 </div> 
+<div class="comments">
+    <h4>Add a comment:</h2>
+    <%= form_for([@item, @item.comments.new]) do |f| %>
+        <p>
+            <%= f.label :content %>
+            <%= f.text_area :content %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+</div>
 <script type="text/javascript">
     var existing_tags = [],
         last_tag = '';

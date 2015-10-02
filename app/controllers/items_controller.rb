@@ -13,7 +13,9 @@ class ItemsController < ApplicationController
             @item.title = result['title']
             @item.description = result['description']
             @item.url = params[:quick_url]
-            @item.image = result['images'][0]['url']    
+            if result['images'].present?
+                @item.image = result['images'][0]['url']    
+            end
         end
         respond_to do |format|
             format.html {}
@@ -120,6 +122,10 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
         @item.tags.delete(@tag)
         @tag.items.delete(@item)
+
+        if @tag.items.any?
+            @tag.destroy
+        end
         
         respond_to do |format|
             format.html {}

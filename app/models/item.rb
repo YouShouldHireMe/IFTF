@@ -11,4 +11,5 @@ class Item
 
   has_many :both, :items, type: :related
   has_many :out, :tags, type: :tags
+  has_many :both, :comments, type: :comment
 end

@@ -40,6 +40,7 @@ class User
      property :current_sign_in_ip, :type =>  String
      property :last_sign_in_ip, :type => String
 
+     has_many :both, :comments, type: :author
      ## Confirmable
      # property :confirmation_token
      # index :confirmation_token
