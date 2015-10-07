@@ -42,7 +42,7 @@
 #popup input[type="submit"]{
     width:200px;
 }
-#popup #item_items{
+#popup #item_items, #item_tags{
     width:70%;
 }
 

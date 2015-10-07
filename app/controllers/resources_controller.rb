@@ -11,6 +11,14 @@ class ResourcesController < ApplicationController
     @related_project = ''
     @selectTags = []
     @search
+
+    Item.all.each do |it|
+        it.tags.each do |t|
+            if !(t.items.map {|i| i.id}).include? it.id
+                t.items << it
+            end
+        end
+    end
     
     @item = Item.first
     @items = Item.all

@@ -2,4 +2,4 @@ $('#popup').html("<h3>Edit <%= @item.title %> </h3>" + "<%= j (render 'form') %>
 $('#grayout').show();
 $('#popup').show();
 $('#item_items').select2();
-$('#item_tags').select2();
+$('#item_tags').select2({tags: true});

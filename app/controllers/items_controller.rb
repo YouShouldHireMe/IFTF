@@ -39,9 +39,23 @@ class ItemsController < ApplicationController
     
     def create
         @item = Item.new(params[:item])
-
+        @tags = params[:item][:tags]
+        
         if @item.save
             @item.update(params[:item])
+            @tags.each do |tag|
+                if is_custom_tag(tag.to_s)
+                    @tag = Tag.new(name: tag.to_s)
+                    @item.tags << @tag
+                    @tag.items << @item
+                end
+            end
+
+            @item.tags.each do |tag|
+                if !(tag.items.map {|i| i.id}).include? @item.id
+                    tag.items << @item
+                end
+            end
             redirect_to root_path
         else
             render 'new'
@@ -79,7 +93,7 @@ class ItemsController < ApplicationController
 
     def showlinks
         @item = Item.find(params[:id])
-        @items = @item.items.page(params[:page]).per(15)
+        @items = @item.items.page(params[:page]).per(25)
         
         respond_to do |format|
             format.html {}
@@ -123,7 +137,7 @@ class ItemsController < ApplicationController
         @item.tags.delete(@tag)
         @tag.items.delete(@item)
 
-        if @tag.items.any?
+        if !@tag.items.any?
             @tag.destroy
         end
         
@@ -132,4 +146,5 @@ class ItemsController < ApplicationController
             format.js {}
         end 
     end
+
 end

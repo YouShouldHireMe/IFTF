@@ -9,4 +9,16 @@ class ApplicationController < ActionController::Base
         render 'signin.js'
     end
   end
+
+  def is_custom_tag(tagVal)
+    if tagVal.length == 0
+        return false
+    end
+    if tagVal.length == 36
+        if tagVal =~ /.{8}\-.{4}\-.{4}\-.{4}\-.{12}/
+            return false
+        end
+    end
+    return true
+  end
 end
