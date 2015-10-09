@@ -73,6 +73,7 @@ body{
 .link {text-decoration:underline; cursor:pointer;}
 .url_input{
     height:18px;
+    width:350px;
 }
 
 /*Define color scheme class rules */
