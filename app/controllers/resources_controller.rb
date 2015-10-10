@@ -3,8 +3,8 @@ class ResourcesController < ApplicationController
     #for simple filters
     @projects = Item.where(type: 'Project')
     query = Tag.all(:tags).items.query_as(:tagitems)
-    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(4).pluck(:tags)
-    
+    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(6).pluck(:tags)
+
     #for advanced filters
     @taggings = ''
     @filter = 'All Items'
