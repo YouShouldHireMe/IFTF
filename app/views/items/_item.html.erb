@@ -8,8 +8,8 @@
     <div class="item_url"><%= link_to 'More...', @item.url %></div>
 <% end %>
 <div class="item_tags">
-    <span>Tags:</span>
-    <div id="tag_lists"> 
+  <!--  <span>Tags:</span> -->
+    <div id="tag_lists">
     <% @item.tags.each do |tag| %>
         <span id="tag_<%=tag.name %>" class="button lighter_border">
             <%= tag.name %>
@@ -22,12 +22,12 @@
     <div id="tag_suggestions">
         <span>Add popular tags:</span>
         <% @top_tags.each do |tag| %>
-            <span class="button lighter_border" onclick="if(addTag('<%= tag.name %>')){ $(this).remove(); }"> 
+            <span class="button lighter_border" onclick="if(addTag('<%= tag.name %>')){ $(this).remove(); }">
                 <%= tag.name %>
             </span>
         <% end %>
     </div>
-</div> 
+</div>
 <div class="comments">
     <h4>Add a comment:</h2>
     <%= form_for([@item, @item.comments.new]) do |f| %>
@@ -61,15 +61,15 @@
     });
 
     function addTag(name){
-        if (name && existing_tags.indexOf(name) == -1){ 
+        if (name && existing_tags.indexOf(name) == -1){
         var url = '/item/' + '<%= @item.id %>' + '/addtag';
         $.ajax({
             type: 'POST',
-            url: url, 
+            url: url,
             beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             data: 'tagname=' + name,
             success: function(data, textStatus) {
-                if (jQuery.type(data) != 'string' || data.indexOf('Please Login first before continue') == -1){    
+                if (jQuery.type(data) != 'string' || data.indexOf('Please Login first before continue') == -1){
                 $('#new_tag').before($('<span id="tag_' + name + '" class="lighter_border button">' + name + '<span class="remove_tag"><a data-remote="true" rel="nofollow" data-method="post" href="/item/<%= @item.id %>/removetag?tagname=' + name + '">x</a></span></span>'));
                 $('#new_tag').val('');
                 existing_tags.push(name);
@@ -85,5 +85,5 @@
         });
         }
     }
-     
+
 </script>

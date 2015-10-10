@@ -1,8 +1,8 @@
 /*Tags */
 .item_tags {
     margin:15px 0px;
-    position: absolute;
-    top: 735px;
+  /*  position: absolute;
+    top: 735px; */
     width: 450px;
 }
 #tag_suggestions {
