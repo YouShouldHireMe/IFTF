@@ -5,6 +5,11 @@
     top: 735px; */
     width: 450px;
 }
+.item_url {
+    color: #eb9f4d;
+    text-decoration: none;
+    font-weight: bold;
+}
 #tag_suggestions {
     font-size: 12px;
     padding-top: 5px;
