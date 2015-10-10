@@ -20,7 +20,7 @@
 }
 #resource_list{
     width:460px;
-    height:610px;
+    height:600px;
     float:left;
     margin:3px 8px;
     padding:10px;
@@ -29,7 +29,7 @@
 }
 #resource_preview{
     width:460px;
-    height:610px;
+    height:600px;
     float:right;
     margin:3px 8px;
     padding:10px;
