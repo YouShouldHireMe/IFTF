@@ -16,7 +16,8 @@
             <span class="remove_tag"><%= link_to 'x', removetag_path(@item, tagname: tag.name), :remote=> true, method: :post %></span>
         </span>
     <% end %>
-    <input id="new_tag"></input>
+    <%= select_tag 'filter_tags[]', options_for_select(Tag.all.collect {|tag| [tag.name, tag.id]}), {:multiple => true} %>
+  <!--  <input id="new_tag"></input> -->
     </div>
     <%= csrf_meta_tag %>
     <div id="tag_suggestions">
