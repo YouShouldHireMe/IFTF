@@ -3,8 +3,8 @@ class ResourcesController < ApplicationController
     #for simple filters
     @projects = Item.where(type: 'Project')
     query = Tag.all(:tags).items.query_as(:tagitems)
-    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(4).pluck(:tags)
-    
+    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(7).pluck(:tags)
+
     #for advanced filters
     @taggings = ''
     @filter = 'All Items'
@@ -19,7 +19,7 @@ class ResourcesController < ApplicationController
             end
         end
     end
-    
+
     @item = Item.first
     @items = Item.all
 
@@ -29,18 +29,18 @@ class ResourcesController < ApplicationController
         @items = @items.where('n.uuid IN {items}', items: @project.items.map { |i| i.id })
         @related_project = ' related to "' + @project.title + '"'
     end
-            
+
     if params[:type].present? && params[:type] != "Item"
         @filter = params[:type] + 's'
         @items = @items.where(type:params[:type])
-    end 
+    end
 
     if params[:tag].present?
         @tag = Tag.find(params[:tag])
         @items = @items.where('n.uuid IN {items}', items: @tag.items.map { |i| i.id })
         @taggings = ' tagged with "' + @tag.name + '"'
     end
-    
+
     if params[:search].present?
          @items = @items.where(title: /.*#{Regexp.escape(params[:search])}.*/i)
          @search = 'Search Result for "' + params[:search] + '"'
@@ -64,18 +64,18 @@ class ResourcesController < ApplicationController
         @items = @items.where(title: /.*#{Regexp.escape(params[:keyword])}.*/i)
     end
     if params['filter_tags'].present?
-        params['filter_tags'].each do |tag| 
+        params['filter_tags'].each do |tag|
             @tag = Tag.find(tag)
             @items = @items.where('n.uuid IN {items}', items: @tag.items.map {|i| i.id })
         end
     end
     if params['filter_items']
-        params['filter_items'].each do |item| 
+        params['filter_items'].each do |item|
             @project = Item.find(item)
             @items = @items.where('n.uuid IN {items}', items: @project.items.map {|i| i.id})
         end
     end
-     
+
     @items = @items.page(params[:page]).per(25)
 
 

@@ -1,7 +1,7 @@
 <div id="search_simple">
 <div id="filters">
             <span class="filter_category">
-                <span style="width:45px;">Item Type:</span> 
+                <span style="width:45px;">Filter by Type:</span>
                 <!--
                 <span id="view_select" class="button dropdown" onclick="view_select_dropdown()"><%= @filter %></span>
                 <span id="view_select_options">
@@ -15,20 +15,21 @@
                 </span>-->
                 <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], params[:type]), {:include_blank => true} %>
             </span>
+            <!--
             <input></input>
-            <span id="simple_search" class="button">Search</span>
+            <span id="simple_search" class="button">Search</span> -->
             <span id="advance_search">Advanced</span>
         </div>
         <div id="search">
             <span class="filter_category">
                 Filter By Tag:
                 <ul class="horizontal_list">
-                    <% @tags.each do |tag| 
+                    <% @tags.each do |tag|
                         if @tag && tag.name == @tag.name %>
                             <li class="button gray_black"><%= link_to tag.name, url_for(params.except(:tag)) %></li>
                         <% else %>
                             <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
-                    <% end 
+                    <% end
                     end %>
                 </ul>
             </span>
