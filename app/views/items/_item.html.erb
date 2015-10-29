@@ -9,6 +9,7 @@
 <% end %>
 <div class="item_tags">
     <span>Tags:</span>
+   <!-- <%= select_tag "select_tags", options_for_select(Tag.all.collect{ |t| [t.name, t.id]}, @item.tags.collect{ |t| t.id}), {:multiple => true} %> -->
     <div id="tag_lists"> 
     <% @item.tags.each do |tag| %>
         <span id="tag_<%=tag.name %>" class="button lighter_border">
@@ -29,15 +30,30 @@
     </div>
 </div> 
 <div class="comments">
+    <h4> Comments </h4>
+    <ul class="styleless_list">
+    <% @item.comments.each do |comment| %>
+        <li class="list_item_comment">
+            <% if comment.users == nil %>
+                <span class="comment_username">Annonymous</span>
+            <% else %>
+                <span class="comment_username"><%= comment.users.email %></span>
+            <% end %>
+            <% if current_user && (comment.users == current_user || comment.users == nil) %>
+                <span class="comment_delete"> <%= link_to 'x', [@item, comment], method: :delete, data: { confirm: 'The comment will be deleted.' } %></span>
+            <% end %>
+            <span class="comment_content"><%= comment.content %></span>
+        </li>
+    <% end %>
+    </ul>
+    <% if current_user %>
     <h4>Add a comment:</h2>
     <%= form_for([@item, @item.comments.new]) do |f| %>
-        <p>
-            <%= f.label :content %>
             <%= f.text_area :content %>
-        </p>
-        <p>
             <%= f.submit %>
-        </p>
+    <% end %>
+    <% else %>
+        <p>Click <%= link_to 'here', 'users/sign_in', {:style=>'text-decoration:underline; cursor:pointer;'} %> to login and make a comment </p>
     <% end %>
 </div>
 <script type="text/javascript">
@@ -60,6 +76,26 @@
         }
     });
 
+    $('#select_tags').on('change', function(){
+        console.log('change');
+        updateTags($(this).val());
+    });
+    
+    function updateTags(tagIds){
+        var url = '/item/' + '<%= @item.id %>' + '/updatetags';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            data: 'newtags=' + tagIds,
+            success: function(data, textStatus){
+                console.log(data);
+            },
+            error: function(xhr, textStatus, errorThrown){
+                console.log(xhr);
+            }
+        });
+    }
     function addTag(name){
         if (name && existing_tags.indexOf(name) == -1){ 
         var url = '/item/' + '<%= @item.id %>' + '/addtag';

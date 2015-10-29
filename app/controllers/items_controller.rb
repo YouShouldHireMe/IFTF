@@ -146,5 +146,40 @@ class ItemsController < ApplicationController
             format.js {}
         end 
     end
+    
+    def updatetags
+        @item = Item.find(params[:id])   
+        @newtags = params[:newtags].split(',')
+        @test = []
+        @newtags.each do |tag|
+            if is_custom_tag(tag)
+                @tag = Tag.new(name: tag)
+                @item.tags << @tag
+                @tag.items << @item
+                @tag.save
+            else 
+                if !(@item.tags.map {|t| t.uuid}).include? tag
+                    @tag = Tag.find(tag)
+                    @item.tags << @tag
+                    @tag.items << @item
+                end
+            end
+        end
+        @item.tags.each do |tag|
+            if !@newtags.include? tag.uuid
+                @item.tags.delete(tag)
+                tag.items.delete(@item)
+                if !tag.items.any?
+                    tag.destroy
+                end
+            end
+        end 
+        
+         respond_to do |format|
+            format.json {}
+            format.html {}
+        end
+        render plain: @newtags
+    end
 
 end

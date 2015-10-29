@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     post '/item/:id/addtag' => 'items#addtag', as: :addtag
     get '/item/:id/addtag' => 'items#edittags', as: :edittags
     post '/item/:id/removetag' => 'items#removetag', as: :removetag
+    post '/item/:id/updatetags' => 'items#updatetags', as: :updatetags
     get '/search' => 'resources#search', as: :search
+    get '/login' => 'application#authenticate_user!', as: :login
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
