@@ -21,9 +21,10 @@ class ResourcesController < ApplicationController
     end
 
     @item = Item.first
-    @items = Item.all
+    #@items = Item.all
     #@items = Item.all(:order => 'created_at DESC')
     #@items = Item.order('Created')
+    @items = Item.order('creation_date DESC')
 
 
     # Filters
