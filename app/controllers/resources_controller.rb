@@ -22,7 +22,9 @@ class ResourcesController < ApplicationController
 
     @item = Item.first
     #@items = Item.all
-    @items = Item.order('Created')
+    @items = Item.all(:order => 'created_at DESC')
+    #@items = Item.order('Created')
+
 
     # Filters
     if params[:project].present?
