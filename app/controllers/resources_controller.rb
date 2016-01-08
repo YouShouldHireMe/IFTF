@@ -22,6 +22,7 @@ class ResourcesController < ApplicationController
 
     @item = Item.first
     @items = Item.all
+    @items = @items.order('n.creation_date DESC')
     #@items = Item.all(:order => 'created_at DESC')
     #@items = Item.order('Created')
     #@items = Item.order('creation_date DESC')
