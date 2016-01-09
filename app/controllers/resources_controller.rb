@@ -30,11 +30,23 @@ class ResourcesController < ApplicationController
 
     @item = Item.first
     @items = Item.all
-    @items = @items.order('n.creation_date DESC, n.created_at DESC')
+    #@items = @items.order('n.creation_date DESC, n.created_at DESC')
     #@items = Item.all(:order => 'created_at DESC')
     #@items = Item.order('Created')
     #@items = Item.order('creation_date DESC')
 
+    if params[:order].present?
+        case params[:order]
+        when 'date_asc'
+            @items = @items.order('n.creation_date ASC, n.created_at ASC, -n.upvotes')
+        when 'date_desc'
+            @items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+        when 'fav'
+            @items = @items.order('-n.upvotes, -n.creation_date, -n.created_at')
+        end
+    else 
+        @items = @items.order('n.creation_date DESC, n.created_at DESC')
+    end
 
     # Filters
     if params[:project].present?

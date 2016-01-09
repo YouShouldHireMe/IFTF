@@ -60,8 +60,9 @@
     $('#slider').data('current_page', 0);
     $('#view_select_options').hide();
     $('#tagFilters_').select2();
+    $('#customOrder').select2({minimumResultsForSearch: Infinity});
     $('#projectFilter').select2({placeholder: "Select a project", allowClear: true});
-    $('#typeFilter').select2({placeholder: "All Items", allowClear: true});
+    $('#typeFilter').select2({placeholder: "All Items", allowClear: true, minimumResultsForSearch: Infinity});
     $('#moreTags').select2({placeholder:"More Tags", allowClear:true});
     infiniteScroll();
     adjust_on_window_change();
@@ -70,6 +71,9 @@
 
     $('#typeFilter').on('change', function(){
         window.location = updateCurrentParams('type=' + $(this).val());
+    });
+    $('#customOrder').on('change', function(){
+        window.location = updateCurrentParams('order=' + $(this).val());
     });
     $('#projectFilter').on('change', function(){
         window.location = updateCurrentParams('project=' + $(this).val());

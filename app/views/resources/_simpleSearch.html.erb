@@ -15,6 +15,10 @@
                 </span>-->
                 <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], params[:type]), {:include_blank => true} %>
             </span>
+            Order By: 
+            <span class="order">
+                <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
+            </span>
             <!--
             <input></input>
             <span id="simple_search" class="button">Search</span> -->
