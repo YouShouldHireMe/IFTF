@@ -24,14 +24,14 @@
             <span class="filter_category">
                 Filter By Tag:
                 <ul class="horizontal_list">
-                    <% @tags[0..(IFTF::TOP_TAG_NUM - 1)].each do |tag|
+                    <% @tags[0..(6 - 1)].each do |tag|
                         if @tag && tag.name == @tag.name %>
                             <li class="button tag selected"><%= link_to tag.name, url_for(params.except(:tag)) %></li>
                         <% else %>
                             <li class="button tag"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
                     <% end
                     end %>
-                    <%= select_tag 'moreTags', options_for_select(@tags[IFTF::TOP_TAG_NUM..-1].map { |e| [e.name, e.id] }, params[:tag]), {:include_blank => true} %>
+                    <%= select_tag 'moreTags', options_for_select(@tags[6..-1].map { |e| [e.name, e.id] }, params[:tag]), {:include_blank => true} %>
                 </ul>
                 <!--
                 <ul id="more_tags" style="display:none;">
