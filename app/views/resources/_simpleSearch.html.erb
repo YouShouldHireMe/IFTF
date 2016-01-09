@@ -24,15 +24,31 @@
             <span class="filter_category">
                 Filter By Tag:
                 <ul class="horizontal_list">
-                    <% @tags.each do |tag|
+                    <% @tags[0..(IFTF::TOP_TAG_NUM - 1)].each do |tag|
                         if @tag && tag.name == @tag.name %>
-                            <li class="button gray_black"><%= link_to tag.name, url_for(params.except(:tag)) %></li>
+                            <li class="button tag selected"><%= link_to tag.name, url_for(params.except(:tag)) %></li>
                         <% else %>
-                            <li class="button"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
+                            <li class="button tag"><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
                     <% end
                     end %>
+                    <%= select_tag 'moreTags', options_for_select(@tags[IFTF::TOP_TAG_NUM..-1].map { |e| [e.name, e.id] }, params[:tag]), {:include_blank => true} %>
                 </ul>
+                <!--
+                <ul id="more_tags" style="display:none;">
+                    <% @tags[IFTF::TOP_TAG_NUM..-1].each do |tag| %>
+                        <li><%= link_to tag.name, params.merge(:tag => tag.id) %></li>
+                    <% end %>
+                </ul>
+                -->
             </span>
                 <!--<%= select_tag 'projectFilter', options_for_select(@projects.collect {|project| [project.title, project.id]}), {:include_blank => true} %>-->
         </div>
 </div>
+
+<script type="text/javascript">
+/*
+    $('#show_more_tags').on('click', function(){
+        $('#more_tags').show();
+    })
+*/
+</script>

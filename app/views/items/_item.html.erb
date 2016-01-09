@@ -1,5 +1,17 @@
 <!--item preview-->
-<div class="item_title"> <%= @item.title %></div>
+<div class="item_title"> 
+    <%= @item.title %>   
+    <span class="item_upvotes" id="<%= @item.id + '_upvotes' %>">
+        <% if current_user && (@item.users.map { |u| u.id }.include? current_user.id) %>
+            <%= link_to '', unvote_path(@item), class: "upvote_link star", :remote=>true, method: :post %>
+        <% else %>  
+            <%= link_to '', upvote_path(@item), class: "upvote_link star_inactive", :remote=>true, method: :post %>
+        <% end %>
+        <% if @item.upvotes && @item.upvotes > 0 %>
+            x<span id="upvotes_count"><%= @item.upvotes %></span>
+        <% end %>
+    </span>
+</div>
 <% if @item.image.presence %>
     <div class="item_image"><img src="<%= @item.image %>" /></div>
 <% end %>
@@ -28,6 +40,7 @@
         <% end %>
     </div>
 </div>
+<p> Upvotes: <%= @item.upvotes || 0 %> </p>
 <div class="comments">
     <h4> Comments </h4>
     <ul class="styleless_list">

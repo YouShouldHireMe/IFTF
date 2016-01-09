@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'resources#index'
 
     get '/linkeditems/:id' => 'items#showlinks', as: :linkeditems
+    post '/item/:id/upvote' => 'items#upvote', as: :upvote
+    post '/item/:id/unvote' => 'items#unvote', as: :unvote
     post '/item/:id/addtag' => 'items#addtag', as: :addtag
     get '/item/:id/addtag' => 'items#edittags', as: :edittags
     post '/item/:id/removetag' => 'items#removetag', as: :removetag

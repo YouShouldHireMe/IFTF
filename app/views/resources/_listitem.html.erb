@@ -1,3 +1,11 @@
 <li>
-    <%= link_to item.title, item_path(item), :remote=>true %>
+	<span class="upvote_symbol" id="<%= 'upvote_' + item.id %>">
+		<% 
+		if current_user && (item.users.map { |u| u.id }.include? current_user.id) %>
+			<%= link_to '', unvote_path(item), class: "upvote_link star", :remote=>true, method: :post %>
+		<% else %> 	
+			<%= link_to '', upvote_path(item), class: "upvote_link star_inactive", :remote=>true, method: :post %>
+		<% end %>
+	</span>
+    <%= link_to item.title, item_path(item), class: "title_link", :remote=>true %>
 </li>

@@ -3,7 +3,7 @@ class ResourcesController < ApplicationController
     #for simple filters
     @projects = Item.where(type: 'Project')
     query = Tag.all(:tags).items.query_as(:tagitems)
-    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(7).pluck(:tags)
+    @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').pluck(:tags)
 
     #for advanced filters
     @taggings = ''
@@ -18,11 +18,19 @@ class ResourcesController < ApplicationController
                 t.items << it
             end
         end
+        if !(it.creation_date)
+            it.creation_date = Date.parse('1 Jan 2015')
+            it.save
+        end
+        if !(it.created_at)
+            it.created_at = DateTime.parse(it.creation_date.to_s)
+            it.save
+        end
     end
 
     @item = Item.first
     @items = Item.all
-    @items = @items.order('n.creation_date DESC')
+    @items = @items.order('n.creation_date DESC, n.created_at DESC')
     #@items = Item.all(:order => 'created_at DESC')
     #@items = Item.order('Created')
     #@items = Item.order('creation_date DESC')

@@ -17,6 +17,7 @@ require "rails/test_unit/railtie"
 Bundler.require(*Rails.groups)
 
 module IFTF
+  TOP_TAG_NUM = 3;
   class Application < Rails::Application
     
     config.generators do |g|

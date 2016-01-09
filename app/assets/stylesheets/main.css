@@ -33,8 +33,18 @@ body{
     cursor:default;
 }
 
+.tag{
+    border-color: #c6c6c6;
+    background: #f9f9f9;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.10);
+}
+
+.tag.selected{
+    background: #e0e0e0;
+}
+
 .bordered-block{
-    border:2px solid black;
+    border:2px solid #bbb;
     border-radius:3px;
 }
 
@@ -55,7 +65,7 @@ body{
 .horizontal_list li{
     float:left;
     display:block;
-    margin:0px 5px;
+    margin:0px 5px 0px 0px;
 }
 
 .styled_list{
@@ -66,7 +76,7 @@ body{
 
 .styled_list li>a{
     padding:10px;
-    display:block;
+    display:inline-block;
 }
 .styled_list li:nth-child(odd) {background: #f3f3f3;}
 .styled_list li:nth-child(even) {background:#fff;}
@@ -84,6 +94,14 @@ body{
 }
 .orange_white a{
     color:white;
+}
+.white_orange{
+    color:#eb9f4d;
+    background-color: white;
+    border-color:#eb9f4d;
+}
+.white_orange a{
+    color:#eb9f4d;
 }
 .gray_black{
     color:#444;

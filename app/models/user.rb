@@ -41,6 +41,7 @@ class User
      property :last_sign_in_ip, :type => String
 
      has_many :both, :comments, type: :author
+     has_many :both, :items, type: :upvoter
      ## Confirmable
      # property :confirmation_token
      # index :confirmation_token

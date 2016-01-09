@@ -100,6 +100,39 @@ class ItemsController < ApplicationController
             format.js {}
         end
     end
+
+    def upvote
+        if current_user
+            @item = Item.find(params[:id])
+            if !(@item.users)
+                @item.users = [current_user]
+            else
+                if !(@item.users.map {|u| u.id}).include? current_user.id
+                    @item.users << current_user
+                    @item.upvotes = @item.users.count
+                    @item.save
+                end
+                respond_to do |format|
+                    format.html {}
+                    format.js {}
+                end
+            end
+        end
+    end
+
+    def unvote
+        if current_user
+            @item = Item.find(params[:id])
+            @item.users.delete(current_user)
+            current_user.items.delete(@item)
+            @item.upvotes = @item.users.count
+            @item.save
+            respond_to do |format|
+                format.html {}
+                format.js {}
+            end
+        end
+    end
    
     def edittags
         @item = Item.find(params[:id])
