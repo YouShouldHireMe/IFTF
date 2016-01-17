@@ -1,0 +1,8 @@
+<% if @user_found %>
+$('.error_messages').html('You will receive an email with instructions to reset your password momentarily.');
+$('.popup_header').html('Email sent!');
+$('.error_messages').css({'color': '#444', 'font-size': '14px'});
+$('#popup form').html('');
+<% else %>
+$('.error_messages').html('No user account is registered with this email');
+<% end %>

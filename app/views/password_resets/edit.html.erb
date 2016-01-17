@@ -1,0 +1,32 @@
+<div id="popup" class="popup_signin" style="display:block;">
+<% if @user_found %>
+<div class="popup_header">Password Reset</div>
+	<%= form_for @user, class: "user_forms", :url => password_reset_path(params[:id]) do |f| %>
+		<% if @user.errors.any? %>
+			<div class="error_mesage">
+				<h4>Form is invalid</h4>
+				<ul>
+					<% for message in @user.errors.full_messages %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<div class="field">
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		</div>
+		<div class="field">
+			<%= f.label :password_confimation %>
+			<%= f.password_field :password_confirmation %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Reset Password" %>
+		</div>
+	<% end %>
+<% else %>
+	<div class="popup_header">Link Outdated</div>
+	<div style="padding:20px"> A more recent password reset request has overwritten the reset link you used. Please use the most recent password reset link you received in your email to reset your password.</div>
+<% end %>
+
+</div>

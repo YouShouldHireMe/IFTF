@@ -56,7 +56,18 @@ class User
 
       ## Token authenticatable
       # property :authentication_token, :type => String, :null => true, :index => :exact
+    def generate_token (prop)
+        begin
+            self[prop] = SecureRandom.urlsafe_base64
+        end while User.exists?(prop => self[prop])
+    end
 
+    def send_password_reset
+        generate_token(:reset_password_token)
+        self.reset_password_sent_at = DateTime.now
+        save!
+        UserMailer.password_reset(self).deliver_now
+    end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

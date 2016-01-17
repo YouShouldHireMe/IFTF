@@ -33,7 +33,7 @@
     width:200px;
 }
 #signin_wrapper input[type="submit"], #signup_wrapper input[type="submit"]{
-    margin-auto;
+    margin:auto;
     display:block;
     width:200px;
 }

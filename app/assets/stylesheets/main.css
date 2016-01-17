@@ -17,7 +17,18 @@ body{
     font-family: 'Helvetica Neue', helvetica, arial, san-serif;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
 /*Define general class rules*/
+.text_left  { text-align: left;}
+.text_right { text-align: right;}
+.text_center{ text-align: center;}
 
 .button{
     display:inline-block;
@@ -110,4 +121,41 @@ body{
 }
 .lighter_border{
     border-color:#bbb;
+}
+
+#user_info{
+    white-space: nowrap;
+    position:absolute;
+    top:0px;
+    right:0px;
+    margin:10px;
+}
+
+@media all and (max-width: 800px){
+    #user_info{
+        left:570px;
+    }
+}
+
+@media all and (max-width:  1090px){
+    #user_info.logged_in{
+        left:730px;
+    }
+}
+
+#user_info span{
+    padding: 10px 0px;
+    margin-right:10px;
+    border:1px solid #ccb;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor:pointer;
+    display:inline-block;
+}
+
+#user_info span:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#user_info span a{
+    padding: 10px 15px;
 }

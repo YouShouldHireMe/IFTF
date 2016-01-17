@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
   resources :items do
     resources :comments
   end
   devise_for :users, controllers: {sessions: "users/sessions" }
+  resources :password_resets
 
   root 'resources#index'
 

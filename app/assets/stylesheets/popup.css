@@ -5,11 +5,14 @@
     top:100px;
     left:25%;
     background-color:white;
-    border:2px solid #444;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
+    box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
     border-radius:5px;
     padding:5px 25px;
     width:50%;
     z-index:91;
+    font-size:14px;
 }
 #grayout{
     z-index:90;
@@ -24,6 +27,10 @@
 #popup label{
     width: 100px;
     display: inline-block;
+}
+#popup a{
+    text-decoration: underline;
+    color:rgba(235, 159, 77, 1);
 }
 #popup * {
     vertical-align: text-top;
@@ -45,32 +52,101 @@
 #popup #item_items, #item_tags{
     width:70%;
 }
+#popup .actions{
+    width: calc(100% + 12px);
+}
+#popup .actions input{
+    display: inline-block;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: 0px;
+    background-color: rgba(235, 159, 77, 1);
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius:5px;
+    margin-left:-1px;
+}
+.popup_header {
+    color: #444;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #fafafa;
+    font-size: 16px;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom:20px;
+}
+.popup_footer{
+    border-top: 1px solid #ddd;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
 
 /*popup signin*/
 #popup.popup_signin {
-    padding:5px 25px 25px 25px;
+    display:none;
+    position:absolute;
+    top:100px;
+    left:30%;
+    background-color:white;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
+    box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
+    border-radius:5px;
+    padding:0px;
+    width:40%;
+    min-width:300px;
+    z-index:91;
+    font-size:14px;
 }
 .popup_signin h2{
     text-align:center;
 }
 .popup_signin #new_user{
-    width:400px;
-    margin:auto;
-    display:block;
+    width: 60%;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
 }
-.popup_signin .field{
+#popup .field{
     margin: 10px 0px;
 }
-.popup_signin .field input:last-child{
-    width: 280px;
+.field #user_email, .field #user_password, .field #email, .field #user_password_confirmation{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    padding: 10px 5px;
+    border-radius: 5px;
 }
-#popup.popup_signin .field:nth-child(5) label{
-    width: 200px;
+.popup_signin #remember_me{
+    margin-top: 0px;
+    display: inline-block;
+    text-align: left;
 }
-.popup_signin .field:nth-child(5) input[type="checkbox"]{
-    margin-left:100px;
-}
-#popup.popup_signin input[type="submit"]{
+.popup_signin input[type="submit"]{
     margin:auto;
     display:block;
+}
+.popup_signin #pwd_reset{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 0px;
+    text-decoration: underline;
+}
+.popup_signin #pwd_reset a{
+    color: rgba(235, 159, 77, 1);
+    font-size: 14px;
+}
+#popup .user_forms, #popup .edit_user{
+    width: 60%;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+#popup .error_messages{
+    color: rgb(222, 0, 0);
+    font-size:14px;
+    text-align:center;
 }

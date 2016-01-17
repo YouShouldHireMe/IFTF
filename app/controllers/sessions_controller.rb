@@ -3,8 +3,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    super
-    respond_to do |format|
+     super
+        respond_to do |format|
             format.html {}
             format.js {}
             format.json {}

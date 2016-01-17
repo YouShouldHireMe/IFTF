@@ -1,8 +1,11 @@
-<div id="signup_wrapper">
-<h2>Sign up</h2>
+<div id="popup" class="popup_signin" style="display:block">
+<div class="popup_header">Sign up</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="error_messages">
+<%= devise_error_messages! %>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "user_forms") do |f| %>
 
   <div class="field">
     <%= f.label :email %>
@@ -26,6 +29,6 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="popup_footer">Already have a account? <%= link_to 'Log in', '/users/sign_in' %></div>
+<!--<%= render "devise/shared/links" %>-->
 </div>

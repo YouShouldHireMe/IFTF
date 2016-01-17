@@ -1,0 +1,16 @@
+<div class="popup_header text_center">Password Reset</div>
+<div class="error_messages text_center"></div>
+<%= form_tag password_resets_path, class: "user_forms", :remote=>true, :method => :post do %>
+	<div class="field">
+		<%= email_field_tag :email, params[:email], :placeholder => "Email" %>
+	</div>
+	<div class="actions">
+		<%= submit_tag "Reset Password" %>
+	</div>
+<% end %>
+<div class="popup_footer"></div>
+<script type="text/javascript">
+	$('#popup .user_forms .actions input').on('click', function(){
+		$('.error_messages').html('<img src="/assets/ajax-loader.gif" />');
+	})
+</script>
