@@ -1,0 +1,9 @@
+<div class="page_title">
+    <%= @type +  @tagging + @related_project %>
+</div>
+<ul id="list_items" class="styled_list">
+    <%= render partial: "listitem", collection: @items, as: :item %>
+</ul>
+<div id="pagination">
+    <%= paginate @items, :remote => true %>
+</div>

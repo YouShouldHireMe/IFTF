@@ -47,6 +47,67 @@ function updateCurrentParams(newParamString){
     return window.location.pathname + '?' + search_string.substring(1);
 }
 
+function filter_sort_url(){
+    var type    = $('#typeFilter').val() ? $('#typeFilter').val() : 'no_selection',
+        tag     = $('#moreTags').val() ? $('#moreTags').val() : 'no_selection',
+        order   = $('#customOrder').val(),
+        related = '';
+
+    if ($('.tag.selected').length == 1){
+        tag = $('.tag.selected').data('tagid');
+    }
+
+    related = $('.currentpage').data('item_id') || '';
+    if ($('#item_id').length == 1 && related == ''){
+         //related = $('#item_id').data('itemid');
+    }
+    return '/filter/' + type + '/' + tag + '/' + order + '/' + related;
+}
+
+function save_filter_to_page($page){
+    var type    = $('#typeFilter').val() ? $('#typeFilter').val() : 'no_selection',
+        tag     = $('#moreTags').val() ? $('#moreTags').val() : 'no_selection',
+        order   = $('#customOrder').val();
+
+    if ($('.tag.selected').length == 1){
+        tag = $('.tag.selected').data('tagid');
+    }
+
+    $page.data('type', type);
+    $page.data('tag', tag);
+    $page.data('order', order);
+}
+
+function reset_filter_display(type, tag, order){
+    console.log('reset ' + tag);
+    var reset_type  = (type == 'no_selection') ? '' : type,
+        reset_tag   = (tag  == 'no_selection') ? '' : tag,
+        reset_order = order ? order : 'date_desc';
+    $('#typeFilter').val(reset_type);
+    $('#customOrder').val(reset_order);
+    $('#moreTags').val('');
+    $('li.tag').removeClass('selected');
+    if ($('.tag[data-tagid="' + reset_tag + '"').length == 1){
+        $('.tag[data-tagid="' + reset_tag + '"').addClass('selected');
+    }
+    else {
+        $('#moreTags').val(reset_tag);
+    }
+    $('#typeFilter').change();
+    $('#customOrder').change();
+    $('#moreTags').change();
+    $('.currentpage').removeClass('newpage');
+}
+
+function reset_page_filter_display($page){
+    var type    = $page.data('type'),
+        tag     = $page.data('tag'),
+        order   = $page.data('order');
+    $page.addClass('newpage');
+    reset_filter_display(type, tag, order);
+    $page.removeClass('newpage');
+}
+
 function popupHide(){
     $('#popup').hide();
     $('#grayout').hide();

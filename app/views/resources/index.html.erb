@@ -28,16 +28,18 @@
             </div>
             <div id="slider">
                 <div id="resource_page_0" class="homepage currentpage">
-                <div class="page_title">
-                    <%= @filter +  @taggings + @related_project %>
-                    <br>
-                    <%= @search %>
-                </div>
-                <ul id="list_items" class="styled_list">
-                    <%= render partial: "listitem", collection: @items, as: :item %>
-                </ul>
-                <div id="pagination">
-                    <%= paginate @items, :remote => true %>
+                <div id="list_display">
+                    <div class="page_title">
+                        <%= @filter +  @taggings + @related_project %>
+                        <br>
+                        <%= @search %>
+                    </div>
+                    <ul id="list_items" class="styled_list">
+                        <%= render partial: "listitem", collection: @items, as: :item %>
+                    </ul>
+                    <div id="pagination">
+                        <%= paginate @items, :remote => true %>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -66,18 +68,46 @@
     adjust_on_window_change();
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
+    save_filter_to_page($('.currentpage'));
 
     $('#typeFilter').on('change', function(){
-        window.location = updateCurrentParams('type=' + $(this).val());
+        if ($('.currentpage').hasClass('newpage')) {return;}
+        //window.location = updateCurrentParams('type=' + $(this).val());
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load(filter_sort_url());
     });
     $('#customOrder').on('change', function(){
-        window.location = updateCurrentParams('order=' + $(this).val());
+        if ($('.currentpage').hasClass('newpage')) {return;}
+        //window.location = updateCurrentParams('order=' + $(this).val());
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load(filter_sort_url());
     });
     $('#projectFilter').on('change', function(){
-        window.location = updateCurrentParams('project=' + $(this).val());
+        if ($('.currentpage').hasClass('newpage')) {return;}
+        //window.location = updateCurrentParams('project=' + $(this).val());
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load(filter_sort_url());
     });
     $('#moreTags').on('change', function(){
-        window.location = updateCurrentParams('tag=' + $(this).val());
+        if ($('.currentpage').hasClass('newpage')) {return;}     
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.tag.selected').removeClass('selected');
+        $('.currentpage #list_display').load(filter_sort_url());
+    });
+    $('#filter_tags > li.tag').on('click', function(){
+        if ($(this).hasClass('selected')){
+            $(this).removeClass('selected');
+        } else {
+            $('.tag.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+        $('#moreTags').val('');
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load(filter_sort_url()); 
+    });
+
+    $('#list_items > li').on('click', function(){
+        $('#resource_preview').html('<img src="/assets/ajax-loader.gif" />');
     });
 
     $('#search span#simple_search').on('click', function(){
@@ -114,6 +144,9 @@
             }, 250);
             $('#slider').data('current_page', c_page - 1);
             update_navigator();
+            save_filter_to_page($('.currentpage'));
+            update_currentpage(c_page - 1)
+            reset_page_filter_display($('.currentpage'));
         }
     }
 
@@ -126,6 +159,9 @@
             }, 250);
             $('#slider').data('current_page', c_page + 1);
             update_navigator();
+            save_filter_to_page($('.currentpage'));
+            update_currentpage(c_page + 1);
+            reset_page_filter_display($('.currentpage'));
         }
     }
 
@@ -144,7 +180,10 @@
             left: ('-=' + pageWidth)
         }, 250);
         $('#slider').data('current_page', c_page + 1);
-        update_navigator();
+        update_navigator();   
+        save_filter_to_page($('.currentpage'));
+        update_currentpage(c_page + 1);
+        reset_page_filter_display($('.currentpage'));
     }
 
     function update_navigator(){
@@ -152,5 +191,10 @@
         var next_page = '#resource_page_' + (c_page + 1);
         $('#navigator_back').toggleClass('inactive', c_page == 0);
         $('#navigator_forward').toggleClass('inactive', $('#slider').find(next_page).length == 0);
+    }
+
+    function update_currentpage(c_page){
+        $('.currentpage').removeClass('currentpage');
+        $('#resource_page_' + c_page).addClass('currentpage');
     }
 </script>

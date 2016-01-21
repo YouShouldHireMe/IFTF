@@ -1,27 +1,31 @@
 var pageWidth = 455;
 var c_page = $('#slider').data('current_page');
 $('#navigator').show();
+save_filter_to_page($('.currentpage'));
 
 if ($('#resource_page_' + c_page).data('item_id') != '<%= @item.id %>'){
-//remove forward paths
-var path_length = $('#slider').children().length;
-for (var i = c_page + 1; i < path_length; i++) {
-    $('#resource_page_' + i).remove();
-}
+	//remove forward paths
+	var path_length = $('#slider').children().length;
+	for (var i = c_page + 1; i < path_length; i++) {
+	    $('#resource_page_' + i).remove();
+	}
 
-$('#slider').css('width', ((c_page + 2) * pageWidth) + 'px');
-var $new_page = $('<div id="resource_page_' + (c_page + 1) + '" style="position:relative"></div>');
-$('#slider').data('current_page', c_page + 1);
-$('#slider').append($new_page);
-$new_page.html("<%= j (render 'itemlinks') %>");
+	$('#slider').css('width', ((c_page + 2) * pageWidth) + 'px');
+	$('.currentpage').removeClass('currentpage');
+	var $new_page = $('<div id="resource_page_' + (c_page + 1) + '" class="newpage currentpage" style="position:relative"></div>');
+	$('#slider').data('current_page', c_page + 1);
+	$('#slider').append($new_page);
+	$new_page.html("<%= j (render 'itemlinks') %>");
+	reset_filter_display('', '', '');
 
-$('#slider').css('position', 'relative');
-$('#slider').animate({
-        left:('-='+pageWidth)
-    }, 250);
 
-$new_page.data('item_id', '<%= @item.id %>');
-update_navigator();
+	$('#slider').css('position', 'relative');
+	$('#slider').animate({
+	        left:('-='+pageWidth)
+	    }, 250);
+
+	$new_page.data('item_id', '<%= @item.id %>');
+	update_navigator();
 } else {
     var $page = $('#resource_page_' + c_page);
     $page.html("<%= j (render 'itemlinks') %>");

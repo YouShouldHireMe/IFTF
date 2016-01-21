@@ -1,4 +1,9 @@
 class ResourcesController < ApplicationController
+   before_filter :set_variables
+   def set_variables
+        @per_page = 25
+    end
+
    def index
     #for simple filters
     @projects = Item.where(type: 'Project')
@@ -30,10 +35,6 @@ class ResourcesController < ApplicationController
 
     @item = Item.first
     @items = Item.all
-    #@items = @items.order('n.creation_date DESC, n.created_at DESC')
-    #@items = Item.all(:order => 'created_at DESC')
-    #@items = Item.order('Created')
-    #@items = Item.order('creation_date DESC')
 
     if params[:order].present?
         case params[:order]
@@ -72,7 +73,7 @@ class ResourcesController < ApplicationController
     end
 
     # Pagination
-    @items = @items.page(params[:page]).per(25)
+    @items = @items.page(params[:page]).per(@per_page)
 
     respond_to do |format|
         format.html {}
@@ -97,11 +98,11 @@ class ResourcesController < ApplicationController
     if params['filter_items']
         params['filter_items'].each do |item|
             @project = Item.find(item)
-            @items = @items.where('n.uuid IN {items}', items: @project.items.map {|i| i.id})
+            @items = @items.where('n.uuid IN {relateditems}', relateditems: @project.items.map {|i| i.id})
         end
     end
 
-    @items = @items.page(params[:page]).per(25)
+    @items = @items.page(params[:page]).per(@per_page)
 
 
     respond_to do |format|
@@ -109,5 +110,40 @@ class ResourcesController < ApplicationController
         format.js {}
         format.json {}
     end
+  end
+  def filter
+    @items = Item.all
+    @type = 'All items'
+    @tagging = ''
+    @related_project = ''
+    if params[:order].present?
+        case params[:order]
+        when 'date_asc'
+            @items = @items.order('n.creation_date ASC, n.created_at ASC, -n.upvotes')
+        when 'date_desc'
+            @items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+        when 'fav'
+            @items = @items.order('-n.upvotes, -n.creation_date, -n.created_at')
+        end
+    else 
+        @items = @items.order('n.creation_date DESC, n.created_at DESC')
+    end
+    if params[:type].present? && params[:type] != 'no_selection'
+        @type  = params[:type] + 's'
+        @items = @items.where(type:params[:type])
+    end
+    if params[:tag].present? && params[:tag] != 'no_selection'
+        @tag = Tag.find(params[:tag])
+        @tagging = ' tagged with "' + @tag.name + '"';
+        @items = @items.where('n.uuid IN {items}', items: @tag.items.map {|i| i.id })
+    end
+    if params[:item].present? 
+        @related = Item.find(params[:item])
+        @related_project = ' related to "' + @related.title + '"'
+        @items = @items.where('n.uuid IN {relateditems}', relateditems: @related.items.map {|i| i.id}) 
+    end 
+    @items = @items.page(params[:page]).per(@per_page)
+
+    render partial:  "listdisplay";
   end
 end
