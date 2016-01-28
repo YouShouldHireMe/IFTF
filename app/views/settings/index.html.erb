@@ -6,11 +6,11 @@
             <%= form_tag(mergetag_path, :method=>'post') do %>
                 <div>
                     Source Tags &nbsp;&nbsp; &nbsp;
-                    <%= select_tag 'sourceTags', options_for_select(@tags.map { |e| [e.name, e.id] }), {:include_blank => false, :multiple => true} %>
+                    <%= select_tag 'sourceTags', options_for_select(@alltags.map { |e| [e.name, e.id] }), {:include_blank => false, :multiple => true} %>
                 </div>
                 <div>
                     Destination Tag
-                    <%= select_tag 'destinationTag', options_for_select(@tags.map { |e| [e.name, e.id] }), {:include_blank => false} %>
+                    <%= select_tag 'destinationTag', options_for_select(@alltags.map { |e| [e.name, e.id] }), {:include_blank => false} %>
                 </div>
                 <div>
                     <%= check_box_tag(:deleteAfterMerge, 'on', true) %>

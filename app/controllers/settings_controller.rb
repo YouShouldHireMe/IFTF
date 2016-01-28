@@ -3,12 +3,12 @@ class SettingsController < ApplicationController
 	before_filter :set_variables
 
 	def set_variables
-        @per_page = 25
+        @per_page = 50
     end
 
 	def index
-		@tags = Tag.all
-		@tags = @tags.order('lower(n.name)')
+		@alltags = Tag.all
+		@tags = @alltags.order('lower(n.name)')
 		# Pagination
     	@tags = @tags.page(params[:page]).per(@per_page)
 	end
