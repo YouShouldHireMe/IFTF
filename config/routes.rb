@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   devise_for :users, controllers: {sessions: "users/sessions" }
   resources :password_resets
+  resources :tags
 
   root 'resources#index'
 
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
     get   '/search'                           => 'resources#search', as: :search
     get   '/filter/:type/:tag/:order/(:item)' => 'resources#filter', as: :filter
     get   '/login'                            => 'application#authenticate_user!', as: :login
+    get   '/sitesettings'                     => 'settings#index', as: :settings
+    post  '/sitesettings/mergeTag'            =>  'settings#mergeTags', as: :mergetag
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

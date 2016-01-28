@@ -1,0 +1,8 @@
+<% if @has_dup %>
+	$('.error_messages').html('There\'s already a tag with the name you entered. Do you want to merge the two tags together?');
+	$('.popup_header').html('New tag name is already in use.');
+	$('#popup form').remove();
+	$('.error_messages').after($("<%= j (render 'mergeform') %>"));
+<% else %>
+	location.reload();
+<% end %>

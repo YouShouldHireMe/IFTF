@@ -1,0 +1,11 @@
+<%= form_for @tag, :html => {:class => 'tag_rename'}, :remote=> true do |f| %>
+    <div class="field">
+        <span style='vertical-align: -10px; margin-right:10px;'>New name</span>
+        <%= f.text_field :name %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+ <% end %>
+
+<a style="cursor:pointer; display:block; text-align:center; margin:10px;" onclick="popupHide()">Cancel</a>

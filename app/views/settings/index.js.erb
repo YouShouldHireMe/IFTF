@@ -1,0 +1,3 @@
+$('#list_tags ul').html('<%= j render partial: "listtag", collection: @tags, as: :tag %>');
+$('#tag_pagination').html('<%= j (paginate(@tags, :remote => true).to_s) %>');
+

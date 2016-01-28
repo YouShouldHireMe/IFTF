@@ -1,0 +1,19 @@
+<%= form_tag(mergetag_path, :method=>'post') do %>
+    <span style="margin:15px; font-weight:bold; display:inline-block;">Click the button below to merge "<%= @tag.name %>" into "<%= @dup_tag.name %>". "<%= @tag.name %>" will be removed after the merge: </span>
+    <div style="display:none">
+        Source Tags &nbsp;&nbsp; &nbsp;
+        <%= select_tag 'sourceTags', options_for_select([[@tag.name, @tag.id]], [@tag.id]), {:include_blank => false, :multiple => true} %>
+    </div>
+    <div style="display:none">
+        Destination Tag
+        <%= select_tag 'destinationTag', options_for_select([[@dup_tag.name, @dup_tag.id]], @dup_tag.id), {:include_blank => false} %>
+    </div>
+    <div style="display:none">
+        <%= check_box_tag(:deleteAfterMerge, 'on', true) %>
+        <%= label_tag(:deleteAfterMerge, "Delete source tags after merging") %>
+    </div>
+    <div >
+        <%= submit_tag "Merge Tags" %>
+    </div>
+<% end %>
+

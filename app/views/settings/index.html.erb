@@ -1,0 +1,42 @@
+<div id="settings">
+	<div>
+		<span class="section_title">Manage Tags</span>
+        <div class="sub_title"> Merge Tags </div>
+        <div id="merge_tags">
+            <%= form_tag(mergetag_path, :method=>'post') do %>
+                <div>
+                    Source Tags &nbsp;&nbsp; &nbsp;
+                    <%= select_tag 'sourceTags', options_for_select(@tags.map { |e| [e.name, e.id] }), {:include_blank => false, :multiple => true} %>
+                </div>
+                <div>
+                    Destination Tag
+                    <%= select_tag 'destinationTag', options_for_select(@tags.map { |e| [e.name, e.id] }), {:include_blank => false} %>
+                </div>
+                <div>
+                    <%= check_box_tag(:deleteAfterMerge, 'on', true) %>
+                    <%= label_tag(:deleteAfterMerge, "Delete source tags after merging") %>
+                </div>
+                <div>
+                    <%= submit_tag "Merge Tags" %>
+                </div>
+            <% end %>
+        </div>
+        <div class="sub_title"> All Tags </div>
+        <div id="list_tags">
+            <ul class="styled_list column_list">
+                <%= render partial: "listtag", collection: @tags, as: :tag %>
+            </ul>
+            <div id="tag_pagination">
+                <%= paginate @tags, :remote => true %>
+            </div>
+        </div>
+	</div>
+</div>
+
+<div id="popup"></div>
+<div id="grayout" onclick="popupHide();"></div>
+
+<script type="text/javascript">
+    $('#sourceTags').select2();
+    $('#destinationTag').select2();
+</script>

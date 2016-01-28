@@ -6,9 +6,10 @@ class ApplicationController < ActionController::Base
   protected
   def authenticate_user!
     unless current_user
-        render 'signin.js'
+        render 'signin'
     end
   end
+
 
   def is_custom_tag(tagVal)
     if tagVal.length == 0

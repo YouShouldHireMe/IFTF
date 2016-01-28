@@ -1,0 +1,5 @@
+<li>
+	<span class="tagName"><%=tag.name %></span>
+	<%= link_to 'Rename', edit_tag_path(tag), :remote=>true %>
+	<%= link_to 'Delete', tag_path(tag), method: :delete, data: { confirm: (tag.name || '') + ' will be deleted.' } %>
+</li>

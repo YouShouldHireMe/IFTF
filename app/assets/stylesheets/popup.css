@@ -105,7 +105,7 @@
 .popup_signin h2{
     text-align:center;
 }
-.popup_signin #new_user{
+.popup_signin #new_user, .popup_signin .tag_rename{
     width: 60%;
     margin: auto;
     display: block;
@@ -149,4 +149,10 @@
     color: rgb(222, 0, 0);
     font-size:14px;
     text-align:center;
+}
+#popup #tag_name{
+    border: 1px solid #d9d9d9;
+    padding: 10px 5px;
+    border-radius: 5px;
+    height:15px !important;
 }
