@@ -7,7 +7,7 @@ class SettingsController < ApplicationController
     end
 
 	def index
-		@alltags = Tag.all
+		@alltags = Tag.all.order('lower(n.name)')
 		@alltags = @alltags.order('lower(n.name)')
 		# Pagination
     	@tags = @alltags.page(params[:page]).per(@per_page)
