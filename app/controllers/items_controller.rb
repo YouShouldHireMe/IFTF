@@ -73,10 +73,12 @@ class ItemsController < ApplicationController
 
     def show
         @item = Item.find(params[:id])
+        @tags = Tag.all
         
         query = Tag.all(:tags).items.query_as(:tagitems)
-        @top_tags = query.with(:tags, 'count(tagitems) AS count').where('NOT tags.name IN ?', @item.tags.map { |t| t.name }).order('count DESC').limit(4).pluck(:tags)
- 
+        #@top_tags = query.with(:tags, 'count(tagitems) AS count').where('NOT tags.name IN ?', @item.tags.map { |t| t.name }).order('count DESC').limit(4).pluck(:tags)
+        @top_tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').limit(4).pluck(:tags)
+
         respond_to do |format|
             format.html {}
             format.js {}
@@ -184,6 +186,17 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])   
         @newtags = params[:newtags].split(',')
         @test = []
+
+        @item.tags.each do |tag|
+            if !@newtags.include? tag.uuid
+                @item.tags.delete(tag)
+                tag.items.delete(@item)
+                if !tag.items.any?
+                    tag.destroy
+                end
+            end
+        end 
+
         @newtags.each do |tag|
             if is_custom_tag(tag)
                 @tag = Tag.new(name: tag)
@@ -198,15 +211,6 @@ class ItemsController < ApplicationController
                 end
             end
         end
-        @item.tags.each do |tag|
-            if !@newtags.include? tag.uuid
-                @item.tags.delete(tag)
-                tag.items.delete(@item)
-                if !tag.items.any?
-                    tag.destroy
-                end
-            end
-        end 
         
          respond_to do |format|
             format.json {}

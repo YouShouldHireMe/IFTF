@@ -22,7 +22,11 @@
 <% end %>
 <div class="item_tags">
   <!--  <span>Tags:</span> -->
-    <div id="tag_lists">
+    <%= select_tag 'item_tags[]', 
+        options_for_select(@tags.map {|t| [t.name, t.id]}, @item.tags.map {|i| i.id}),
+        :multiple => true %>
+
+    <div id="tag_lists" style="display:none;">
     <% @item.tags.each do |tag| %>
         <span id="tag_<%=tag.name %>" class="button lighter_border">
             <%= tag.name %>
@@ -35,7 +39,8 @@
     <div id="tag_suggestions">
         <span>Add popular tags:</span>
         <% @top_tags.each do |tag| %>
-            <span class="button lighter_border" onclick="if(addTag('<%= tag.name %>')){ $(this).remove(); }">
+            <!--<span class="button lighter_border" onclick="if(addTag('<%= tag.name %>')){ $(this).remove(); }">-->
+            <span class="button tag" data-tag = '<%=tag.id %>' style="padding:3px;" onclick="addToSelect2('<%= tag.id %>'); $(this).hide();" >
                 <%= tag.name %>
             </span>
         <% end %>
@@ -69,6 +74,10 @@
     <% end %>
 </div>
 <script type="text/javascript">
+    $('#tag_suggestions .tag').each(function(){
+        $(this).toggle($('#item_tags_').val().indexOf($(this).data('tag')) == -1);
+    });
+    $('#item_tags_').select2({tags: true});
     var existing_tags = [],
         last_tag = '';
     $('#tag_lists>span.lighter_border').each(function(){
@@ -92,7 +101,19 @@
         console.log('change');
         updateTags($(this).val());
     });
+
+    $('#item_tags_').on('change', function(){
+        updateTags($(this).val());
+    })
     
+    function addToSelect2(tagId){
+        var c_vals = $('#item_tags_').select2('val');
+        if (c_vals == null) {c_vals = [];}
+        if (!Array.isArray(c_vals)) {c_vals = [c_vals];}
+        c_vals.push(tagId);
+        $('#item_tags_').select2('val', c_vals, true);
+    }
+
     function updateTags(tagIds){
         var url = '/item/' + '<%= @item.id %>' + '/updatetags';
         $.ajax({
@@ -102,6 +123,9 @@
             data: 'newtags=' + tagIds,
             success: function(data, textStatus){
                 console.log(data);
+                $('#tag_suggestions .tag').each(function(){
+                    $(this).toggle(data.indexOf($(this).data('tag')) == -1);
+                });
             },
             error: function(xhr, textStatus, errorThrown){
                 console.log(xhr);
