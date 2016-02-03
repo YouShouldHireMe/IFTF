@@ -74,9 +74,11 @@
     <% end %>
 </div>
 <script type="text/javascript">
-    $('#tag_suggestions .tag').each(function(){
-        $(this).toggle($('#item_tags_').val().indexOf($(this).data('tag')) == -1);
-    });
+    if ($('#item_tags_').val() != null){
+        $('#tag_suggestions .tag').each(function(){
+            $(this).toggle($('#item_tags_').val().indexOf($(this).data('tag')) == -1);
+        });
+    }
     $('#item_tags_').select2({tags: true});
     var existing_tags = [],
         last_tag = '';
