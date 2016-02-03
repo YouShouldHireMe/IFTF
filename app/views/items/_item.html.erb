@@ -1,7 +1,7 @@
 <!--item preview-->
 <div id="item_id" style="display:none;" data-itemid = "<%= @item.id %>"> </div>
 <div class="item_title"> 
-    <%= @item.title %>   
+    <%= link_to @item.title, @item.url %>   
     <span class="item_upvotes" id="<%= @item.id + '_upvotes' %>">
         <% if current_user && (@item.users.map { |u| u.id }.include? current_user.id) %>
             <%= link_to '', unvote_path(@item), class: "upvote_link star", :remote=>true, method: :post %>
@@ -18,7 +18,7 @@
 <% end %>
 <div class="item_description"><%= @item.description %></div>
 <% if @item.url.presence %>
-    <div class="item_url"><%= link_to 'View Source', @item.url %></div>
+    <div class="item_url"><%= link_to '(View Source)', @item.url %></div>
 <% end %>
 <div class="item_tags">
   <!--  <span>Tags:</span> -->
@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class="comments">
-    <h4> Comments </h4>
+    <div> Comments </div>
     <ul class="styleless_list">
     <% @item.comments.each do |comment| %>
         <li class="list_item_comment">
@@ -64,10 +64,9 @@
     <% end %>
     </ul>
     <% if current_user %>
-    <h4>Add a comment:</h2>
     <%= form_for([@item, @item.comments.new]) do |f| %>
             <%= f.text_area :content %>
-            <%= f.submit %>
+            <%= f.submit "Add Comment"%>
     <% end %>
     <% else %>
         <p>Click <%= link_to 'here', 'users/sign_in', {:style=>'text-decoration:underline; cursor:pointer;'} %> to login and make a comment </p>

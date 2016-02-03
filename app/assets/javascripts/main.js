@@ -19,9 +19,9 @@ function adjustNewTagWidth(tagid){
 
 function adjust_on_window_change(){
         adjustCSS($('#grayout'), 'height', window.screen.height);
-        adjustCSS($('#item_edit_bar'), 'left', $('#resource_preview').offset().left + 2.5);
+        adjustCSS($('#item_edit_bar'), 'left', $('#resource_preview').offset().left + 1);
         adjustCSS($('#item_edit_bar'), 'top', $('#resource_preview').offset().top + 2.125);
-        adjustCSS($('#item_edit_bar'), 'width', $('#resource_preview').width() + 4); 
+        adjustCSS($('#item_edit_bar'), 'width', $('#resource_preview').width() + 10); 
         adjustCSS($('#view_select_options'), 'left', getOffset($('#view_select'), 'left'));
         adjustCSS($('#resource_center'), 'height', 750 - 85 + $('#search_filter').height());
     }

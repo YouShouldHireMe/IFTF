@@ -82,3 +82,6 @@
     border:none;
     cursor:pointer;
 }
+#settings_button > a {
+	color:white;
+}

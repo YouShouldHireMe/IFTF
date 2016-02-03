@@ -140,6 +140,9 @@
     font-weight: normal;
     vertical-align: 2px;
 }
+.item_upvotes > a{
+    vertical-align: -2px;
+}
 .item_image img{
     display:inline-block;
     float:left;
@@ -159,13 +162,13 @@
 }
 #slider ul{
     float:left;
-    width:445px;
-    margin-right:10px;
+    width:100%
 }
 #slider > div {
     width:455px;
     float:left;
     display:inline-block;
+    margin-right:10px;
 }
 #slider .page_title{
     width:455px;
