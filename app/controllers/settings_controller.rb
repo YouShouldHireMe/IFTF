@@ -18,7 +18,15 @@ class SettingsController < ApplicationController
         @similarTags = []
         @tags.each_with_index do |tag, index|
             if index < @tags.length - 1
+                temp = ''
                 if tag.name.downcase == @tags[index + 1].name.downcase || @tags[index+1].name.downcase == tag.name.downcase + 's'
+                    if temp == ''
+                        temp = tag.name.downcase
+                    else 
+                        if temp != tag.name.downcase && temp != tag.name.downcase + 's'
+                            break
+                        end
+                    end
                     @similarTags.push(tag.id)
                     @similarTags.push(@tags[index+1].id)
                 end
