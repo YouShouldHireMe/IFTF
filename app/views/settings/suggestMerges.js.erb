@@ -1,0 +1,9 @@
+console.log('finding tags to merge...');
+<% if @similarTags.length > 0 %>
+	var $st = $('#sourceTags'),
+		$dt = $('#destinationTag');
+		$similarTags = '<%= @tagString %>'.split(' ')
+
+	$st.select2('val', $similarTags, true);
+	$dt.select2('val', $similarTags[0], true);
+<% end %>

@@ -1,12 +1,13 @@
 <div id="settings">
 	<div>
 		<span class="section_title">Manage Tags</span>
-        <div class="sub_title"> Merge Tags </div>
+        <div class="sub_title"> Merge Tags </div> 
         <div id="merge_tags">
             <%= form_tag(mergetag_path, :method=>'post') do %>
                 <div>
                     Source Tags &nbsp;&nbsp; &nbsp;
                     <%= select_tag 'sourceTags', options_for_select(@alltags.map { |e| [e.name, e.id] }), {:include_blank => false, :multiple => true} %>
+                    <span style="font-size:12px; text-decoration:underline;"><%= link_to 'suggest merges', suggestmerges_path, :remote=>true %></span>
                 </div>
                 <div>
                     Destination Tag
@@ -22,6 +23,14 @@
             <% end %>
         </div>
         <div class="sub_title"> All Tags </div>
+        Order By: 
+            <span class="order">
+                <%= select_tag 'tagsOrder', options_for_select([['Name', 'name'], ['Trending', 'trending']], params[:order] || 'name') %>
+            </span>
+            <span class="order" id ="trending" style="display:none;">
+                Trending In: 
+                <%= select_tag 'trendingTime', options_for_select([['This Week', 'week'], ['This Month', 'month'], ['This year', 'year'], ['All Time', 'time']], params[:trending] || 'week') %>
+            </span>
         <div id="list_tags">
             <ul class="styled_list column_list">
                 <%= render partial: "listtag", collection: @tags, as: :tag %>
@@ -39,4 +48,16 @@
 <script type="text/javascript">
     $('#sourceTags').select2();
     $('#destinationTag').select2();
+
+    $('#tagsOrder').on('change', function(){
+        $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
+        $('#list_tags').load('/sitesettings/orderTags/' + $(this).val());
+        $('#trending').toggle($('#tagsOrder').val() == 'trending');
+    });
+
+    $('#trendingTime').on('change', function(){
+        $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
+        $('#list_tags').load('/sitesettings/orderTags/trending/' + $(this).val());
+    });
+
 </script>

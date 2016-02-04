@@ -11,18 +11,20 @@ Rails.application.routes.draw do
 
   root 'resources#index'
 
-    get   '/linkeditems/:id'                  => 'items#showlinks', as: :linkeditems
-    post  '/item/:id/upvote'                  => 'items#upvote', as: :upvote
-    post  '/item/:id/unvote'                  => 'items#unvote', as: :unvote
-    post  '/item/:id/addtag'                  => 'items#addtag', as: :addtag
-    get   '/item/:id/addtag'                  => 'items#edittags', as: :edittags
-    post  '/item/:id/removetag'               => 'items#removetag', as: :removetag
-    post  '/item/:id/updatetags'              => 'items#updatetags', as: :updatetags
-    get   '/search'                           => 'resources#search', as: :search
-    get   '/filter/:type/:tag/:order/(:item)' => 'resources#filter', as: :filter
-    get   '/login'                            => 'application#authenticate_user!', as: :login
-    get   '/sitesettings'                     => 'settings#index', as: :settings
-    post  '/sitesettings/mergeTag'            =>  'settings#mergeTags', as: :mergetag
+    get   '/linkeditems/:id'                            => 'items#showlinks', as: :linkeditems
+    post  '/item/:id/upvote'                            => 'items#upvote', as: :upvote
+    post  '/item/:id/unvote'                            => 'items#unvote', as: :unvote
+    post  '/item/:id/addtag'                            => 'items#addtag', as: :addtag
+    get   '/item/:id/addtag'                            => 'items#edittags', as: :edittags
+    post  '/item/:id/removetag'                         => 'items#removetag', as: :removetag
+    post  '/item/:id/updatetags'                        => 'items#updatetags', as: :updatetags
+    get   '/search'                                     => 'resources#search', as: :search
+    get   '/filter/:type/:tag/:order/(:item)'           => 'resources#filter', as: :filter
+    get   '/login'                                      => 'application#authenticate_user!', as: :login
+    get   '/sitesettings'                               => 'settings#index', as: :settings
+    post  '/sitesettings/mergeTag'                      => 'settings#mergeTags', as: :mergetag
+    get   '/sitesettings/orderTags/:order/(:trending)'  => 'settings#orderTags', as: :ordertags
+    get   '/sitesettings/suggestMerge'                  => 'settings#suggestMerges', as: :suggestmerges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

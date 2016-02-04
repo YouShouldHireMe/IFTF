@@ -85,3 +85,6 @@
 #settings_button > a {
 	color:white;
 }
+.trending .not_trending{
+	opacity:0.3;
+}

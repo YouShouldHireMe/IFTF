@@ -1,5 +1,8 @@
-<li>
-	<span class="tagName"><%=tag.name %></span>
+<li class="<%= (tag.trending_count == 0 ) ? 'not_trending' : '' %>">
+	<span class="tagName "><%=tag.name %></span>
+	<% if tag.items.length == 0 %>
+		<span style="color:#dc0000; font-size:12px;">(Not used)</span>
+	<% end %>
 	<%= link_to 'Rename', edit_tag_path(tag), :remote=>true %>
 	<%= link_to 'Delete', tag_path(tag), method: :delete, data: { confirm: (tag.name || '') + ' will be deleted.' } %>
 </li>

@@ -1,0 +1,6 @@
+<ul class="styled_list column_list <%= @trending %>">
+    <%= render partial: "listtag", collection: @tags, as: :tag %>
+</ul>
+<div id="tag_pagination">
+    <%= paginate @tags, :remote => true %>
+</div>
