@@ -16,9 +16,9 @@ class SettingsController < ApplicationController
     def suggestMerges
         @tags = Tag.all.order('lower(n.name)');
         @similarTags = []
+        temp = ''
         @tags.each_with_index do |tag, index|
             if index < @tags.length - 1
-                temp = ''
                 if tag.name.downcase == @tags[index + 1].name.downcase || @tags[index+1].name.downcase == tag.name.downcase + 's'
                     if temp == ''
                         temp = tag.name.downcase
