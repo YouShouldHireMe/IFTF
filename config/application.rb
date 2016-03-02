@@ -26,6 +26,7 @@ module IFTF
 
     config.neo4j.session_type = :server_db
     config.neo4j.session_path = 'http://localhost:7474'
+    config.neo4j._active_record_destroyed_behavior = true
     config.neo4j.session_option = {basic_auth: { username: 'neo4j', password:'cynebr9zqleby0'}}
 
     config.to_prepare do

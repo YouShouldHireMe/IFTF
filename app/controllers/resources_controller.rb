@@ -6,7 +6,7 @@ class ResourcesController < ApplicationController
 
    def index
     #for simple filters
-    @projects = Item.where(type: 'Project')
+#   @projects = Item.where(type: 'Project')
     query = Tag.all(:tags).items.query_as(:tagitems)
     @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').pluck(:tags)
 
@@ -17,37 +17,43 @@ class ResourcesController < ApplicationController
     @selectTags = []
     @search
 
-    Item.all.each do |it|
-        it.tags.each do |t|
-            if !(t.items.map {|i| i.id}).include? it.id
-                t.items << it
-            end
-        end
-        if !(it.creation_date)
-            it.creation_date = Date.parse('1 Jan 2015')
-            it.save
-        end
-        if !(it.created_at)
-            it.created_at = DateTime.parse(it.creation_date.to_s)
-            it.save
-        end
-    end
 
-    @item = Item.first
-    @items = Item.all
+#    Item.all.each do |it|
+#        it.tags.each do |t|
+#            if !(t.items.map {|i| i.id}).include? it.id
+#                t.items << it
+#            end
+#        end
+#        if !(it.creation_date)
+#            it.creation_date = Date.parse('1 Jan 2015')
+#            it.save
+#        end
+#        if !(it.created_at)
+#            it.created_at = DateTime.parse(it.creation_date.to_s)
+#            it.save
+#        end
+#    end
+
+    #@item = Item.first
+    #@items = Item.all
+    item_order = 'n.creation_date DESC, n.created_at DESC'
 
     if params[:order].present?
         case params[:order]
         when 'date_asc'
-            @items = @items.order('n.creation_date ASC, n.created_at ASC, -n.upvotes')
+            #@items = @items.order('n.creation_date ASC, n.created_at ASC, -n.upvotes')
+            item_order = 'n.creation_date ASC, n.created_at ASC, -n.upvotes'
         when 'date_desc'
-            @items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+            #@items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+            item_order = 'n.creation_date DESC, n.created_at DESC, -n.upvotes'
         when 'fav'
-            @items = @items.order('-n.upvotes, -n.creation_date, -n.created_at')
+            #@items = @items.order('-n.upvotes, -n.creation_date, -n.created_at')
+            item_order = '-n.upvotes, -n.creation_date, -n.created_at'
         end
-    else 
-        @items = @items.order('n.creation_date DESC, n.created_at DESC')
+    #else 
+        #@items = @items.order('n.creation_date DESC, n.created_at DESC')
     end
+    @items = Item.all.order(item_order)
 
     # Filters
     if params[:project].present?
@@ -73,7 +79,7 @@ class ResourcesController < ApplicationController
     end
 
     # Pagination
-    @items = @items.page(params[:page]).per(@per_page)
+     @items = @items.page(params[:page]).per(@per_page)
 
     respond_to do |format|
         format.html {}
