@@ -1,10 +1,11 @@
 class ResourcesController < ApplicationController
    before_filter :set_variables
    def set_variables
-        @per_page = 25
+        @per_page = 15
     end
 
    def index
+    @filter = false
     #for simple filters
 #   @projects = Item.where(type: 'Project')
     query = Tag.all(:tags).items.query_as(:tagitems)
@@ -118,6 +119,7 @@ class ResourcesController < ApplicationController
     end
   end
   def filter
+    @filter = true
     @items = Item.all
     @type = 'All items'
     @tagging = ''
@@ -151,5 +153,11 @@ class ResourcesController < ApplicationController
     @items = @items.page(params[:page]).per(@per_page)
 
     render partial:  "listdisplay";
+
+    respond_to do |format|
+        format.html {}
+        format.js {}
+        format.json {}
+    end
   end
 end

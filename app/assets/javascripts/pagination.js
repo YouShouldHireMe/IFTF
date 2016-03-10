@@ -1,4 +1,5 @@
 function infiniteScroll(){
+    if ($('#resource_list').hasClass('init')) return;
     $('#resource_list').on('scroll', function(){
         var more_item_url = $('.pagination .next a').attr('href');
         if (more_item_url && $('#resource_list').scrollTop() > $('.currentpage').height() - $('#resource_list ').height() - 60){
@@ -8,7 +9,7 @@ function infiniteScroll(){
                     console.log(textStatus);
                 })
                 .fail(function(jqxhr, settings, exception) {
-                    console.log(jqxhr);
+                    console.log(exception);
                 });
         } 
     });
