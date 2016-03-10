@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
    before_filter :set_variables
    def set_variables
-        @per_page = 15
+        @per_page = 25
     end
 
    def index
