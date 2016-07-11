@@ -1,5 +1,23 @@
+<% if notice %>
+    <div class="message_bar"><%= notice %></div>
+<% end %>
 <div id="settings">
 	<div>
+        <span class="section_title">Personalize</span>
+        <%= form_tag(personalize_path, :method=>'post') do %>
+            <div class="sub_title">Favorite Tags</div>
+            <div id="favorite_tags">
+                    <div>Select up to 6 favorite tags, your favorite tags will be display in the quick filter bar.</div>
+                    <div style="margin:15px 5px;">
+                        <%= select_tag 'favoriteTags', options_for_select(@alltags.map {|e| [e.name, e.id] }, @personalize_tags), {:include_blank => false, :multiple => true} %>
+                        <span class="inline_warning" style="display:none; color:red; margin-left:5px;">You can only select up to 6 favorite tags </span>
+                    </div>
+            </div>
+            <div id="submit_tile" style="margin-bottom:25px; ">
+                <input type="submit" class="button orange_white" style="padding:5px 25px;" value="Save" />
+            </div>
+        <% end %>
+
 		<span class="section_title">Manage Tags</span>
         <div class="sub_title"> Merge Tags </div> 
         <div id="merge_tags">
@@ -46,18 +64,37 @@
 <div id="grayout" onclick="popupHide();"></div>
 
 <script type="text/javascript">
-    $('#sourceTags').select2();
-    $('#destinationTag').select2();
+    $(document).ready(function() {
+        $('#sourceTags').select2();
+        $('#destinationTag').select2();
+        $('#favoriteTags').select2();
 
-    $('#tagsOrder').on('change', function(){
-        $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
-        $('#list_tags').load('/sitesettings/orderTags/' + $(this).val());
-        $('#trending').toggle($('#tagsOrder').val() == 'trending');
-    });
+        
 
-    $('#trendingTime').on('change', function(){
-        $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
-        $('#list_tags').load('/sitesettings/orderTags/trending/' + $(this).val());
-    });
+        $('#tagsOrder').on('change', function(){
+            $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
+            $('#list_tags').load('/sitesettings/orderTags/' + $(this).val());
+            $('#trending').toggle($('#tagsOrder').val() == 'trending');
+        });
 
+        $('#trendingTime').on('change', function(){
+            $('#list_tags').html('<img src="/assets/ajax-loader.gif" />');
+            $('#list_tags').load('/sitesettings/orderTags/trending/' + $(this).val());
+        });
+
+
+          var last_valid_selection = $('#favoriteTags').val();
+
+          $('#favoriteTags').change(function(e) {
+            if ($(this).val().length > 6) {
+                $(this).val(last_valid_selection);
+                $(this).change();
+                $('.inline_warning').show();
+            } else {
+                last_valid_selection = $(this).val();
+            }
+          });
+        });
+
+ 
 </script>

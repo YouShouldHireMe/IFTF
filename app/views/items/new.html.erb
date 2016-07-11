@@ -1,5 +1,12 @@
+<% if @bookmarklet %>
+<div id="popup" style="display:block;">
+	<h3> Add Signal </h3>
+	<%= render 'form_light'%>
+</div>
+<% else %>
 <h3> New Item</h3>
 
 <%= render 'form' %>
 
 <%= link_to 'Cancel', root_path %>
+<% end %>

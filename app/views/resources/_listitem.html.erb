@@ -8,4 +8,11 @@
 		<% end %>
 	</span>
     <%= link_to item.title, item_path(item), class: "title_link", :remote=>true %>
+    <% if item.comments.length == 1 %>
+    	<span title="<%= item.comments.length %> comment"><i class="fa fa-comment-o" aria-hidden="true"></i>
+    <% elsif  item.comments.length > 1 && item.comments.length < 5 %>
+    	<span title="<%= item.comments.length %> comments"><i class="fa fa-comment-o" aria-hidden="true"></i>
+    <% elsif item.comments.length >= 5  %>
+    	<span title="<%= item.comments.length %> comments"><i class="fa fa-comments-o" aria-hidden="true"></i>
+    <% end %>
 </li>

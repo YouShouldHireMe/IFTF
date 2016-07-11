@@ -173,7 +173,17 @@ li {
     padding: 0px 10px;
 }
 
-
+.message_bar {
+    background:#A1D490;
+    margin:0;
+    opacity:0.8;
+    color:white;
+    font-weight:bold;
+    padding:8px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 1px 1px #aaa;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }

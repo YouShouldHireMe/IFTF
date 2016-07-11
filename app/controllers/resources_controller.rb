@@ -11,6 +11,12 @@ class ResourcesController < ApplicationController
     query = Tag.all(:tags).items.query_as(:tagitems)
     @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').pluck(:tags)
 
+    if current_user
+        @user_tags = current_user.tags
+    else
+        @user_tags = []
+    end
+
     #for advanced filters
     @taggings = ''
     @filter = 'All Items'

@@ -24,8 +24,9 @@ module IFTF
       g.orm             :neo4j
     end
 
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.neo4j.session_type = :server_db
-    config.neo4j.session_path = 'http://localhost:7474'
+    config.neo4j.session_path = 'http://23.92.30.186:7474'
     config.neo4j._active_record_destroyed_behavior = true
     config.neo4j.session_option = {basic_auth: { username: 'neo4j', password:'cynebr9zqleby0'}}
 

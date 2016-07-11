@@ -1,10 +1,15 @@
 class ItemsController < ApplicationController
     before_action :authenticate_user!
-    skip_before_action :authenticate_user!, only: [:show, :showlinks]
+    skip_before_action :authenticate_user!, only: [:show, :showlinks, :new]
     def new
+        unless current_user
+            render 'signin'
+        end
         @item = Item.new
+        @bookmarklet = false
         
         if params[:quick_url].present?
+            @bookmarklet = true
             require 'open-uri'
             require 'json'
             key = '7ae8a289ea5342feb466983a44a8ad26'

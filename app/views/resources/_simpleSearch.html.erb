@@ -28,7 +28,14 @@
             <span class="filter_category">
                 Filter By Tag:
                 <ul id="filter_tags" class="horizontal_list">
-                    <% @tags[0..(6 - 1)].each do |tag|
+                    <% @user_tags.reverse_each do |tag|
+                        if @tag && tag.name == @tag.name %>
+                            <li class="button tag selected" data-tagID="<%= tag.id %>"><%= tag.name %></li>
+                        <% else %>
+                            <li class="button tag" data-tagID="<%= tag.id %>"><%= tag.name %></li>
+                        <% end 
+                    end %>
+                    <% @tags[0..(6 - 1 - @user_tags.length)].each do |tag|
                         if @tag && tag.name == @tag.name %>
                             <li class="button tag selected" data-tagID="<%= tag.id %>"><%= tag.name %></li>
                         <% else %>

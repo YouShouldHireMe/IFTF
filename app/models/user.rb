@@ -42,6 +42,7 @@ class User
 
      has_many :both, :comments, type: :author
      has_many :both, :items, type: :upvoter
+     has_many :both, :tags, type: :favorite
      ## Confirmable
      # property :confirmation_token
      # index :confirmation_token

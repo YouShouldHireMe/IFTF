@@ -7,11 +7,34 @@ class SettingsController < ApplicationController
     end
 
 	def index
-		@alltags = Tag.all.order('lower(n.name)')
-		@tags = @alltags.order('lower(n.name)')
-		# Pagination
-    	@tags = @tags.page(params[:page]).per(@per_page)
+        if current_user
+            @personalize_tags = current_user.tags.map{|i| i.id}
+            
+		    @alltags = Tag.all.order('lower(n.name)')
+		    @tags = @alltags.order('lower(n.name)')
+		    # Pagination
+    	   @tags = @tags.page(params[:page]).per(@per_page)
+        end
 	end
+
+    def saveSettings
+        if current_user
+            current_user.tags = []
+            if params[:favoriteTags].present?
+                params[:favoriteTags].each do |tagId|
+                    @favoriteTag = Tag.find(tagId)
+                    current_user.tags << @favoriteTag
+                end
+            end
+        end
+        respond_to do |format|
+            format.html { 
+                flash[:notice] = 'Changes saved'
+                redirect_to :back
+            }
+            format.js { head :no_content }
+        end
+    end
 
     def suggestMerges
         @tags = Tag.all.order('lower(n.name)');

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     post  '/sitesettings/mergeTag'                      => 'settings#mergeTags', as: :mergetag
     get   '/sitesettings/orderTags/:order/(:trending)'  => 'settings#orderTags', as: :ordertags
     get   '/sitesettings/suggestMerge'                  => 'settings#suggestMerges', as: :suggestmerges
+    post  '/sitesettings/saveSettings'                  => 'settings#saveSettings', as: :personalize
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
