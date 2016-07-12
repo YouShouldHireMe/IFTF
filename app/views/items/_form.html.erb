@@ -9,7 +9,7 @@
             </ul>
         </div>
     <% end %>
-    <p>
+    <p style="display:none;">
         <%= f.label :type %>
         <%= f.select :type, options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], @item.type||'Signal') %> 
     </p>
