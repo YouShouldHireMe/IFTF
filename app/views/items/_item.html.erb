@@ -23,7 +23,7 @@
 <% end %>
 <div class="item_description"><%= @item.description %></div>
 <% if @item.url.presence %>
-    <div class="item_url"><%= link_to '(View Source)', @item.url %></div>
+    <div class="item_url"><%= link_to '(View Source)', @item.url, :target => "_blank" %></div>
 <% end %>
 <div class="item_tags">
   <!--  <span>Tags:</span> -->
