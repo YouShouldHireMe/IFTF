@@ -1,0 +1,6 @@
+<h4>Signals submitted by <%=@user.email %></h4>
+<ul>
+<% for post in @posts %>
+	<li><%=post.title %></li>
+<% end %>
+</ul>

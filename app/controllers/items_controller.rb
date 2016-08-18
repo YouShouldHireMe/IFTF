@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    helper ItemsHelper
     before_action :authenticate_user!
     skip_before_action :authenticate_user!, only: [:show, :showlinks, :new]
     def new
@@ -48,6 +49,7 @@ class ItemsController < ApplicationController
         
         if @item.save
             @item.update(params[:item])
+            @item.author = current_user
             @tags.each do |tag|
                 if is_custom_tag(tag.to_s)
                     @tag = Tag.new(name: tag.to_s)

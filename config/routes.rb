@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   root 'resources#index'
 
+    get   '/profile/:id'                                => 'profile#show', as: :profile
     get   '/linkeditems/:id'                            => 'items#showlinks', as: :linkeditems
     post  '/item/:id/upvote'                            => 'items#upvote', as: :upvote
     post  '/item/:id/unvote'                            => 'items#unvote', as: :unvote
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     post  '/item/:id/updatetags'                        => 'items#updatetags', as: :updatetags
     get   '/search'                                     => 'resources#search', as: :search
     get   '/filter/:type/:tag/:order/(:item)'           => 'resources#filter', as: :filter
+    get   '/simplesearch/:keyword'                      => 'resources#simplesearch', as: :simplesearch
     get   '/login'                                      => 'application#authenticate_user!', as: :login
     get   '/sitesettings'                               => 'settings#index', as: :settings
     post  '/sitesettings/mergeTag'                      => 'settings#mergeTags', as: :mergetag

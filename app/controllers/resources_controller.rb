@@ -11,6 +11,21 @@ class ResourcesController < ApplicationController
     query = Tag.all(:tags).items.query_as(:tagitems)
     @tags = query.with(:tags, 'count(tagitems) AS count').order('count DESC').pluck(:tags)
 
+    @recent_items = Item.all.where('n.created_at > ' + (Time.now - (2*7*24*60*60)).to_i.to_s)
+
+    @recent_tags = []
+    @recent_items.each do |item|
+        item.tags.each do |itemtag|
+            @recent_tags.push(itemtag)
+        end
+    end
+    @recent_tags = @recent_tags.group_by{|x| x}.sort_by{|k, v| -v.size}.first(6).map(&:first)
+    @recent_tags.each do |recent_tag|
+        @tags.delete(recent_tag)
+    end
+
+    @top_tags = @recent_tags + @tags
+
     if current_user
         @user_tags = current_user.tags
     else
@@ -124,6 +139,26 @@ class ResourcesController < ApplicationController
         format.json {}
     end
   end
+
+  def simplesearch
+    @items = Item.all
+    @items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+    if params[:keyword].present? && params[:keyword] != ''
+        @items = @items.where(title: /.*#{Regexp.escape(params[:keyword])}.*/i)
+        @page_title = 'Simple search result for "' + params[:keyword] + '"'
+    end
+
+    @items = @items.page(params[:page]).per(@per_page)
+
+    render partial:  "listdisplay";
+
+    respond_to do |format|
+        format.html {}
+        format.js {}
+        format.json {}
+    end
+  end
+
   def filter
     @filter = true
     @items = Item.all
@@ -157,6 +192,7 @@ class ResourcesController < ApplicationController
         @items = @items.where('n.uuid IN {relateditems}', relateditems: @related.items.map {|i| i.id}) 
     end 
     @items = @items.page(params[:page]).per(@per_page)
+    @page_title = @type +  @tagging + @related_project
 
     render partial:  "listdisplay";
 

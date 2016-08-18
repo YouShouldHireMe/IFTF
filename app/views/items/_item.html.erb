@@ -13,6 +13,11 @@
         <% end %>
     </span>
 </div>
+<div class="by_line">
+    <% if @item.author.presence %>
+        Submitted <%=time_from_today(@item.created_at) %> by <%= link_to @item.author.email, '/profile/' + @item.author.id %>
+    <% end %>
+</div>
 <% if @item.image.presence %>
     <div class="item_image"><img src="<%= @item.image %>" /></div>
 <% end %>

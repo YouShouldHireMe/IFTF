@@ -1,4 +1,3 @@
-
 <div id="resource_center">
     <div id="resource_header">
         <div id="add_item">
@@ -69,6 +68,16 @@
     $(window).resize(adjust_on_window_change);
     $(window).scroll(adjust_on_window_change);
     save_filter_to_page($('.currentpage'));
+
+    $('#simple_search').on('click', function(){
+        var keyword = $('#search_keyword').val();
+        if (keyword == '') {
+            $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+            $('.currentpage #list_display').load(filter_sort_url());
+        }
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load('/simplesearch/' + keyword);
+    });
 
     $('#typeFilter').on('change', function(){
         if ($('.currentpage').hasClass('newpage')) {return;}

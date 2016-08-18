@@ -17,5 +17,6 @@ class Item
   has_many :both, :items, type: :related
   has_many :out, :tags, type: :tags
   has_many :both, :comments, type: :comment
-  has_many :both, :users, type: :upvoter
+  has_many :both, :users,  type: :upvoter
+  has_one  :out, :author, type: :author, model_class: :User
 end

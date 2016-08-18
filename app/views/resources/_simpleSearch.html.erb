@@ -19,9 +19,10 @@
             <span class="order">
                 <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
             </span>
-            <!--
-            <input></input>
-            <span id="simple_search" class="button">Search</span> -->
+            
+            <input id="search_keyword" placeholder="Enter Search Keyword Here" style="padding:5px; border:1px solid #aaa; width:400px; "></input>
+            <span id="simple_search" class="button">Search</span>
+
             <span id="advance_search">Advanced</span>
         </div>
         <div id="search">
@@ -35,14 +36,14 @@
                             <li class="button tag" data-tagID="<%= tag.id %>"><%= tag.name %></li>
                         <% end 
                     end %>
-                    <% @tags[0..(6 - 1 - @user_tags.length)].each do |tag|
+                    <% @top_tags[0..(6 - 1 - @user_tags.length)].each do |tag|
                         if @tag && tag.name == @tag.name %>
                             <li class="button tag selected" data-tagID="<%= tag.id %>"><%= tag.name %></li>
                         <% else %>
                             <li class="button tag" data-tagID="<%= tag.id %>"><%= tag.name %></li>
                     <% end
                     end %>
-                    <%= select_tag 'moreTags', options_for_select(@tags[6..-1].map { |e| [e.name, e.id] }, params[:tag]), {:include_blank => true} %>
+                    <%= select_tag 'moreTags', options_for_select(@top_tags[6..-1].map { |e| [e.name, e.id] }, params[:tag]), {:include_blank => true} %>
                 </ul>
                 <!--
                 <ul id="more_tags" style="display:none;">

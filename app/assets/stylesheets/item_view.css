@@ -67,3 +67,13 @@
 #item_tags_{
     width:100%;
 }
+
+.by_line{
+    margin: -10px auto 10px auto;
+    text-align: left;
+    padding-left: 10px;
+    font-size:14px;
+    color:#888;
+} 
+.by_line a { color:#369;}
+.by_line a:hover {text-decoration: underline; }
