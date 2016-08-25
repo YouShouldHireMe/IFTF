@@ -202,4 +202,35 @@ class ResourcesController < ApplicationController
         format.json {}
     end
   end
+
+  def user_items
+    @items = Item.all
+    if params[:order].present?
+        case params[:order]
+        when 'date_asc'
+            @items = @items.order('n.creation_date ASC, n.created_at ASC, -n.upvotes')
+        when 'date_desc'
+            @items = @items.order('n.creation_date DESC, n.created_at DESC, -n.upvotes')
+        when 'fav'
+            @items = @items.order('-n.upvotes, -n.creation_date, -n.created_at')
+        end
+    else 
+        @items = @items.order('n.creation_date DESC, n.created_at DESC')
+    end
+    if params[:author].present?
+        @author = User.find(params[:author]) 
+        @author_name = @author.email
+        @items  = @items.where('n.uuid IN {posts}', posts: @author.posts.map {|i| i.id})
+    end
+    @items = @items.page(params[:page]).per(@per_page)
+    @page_title = 'Signals submitted by ' + @author_name
+
+    render partial: "listdisplay";
+
+    respond_to do |format|
+        format.html {}
+        format.js {}
+        format.json {}
+    end
+  end
 end

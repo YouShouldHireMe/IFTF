@@ -14,8 +14,10 @@
     </span>
 </div>
 <div class="by_line">
-    <% if @item.author.presence %>
-        Submitted <%=time_from_today(@item.created_at) %> by <%= link_to @item.author.email, '/profile/' + @item.author.id %>
+    <% if @item.author %>
+        Submitted <%=time_from_today(@item.created_at) %> by <a class="user_items" style="cursor:pointer;" user_id="<%=@item.author.id %>"><%=@item.author.email %></a>
+    <% else %>
+        Submitted <%=time_from_today(@item.created_at) %>
     <% end %>
 </div>
 <% if @item.image.presence %>
@@ -78,6 +80,11 @@
     <% end %>
 </div>
 <script type="text/javascript">
+    $('.user_items').on('click', function(){
+        console.log('wowow');
+        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
+        $('.currentpage #list_display').load('/user_items/' + $(this).attr('user_id'));
+    });
     if ($('#item_tags_').val() != null){
         $('#tag_suggestions .tag').each(function(){
             $(this).toggle($('#item_tags_').val().indexOf($(this).data('tag')) == -1);

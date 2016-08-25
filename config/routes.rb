@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     post  '/item/:id/updatetags'                        => 'items#updatetags', as: :updatetags
     get   '/search'                                     => 'resources#search', as: :search
     get   '/filter/:type/:tag/:order/(:item)'           => 'resources#filter', as: :filter
+    get   '/user_items/:author'                         => 'resources#user_items', as: :user_items
     get   '/simplesearch/:keyword'                      => 'resources#simplesearch', as: :simplesearch
     get   '/login'                                      => 'application#authenticate_user!', as: :login
     get   '/sitesettings'                               => 'settings#index', as: :settings
