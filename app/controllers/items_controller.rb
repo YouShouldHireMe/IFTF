@@ -50,6 +50,7 @@ class ItemsController < ApplicationController
         if @item.save
             @item.update(params[:item])
             @item.author = current_user
+            current_user.posts << @item
             @tags.each do |tag|
                 if is_custom_tag(tag.to_s)
                     @tag = Tag.new(name: tag.to_s)
