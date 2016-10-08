@@ -3,7 +3,7 @@
 #resource_center{
     box-sizing:border-box;
     width:100%;
-    min-width:1000px;
+    min-width:1100px;
     height:760px;
     background-color:white;
     -webkit-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
@@ -15,6 +15,7 @@
     margin:auto;
 }
 #resource_header{
+    min-width: 1100px;
     margin:0px 10px;
 }
 #filters{
