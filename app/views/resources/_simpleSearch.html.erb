@@ -1,5 +1,5 @@
 <div id="search_simple">
-<div id="filters">
+<div style="display:none;">
             <span class="filter_category" style="display:none;">
                 <span style="width:45px;">Filter by Type:</span>
                 <!--
@@ -15,17 +15,14 @@
                 </span>-->
                 <%= select_tag 'typeFilter', options_for_select(['Artifact', 'Forecast', 'Project', 'Signal'], params[:type]), {:include_blank => true} %>
             </span>
+            <!--
             Order By: 
             <span class="order">
                 <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
             </span>
-            
-            <input id="search_keyword" placeholder="Enter Search Keyword Here" style="padding:5px; border:1px solid #aaa; width:400px; "></input>
-            <span id="simple_search" class="button">Search</span>
-
-            <span id="advance_search">Advanced</span>
+            -->
         </div>
-        <div id="search">
+        <div id="filters">
             <span class="filter_category">
                 Filter By Tag:
                 <ul id="filter_tags" class="horizontal_list">
@@ -52,6 +49,11 @@
                     <% end %>
                 </ul>
                 -->
+            </span>
+            <span class="search_block">
+                <input id="search_keyword" class="text" placeholder="Enter Search Keyword Here"></input>
+                <span id="simple_search" class="button"><i class="fa fa-search" aria-hidden="true"></i></span>
+                <span id="advance_search">Advanced</span>
             </span>
         </div>
 </div>

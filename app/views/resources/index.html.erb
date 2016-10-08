@@ -3,8 +3,8 @@
         <div id="add_item">
             <span style="display:inline-block">
                 <%= form_tag(new_item_path, method: "get", remote: true) do %>
-                    <%= submit_tag("Add New", :class => "button orange_white") %>
-                    <%= text_field_tag 'quick_url', nil, placeholder: 'Enter URL', class: "url_input" %>
+                    <%= submit_tag("Add New Signal", :class => "button orange_white") %>
+                    <%= text_field_tag 'quick_url', nil, placeholder: 'Enter URL', class: "url_input text" %>
                 <% end %>
             </span>
         </div>
@@ -32,6 +32,9 @@
                         <%= @filter +  @taggings + @related_project %>
                         <br>
                         <%= @search %>
+                        <span class="order">
+                            <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
+                        </span>
                     </div>
                     <ul id="list_items" class="styled_list">
                         <%= render partial: "listitem", collection: @items, as: :item %>
@@ -44,6 +47,12 @@
             </div>
         </div>
         <div id="resource_preview" class="bordered-block">
+            <% if current_user %>           
+            <% else %>
+                <div class="popup_signin">
+                    <%= render :partial => 'users/sessions/signin' %>
+                </div>
+            <% end %>
         </div>
         <!--item edit bar-->
         <div id="item_edit_bar">
@@ -82,14 +91,16 @@
     $('#typeFilter').on('change', function(){
         if ($('.currentpage').hasClass('newpage')) {return;}
         //window.location = updateCurrentParams('type=' + $(this).val());
+        var new_url = filter_sort_url();
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load(filter_sort_url());
+        $('.currentpage #list_display').load(new_url);
     });
     $('#customOrder').on('change', function(){
         if ($('.currentpage').hasClass('newpage')) {return;}
         //window.location = updateCurrentParams('order=' + $(this).val());
+        var new_url = filter_sort_url();
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load(filter_sort_url());
+        $('.currentpage #list_display').load(new_url);
     });
     $('#projectFilter').on('change', function(){
         if ($('.currentpage').hasClass('newpage')) {return;}

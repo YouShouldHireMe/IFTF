@@ -15,6 +15,7 @@ body{
     color:#444;
     background-color:#f0f0f0;
     font-family: 'Helvetica Neue', helvetica, arial, san-serif;
+    margin:0;
 }
 
 input:-webkit-autofill,
@@ -23,6 +24,13 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+input.text{
+    border:1px solid #bbb;
+    border-radius:3px;
+    padding:5px 8px;
+    font-size:14px;
 }
 
 /*Define general class rules*/
@@ -106,7 +114,7 @@ li {
 .link {text-decoration:underline; cursor:pointer;}
 .url_input{
     height:18px;
-    width:350px;
+    width:500px;
     padding-left:5px;
 }
 
@@ -142,6 +150,7 @@ li {
     top:0px;
     right:0px;
     margin:10px;
+    color:#eee;
 }
 
 @media all and (max-width: 800px){
@@ -157,21 +166,37 @@ li {
 }
 
 #user_info span{
-    padding: 5px 0px;
-    margin-right:10px;
-    border:1px solid #ccb;
-    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2px 0px 3px 0px;
+    margin-right:8px;
+    border:1px solid #E38520;
+    border-radius:3px;   
+    background-color: #F29229;
     cursor:pointer;
     display:inline-block;
 }
 
 #user_info span:hover{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #E38520;
 }
 
 #user_info span a{
     padding: 0px 10px;
+    color:#eee;
+    font-size:14px;
+    font-weight:bold;
 }
+
+#page_header { background: #eb9f4d; padding:10px; text-align: left;}
+#page_header h1 { text-align: left; font-size:22px; margin:0; margin-left:40px;}
+#page_header h1 a {color: #eee;}
+#page_header .logo {position:absolute; top:8px;}
+
+#add_item form input {vertical-align: middle;}
+#add_item form input[type="submit"] {padding:7px;}
+
+.search_block {float:right;}
+#search_keyword {width:250px; vertical-align: middle; border-radius:3px 0px 0px 3px;}
+#simple_search {margin-left:-5px; vertical-align: -1px; background:#eb9f4d; color:#fff; border:0; padding:4px 5px; border-radius:0px 3px 3px 0px;}
 
 .message_bar {
     background:#A1D490;

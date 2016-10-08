@@ -55,7 +55,7 @@
 #popup .actions{
     width: calc(100% + 12px);
 }
-#popup .actions input{
+.actions input{
     display: inline-block;
     color: white;
     width: 100%;

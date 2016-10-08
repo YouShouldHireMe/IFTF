@@ -1,7 +1,9 @@
 /*Resource-listing.css contains all css for the homepage where all resources are listed for browsing*/
 
 #resource_center{
-    width:1000px;
+    box-sizing:border-box;
+    width:100%;
+    min-width:1000px;
     height:760px;
     background-color:white;
     -webkit-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
@@ -22,21 +24,27 @@
     border-bottom:1px solid #ddd;
 }
 #resource_list{
+    position:relative;
     width:460px;
-    height:600px;
+    height:560px;
     float:left;
     margin:3px 8px;
+    margin-right:0px;
     padding:10px;
     overflow-x:hidden;
     overflow-y:scroll;
+    border-radius:3px 0px 0px 3px;
 }
 #resource_preview{
-    width:460px;
-    height:600px;
+    width: calc(100% - 519px);
+    min-width:460px;
+    height:560px;
     float:right;
     margin:3px 8px;
+    margin-left:0px;
     padding:10px;
     overflow-y:scroll;
+    border-radius:0px 3px 3px 0px;
 }
 
 /* Filter bar */
@@ -76,14 +84,24 @@
     width:200px;
 }
 #customOrder{
-    width:200px;
+    width:150px;
+}
+.order{
+    font-size:14px;
+    font-weight:normal;
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+.select2-results__option{
+    font-size:14px;
 }
 #tagFilters_ {
     width:300px;
 }
 #advance_search{
     text-decoration:underline;
-    margin-left:20px;
+    margin-left:10px;
     cursor:pointer;
 }
 #advance_options>li{
