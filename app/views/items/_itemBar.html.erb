@@ -13,5 +13,5 @@
     <% else %>
     	<li class="button orange_white"><%= link_to 'Delete', item_path(@item), method: :delete, :remote=>true, data: { confirm: @item.title + ' will be deleted.' } %></li>
     <% end %>
-    <li class="button orange_white"><%= link_to 'View Linked Items', linkeditems_path(@item), :remote=>true %></li>
+    <li class="button orange_white" style="display:none;"><%= link_to 'View Linked Items', linkeditems_path(@item), :remote=>true %></li>
 </ul>

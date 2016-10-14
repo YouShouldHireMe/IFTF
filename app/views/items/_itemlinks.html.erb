@@ -3,6 +3,9 @@
 <% if defined?(@item) %>
 <div class="page_title">
     All items linked to <%= @item.title %>
+    <span class="order">
+        <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
+    </span>
 </div>
 <% end %>
 	<ul class="styled_list">

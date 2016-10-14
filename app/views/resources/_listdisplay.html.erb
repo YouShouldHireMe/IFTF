@@ -1,4 +1,4 @@
-<div class="page_title youyo">
+<div class="page_title">
     <%= @page_title %>
     <span class="order">
         <%= select_tag 'customOrder', options_for_select([['Newest First', 'date_desc'], ['Oldest First', 'date_asc'], ['Most Favorited', 'fav']], params[:order] || 'date_desc') %>
@@ -40,13 +40,6 @@
     });
 	$('#resource_list').addClass('init');
 
-    $('#customOrder').select2({minimumResultsForSearch: Infinity});
-    $('#customOrder').on('change', function(){
-        if ($('.currentpage').hasClass('newpage')) {return;}
-        //window.location = updateCurrentParams('order=' + $(this).val());
-        var new_url = filter_sort_url();
-        $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load(new_url);
-    });
+    Resources.ItemsOrder.init($('.currentpage #customOrder'));
 </script>
 <% end %>

@@ -13,7 +13,7 @@ class SettingsController < ApplicationController
 		    @alltags = Tag.all.order('lower(n.name)')
 		    @tags = @alltags.order('lower(n.name)')
 		    # Pagination
-    	   @tags = @tags.page(params[:page]).per(@per_page)
+    	    @tags = @tags.page(params[:page]).per(@per_page)
         end
 	end
 

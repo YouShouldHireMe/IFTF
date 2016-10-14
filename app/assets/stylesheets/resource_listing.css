@@ -26,6 +26,8 @@
 }
 #resource_list{
     position:relative;
+    max-width:calc(100% - 520px);
+    min-width:460px;
     width:460px;
     height:560px;
     float:left;
@@ -38,6 +40,7 @@
 }
 #resource_preview{
     width: calc(100% - 519px);
+    max-width: calc(100% - 520px);
     min-width:460px;
     height:560px;
     float:right;
@@ -91,7 +94,7 @@
     font-size:14px;
     font-weight:normal;
     position: absolute;
-    top:10px;
+    top:0px;
     right:10px;
 }
 .select2-results__option{
@@ -139,6 +142,8 @@
 #item_edit_bar{
     position:absolute;
     background-color:#f0f0f0;
+    min-width:470px;
+    max-width:calc(100% - 540px);
 }
 #item_edit_bar.bar_shown{
     padding:8px 0;
@@ -190,7 +195,7 @@
     margin-right:10px;
 }
 #slider .page_title{
-    width:455px;
+    width:300px;
     padding:5px;
     margin-bottom:15px;
     color:#eb9f4d;
@@ -219,4 +224,8 @@
     vertical-align: top;
     display:inline-block;
     padding: 10px 5px;
+}
+
+#list_display{
+    position:relative;
 }

@@ -47,7 +47,21 @@
             </div>
         </div>
         <div id="resource_preview" class="bordered-block">
-            <% if current_user %>           
+            <% if current_user %>   
+                <h4 style="font-size:22px; text-align:center;"> You are logged in as <%=current_user.email %></h4>
+                <%= form_tag(personalize_path, :method=>'post') do %>
+                    <div class="sub_title">Favorite Tags</div>
+                    <div id="favorite_tags">
+                            <div>Select up to 6 favorite tags, your favorite tags will be display in the quick filter bar.</div>
+                            <div style="margin:15px 5px;">
+                                <%= select_tag 'favoriteTags', options_for_select(@alltags.map {|e| [e.name, e.id] }, @personalize_tags), {:include_blank => false, :multiple => true} %>
+                                <span class="inline_warning" style="display:none; color:red; margin-left:5px;">You can only select up to 6 favorite tags </span>
+                            </div>
+                    </div>
+                    <div id="submit_tile" style="margin-bottom:25px; ">
+                        <input type="submit" class="button orange_white" style="padding:5px 25px;" value="Save" />
+                    </div>
+                <% end %>        
             <% else %>
                 <div class="popup_signin">
                     <%= render :partial => 'users/sessions/signin' %>
@@ -64,6 +78,7 @@
 <div id="grayout" onclick="popupHide();"></div>
 
 <script type="text/javascript">
+    Resources.Personalize.Tags.init();
     var pageWidth = 465;
     $('#slider').data('current_page', 0);
     $('#view_select_options').hide();
@@ -78,11 +93,17 @@
     $(window).scroll(adjust_on_window_change);
     save_filter_to_page($('.currentpage'));
 
+    $('#search_keyword').on('keypress', function(e){
+        if (e.keyCode == '13'){
+            $('#simple_search').click();
+        }
+    });
     $('#simple_search').on('click', function(){
         var keyword = $('#search_keyword').val();
         if (keyword == '') {
+            var new_url = filter_sort_url();
             $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-            $('.currentpage #list_display').load(filter_sort_url());
+            $('.currentpage #list_display').load(new_url);
         }
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
         $('.currentpage #list_display').load('/simplesearch/' + keyword);
@@ -105,14 +126,16 @@
     $('#projectFilter').on('change', function(){
         if ($('.currentpage').hasClass('newpage')) {return;}
         //window.location = updateCurrentParams('project=' + $(this).val());
+        var new_url = filter_sort_url();
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load(filter_sort_url());
+        $('.currentpage #list_display').load(new_url);
     });
     $('#moreTags').on('change', function(){
-        if ($('.currentpage').hasClass('newpage')) {return;}     
+        if ($('.currentpage').hasClass('newpage')) {return;}    
+        var new_url = filter_sort_url(); 
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
         $('.tag.selected').removeClass('selected');
-        $('.currentpage #list_display').load(filter_sort_url());
+        $('.currentpage #list_display').load(new_url);
     });
     $('#filter_tags > li.tag').on('click', function(){
         if ($(this).hasClass('selected')){
@@ -122,8 +145,9 @@
             $(this).addClass('selected');
         }
         $('#moreTags').val('');
+        var new_url = filter_sort_url();
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load(filter_sort_url()); 
+        $('.currentpage #list_display').load(new_url); 
     });
 
     $('#list_items > li').on('click', function(){
@@ -168,6 +192,7 @@
             update_currentpage(c_page - 1)
             reset_page_filter_display($('.currentpage'));
         }
+        Resources.ItemsOrder.position_adjust($('.currentpage .order'));
     }
 
     function navigate_forward(){
@@ -183,6 +208,7 @@
             update_currentpage(c_page + 1);
             reset_page_filter_display($('.currentpage'));
         }
+        Resources.ItemsOrder.position_adjust($('.currentpage .order'));
     }
 
     function navigate_home(){
@@ -204,6 +230,7 @@
         save_filter_to_page($('.currentpage'));
         update_currentpage(c_page + 1);
         reset_page_filter_display($('.currentpage'));
+        Resources.ItemsOrder.position_adjust($('.currentpage .order'));
     }
 
     function update_navigator(){
@@ -217,4 +244,5 @@
         $('.currentpage').removeClass('currentpage');
         $('#resource_page_' + c_page).addClass('currentpage');
     }
+    Resources.DragSlide.init();
 </script>

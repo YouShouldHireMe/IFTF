@@ -31,3 +31,4 @@ if ($('#resource_page_' + c_page).data('item_id') != '<%= @item.id %>'){
     $page.html("<%= j (render 'itemlinks') %>");
     $page.find('.mypagination').html('<%= j (paginate(@items, :remote => true).to_s) %>');
 }
+Resources.ItemsOrder.init($('.currentpage #customOrder'));

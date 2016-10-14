@@ -39,7 +39,10 @@ class ResourcesController < ApplicationController
     @selectTags = []
     @search
 
-
+    if current_user
+        @personalize_tags = current_user.tags.map{|i| i.id}   
+        @alltags = Tag.all.order('lower(n.name)')
+    end
 #    Item.all.each do |it|
 #        it.tags.each do |t|
 #            if !(t.items.map {|i| i.id}).include? it.id

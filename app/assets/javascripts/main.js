@@ -50,7 +50,7 @@ function updateCurrentParams(newParamString){
 function filter_sort_url(){
     var type    = $('#typeFilter').val() ? $('#typeFilter').val() : 'no_selection',
         tag     = $('#moreTags').val() ? $('#moreTags').val() : 'no_selection',
-        order   = $('#customOrder').val(),
+        order   = $('.currentpage #customOrder').val(),
         related = '';
 
     if ($('.tag.selected').length == 1){

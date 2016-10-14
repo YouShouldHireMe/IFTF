@@ -81,9 +81,10 @@
 </div>
 <script type="text/javascript">
     $('.user_items').on('click', function(){
-        console.log('wowow');
         $('.currentpage #list_display').html('<img src="/assets/ajax-loader.gif" />');
-        $('.currentpage #list_display').load('/user_items/' + $(this).attr('user_id'));
+        $('.currentpage #list_display').load('/user_items/' + $(this).attr('user_id'), function(){
+            Resources.ItemsOrder.init($('.currentpage #customOrder'));
+        });
     });
     if ($('#item_tags_').val() != null){
         $('#tag_suggestions .tag').each(function(){
