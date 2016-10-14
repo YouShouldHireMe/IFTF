@@ -85,7 +85,7 @@ var Resources = {
                 var x_current   = e.pageX;
                 var x_change    = x_current - Resources.DragSlide.x_start
                 var w_current   = Resources.DragSlide.w_start + x_change;
-                var w_current_2 = Resources.DragSlide.w_start_2 - x_change;
+                var w_current_2 = Resources.DragSlide.w_start_2 - x_change - 10;
                 var w_current_bar = Resources.DragSlide.w_start_bar - x_change;
                 var l_current_bar = Resources.DragSlide.l_start_bar + x_change;
 
