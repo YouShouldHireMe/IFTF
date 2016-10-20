@@ -4,7 +4,6 @@
     box-sizing:border-box;
     width:100%;
     min-width:1100px;
-    height:760px;
     background-color:white;
     -webkit-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
     -moz-box-shadow: 0px 0px 5px 1px rgba(176,176,176,0.45);
@@ -29,7 +28,7 @@
     max-width:calc(100% - 520px);
     min-width:460px;
     width:460px;
-    height:560px;
+    min-height:500px;
     float:left;
     margin:0px 8px;
     margin-right:0px;
@@ -42,7 +41,7 @@
     width: calc(100% - 519px);
     max-width: calc(100% - 520px);
     min-width:460px;
-    height:560px;
+    min-height:500px;
     margin:4px 8px;
     margin-left:0px;
     padding:10px;

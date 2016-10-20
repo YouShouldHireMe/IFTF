@@ -23,7 +23,9 @@ function adjust_on_window_change(){
         adjustCSS($('#item_edit_bar'), 'top', $('#resource_preview').offset().top + 2.125);
         adjustCSS($('#item_edit_bar'), 'width', $('#resource_preview').width() + 10); 
         adjustCSS($('#view_select_options'), 'left', getOffset($('#view_select'), 'left'));
-        adjustCSS($('#resource_center'), 'height', 750 - 85 + $('#search_filter').height());
+        //adjustCSS($('#resource_center'), 'height', 750 - 85 + $('#search_filter').height());
+        adjustCSS($('#resource_list'), 'height', window.screen.height - 325);
+        adjustCSS($('#resource_preview'), 'height', window.screen.height - 325);
     }
 
 function getOffset($el, att){
